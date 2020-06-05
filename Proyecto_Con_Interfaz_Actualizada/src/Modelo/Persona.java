@@ -68,7 +68,7 @@ public class Persona {
     public void DiegoEstas(){
         
         System.out.println("DIEGO DONDE ESTAS");
-        
+        System.out.println("1");
     }
     
 }
