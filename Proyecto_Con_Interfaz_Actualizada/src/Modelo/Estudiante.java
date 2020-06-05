@@ -54,10 +54,7 @@ public class Estudiante extends Persona{
         this.propuesta = propuesta;
     }
     
-    public void calcular(){
-         int num;
-         String jjj;
-    }
+    
     
     
     
