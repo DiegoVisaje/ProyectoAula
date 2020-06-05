@@ -65,8 +65,4 @@ public class Persona {
         this.cedula = cedula;
     }
 
-    public void calcularEdad(){
-        System.out.println("termine mi trabajo");
-    }
-    
 }
