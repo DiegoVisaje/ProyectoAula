@@ -26,7 +26,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
   private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
     private ArrayList<SubLineaInvestigacion> listaLineasSubLineas = new ArrayList<SubLineaInvestigacion>();  
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
-    private ArchivoTexto archivoTexto = new ArchivoTexto();
+    private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
     private SubLineaInvestigacion subLineaInvestigacion;
   private  LineaDeInvestigacion e;
 

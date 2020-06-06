@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import Datos.ArchivoTexto;
+import Datos.ArchivoTextoLineas;
 import Datos.ArchivoTextoDocentes;
 import Datos.Archivo_TextoSub_Linea;
 import Modelo.*;
@@ -31,7 +31,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private ArrayList<SubLineaInvestigacion> listaSubLineas = new ArrayList<SubLineaInvestigacion>();
     private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
-    private ArchivoTexto archivoTexto = new ArchivoTexto();
+    private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
     private SubLineaInvestigacion subLineaInvestigacion;
     private String codigo="", linea="";
     

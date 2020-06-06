@@ -7,7 +7,7 @@ package Interfaz;
 
 import Datos.ArchivoTextoDocentes;
 import Datos.Archivo_TextoSub_Linea;
-import Datos.ArchivoTexto;
+import Datos.ArchivoTextoLineas;
 import Modelo.Docente;
 import Modelo.Estudiante;
 import Modelo.LineaDeInvestigacion;
@@ -29,7 +29,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private ArrayList<SubLineaInvestigacion> listaSubLineas = new ArrayList<SubLineaInvestigacion>();
     private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
-    private ArchivoTexto archivoTexto = new ArchivoTexto();
+    private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
     private SubLineaInvestigacion subLineaInvestigacion;
      private String codigo="", linea="";
     /**
@@ -192,6 +192,11 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jPanel11.add(ComboSublinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, 150, 40));
 
         ComboLineaInvestigacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
+        ComboLineaInvestigacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboLineaInvestigacionActionPerformed(evt);
+            }
+        });
         jPanel11.add(ComboLineaInvestigacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 150, 40));
 
         BotonPractica.setText("Practico");
@@ -408,10 +413,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jPanel6MouseClicked
 
     private void ComboDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDocenteActionPerformed
-       linea = ComboLineaInvestigacion.getSelectedItem().toString();
-       codigo = buscarCodigo(linea);
-       ComboSublinea.removeAllItems();
-       listaSubLineas(codigo);
+      
         
         
     }//GEN-LAST:event_ComboDocenteActionPerformed
@@ -419,6 +421,13 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
+       linea = ComboLineaInvestigacion.getSelectedItem().toString();
+       codigo = buscarCodigo(linea);
+       ComboSublinea.removeAllItems();
+       listaSubLineas(codigo);
+    }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
