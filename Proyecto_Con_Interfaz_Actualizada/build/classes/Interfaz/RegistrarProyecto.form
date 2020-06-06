@@ -169,12 +169,8 @@
         <Component class="javax.swing.JComboBox" name="ComboDocente">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="5">
+              <StringArray count="1">
                 <StringItem index="0" value="SELECIONE"/>
-                <StringItem index="1" value="JUANCHITO PEREZ"/>
-                <StringItem index="2" value="DIEGO MANDON"/>
-                <StringItem index="3" value="SHAROLL ARAUJO"/>
-                <StringItem index="4" value="ANYELA SALGADO"/>
               </StringArray>
             </Property>
           </Properties>

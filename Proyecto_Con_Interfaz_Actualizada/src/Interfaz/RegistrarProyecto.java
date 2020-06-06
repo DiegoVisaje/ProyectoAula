@@ -138,7 +138,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jLabel41.setText("Celular:");
         jPanel11.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, 40));
 
-        ComboDocente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE", "JUANCHITO PEREZ", "DIEGO MANDON", "SHAROLL ARAUJO", "ANYELA SALGADO" }));
+        ComboDocente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
         ComboDocente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ComboDocenteActionPerformed(evt);
