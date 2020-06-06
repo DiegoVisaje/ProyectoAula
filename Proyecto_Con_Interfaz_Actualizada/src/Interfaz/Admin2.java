@@ -50,26 +50,23 @@ public class Admin2 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
-        jPanelCrearUsuario = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanelEliminarUsuario = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jPanelModificarUsuario = new javax.swing.JPanel();
+        jPanelModificarUsuario1 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jPanelRegistrarDocente = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jPanelRegistrarLinea = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         jPanel13 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
+        jPanelRegistrarLinea = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jPanelRegistrarSubLinea2 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
         jPanelBarras = new javax.swing.JPanel();
@@ -101,7 +98,7 @@ public class Admin2 extends javax.swing.JFrame {
         jPanel5Admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("_______________________");
+        jLabel34.setText("_____________________");
         jPanel5Admin.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 140, 20));
 
         jLabel33.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
@@ -125,29 +122,6 @@ public class Admin2 extends javax.swing.JFrame {
 
         jPanel1.add(jPanel5Admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 170, 110));
 
-        jPanelCrearUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelCrearUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelCrearUsuarioMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelCrearUsuarioMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelCrearUsuarioMouseExited(evt);
-            }
-        });
-        jPanelCrearUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel1.setText("Crear usuario");
-        jPanelCrearUsuario.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 110, 40));
-
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_add_user_group_man_man_20px_1.png"))); // NOI18N
-        jPanelCrearUsuario.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 20, 40));
-
-        jPanel1.add(jPanelCrearUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 210, -1));
-
         jPanelEliminarUsuario.setBackground(new java.awt.Color(255, 255, 255));
         jPanelEliminarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -164,35 +138,35 @@ public class Admin2 extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel4.setText("Eliminar usuario");
-        jPanelEliminarUsuario.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 130, 40));
+        jPanelEliminarUsuario.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 130, 40));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_folder_20px.png"))); // NOI18N
         jPanelEliminarUsuario.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 210, -1));
+        jPanel1.add(jPanelEliminarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, -1));
 
-        jPanelModificarUsuario.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelModificarUsuario.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanelModificarUsuario1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelModificarUsuario1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelModificarUsuarioMouseClicked(evt);
+                jPanelModificarUsuario1MouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelModificarUsuarioMouseEntered(evt);
+                jPanelModificarUsuario1MouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelModificarUsuarioMouseExited(evt);
+                jPanelModificarUsuario1MouseExited(evt);
             }
         });
-        jPanelModificarUsuario.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanelModificarUsuario1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel3.setText("Modificar usuario");
-        jPanelModificarUsuario.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 140, 40));
+        jPanelModificarUsuario1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 140, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_sort_by_modified_date_20px_1.png"))); // NOI18N
-        jPanelModificarUsuario.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
+        jPanelModificarUsuario1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelModificarUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 210, -1));
+        jPanel1.add(jPanelModificarUsuario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 210, -1));
 
         jPanelRegistrarDocente.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRegistrarDocente.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,40 +184,12 @@ public class Admin2 extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setText("Registrar docente");
-        jPanelRegistrarDocente.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 150, 40));
+        jPanelRegistrarDocente.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 150, 40));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_registration_20px_1.png"))); // NOI18N
         jPanelRegistrarDocente.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelRegistrarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 280, 210, 40));
-
-        jPanelRegistrarLinea.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelRegistrarLinea.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelRegistrarLineaMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelRegistrarLineaMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelRegistrarLineaMouseExited(evt);
-            }
-        });
-        jPanelRegistrarLinea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel14.setText("Registrar linea");
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel14MouseEntered(evt);
-            }
-        });
-        jPanelRegistrarLinea.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 130, 40));
-
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
-        jPanelRegistrarLinea.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
-
-        jPanel1.add(jPanelRegistrarLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 210, -1));
+        jPanel1.add(jPanelRegistrarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 210, 40));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -275,27 +221,51 @@ public class Admin2 extends javax.swing.JFrame {
 
         jPanel1.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 590, 210, 20));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanelRegistrarLinea.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRegistrarLinea.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel4MouseClicked(evt);
+                jPanelRegistrarLineaMouseClicked(evt);
             }
-        });
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel6.setText("Registrar sub-linea");
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
+                jPanelRegistrarLineaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRegistrarLineaMouseExited(evt);
             }
         });
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 160, 40));
+        jPanelRegistrarLinea.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
-        jPanel4.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
+        jLabel7.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel7.setText("Registrar linea");
+        jPanelRegistrarLinea.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 130, 40));
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 440, 210, 40));
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
+        jPanelRegistrarLinea.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
+
+        jPanel1.add(jPanelRegistrarLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 210, -1));
+
+        jPanelRegistrarSubLinea2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanelRegistrarSubLinea2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelRegistrarSubLinea2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jPanelRegistrarSubLinea2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jPanelRegistrarSubLinea2MouseExited(evt);
+            }
+        });
+        jPanelRegistrarSubLinea2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel9.setText("Registrar sub-linea");
+        jPanelRegistrarSubLinea2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 150, 40));
+
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
+        jPanelRegistrarSubLinea2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
+
+        jPanel1.add(jPanelRegistrarSubLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 210, -1));
 
         jPanelPrincipal.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 210, 610));
 
@@ -380,15 +350,6 @@ public class Admin2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanelCrearUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCrearUsuarioMouseEntered
-              resetColor(jPanelCrearUsuario);
-    }//GEN-LAST:event_jPanelCrearUsuarioMouseEntered
-
-    private void jPanelCrearUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCrearUsuarioMouseExited
-         setColor(jPanelCrearUsuario);
-
-    }//GEN-LAST:event_jPanelCrearUsuarioMouseExited
-
     private void jPanelEliminarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelEliminarUsuarioMouseEntered
         resetColor(jPanelEliminarUsuario);
     }//GEN-LAST:event_jPanelEliminarUsuarioMouseEntered
@@ -397,13 +358,13 @@ public class Admin2 extends javax.swing.JFrame {
         setColor(jPanelEliminarUsuario);
     }//GEN-LAST:event_jPanelEliminarUsuarioMouseExited
 
-    private void jPanelModificarUsuarioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuarioMouseEntered
-        resetColor(jPanelModificarUsuario);
-    }//GEN-LAST:event_jPanelModificarUsuarioMouseEntered
+    private void jPanelModificarUsuario1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuario1MouseEntered
+        resetColor(jPanelModificarUsuario1);
+    }//GEN-LAST:event_jPanelModificarUsuario1MouseEntered
 
-    private void jPanelModificarUsuarioMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuarioMouseExited
-        setColor(jPanelModificarUsuario);
-    }//GEN-LAST:event_jPanelModificarUsuarioMouseExited
+    private void jPanelModificarUsuario1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuario1MouseExited
+        setColor(jPanelModificarUsuario1);
+    }//GEN-LAST:event_jPanelModificarUsuario1MouseExited
 
     private void jPanelRegistrarDocenteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseEntered
         resetColor(jPanelRegistrarDocente);
@@ -412,18 +373,6 @@ public class Admin2 extends javax.swing.JFrame {
     private void jPanelRegistrarDocenteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseExited
         setColor(jPanelRegistrarDocente);
     }//GEN-LAST:event_jPanelRegistrarDocenteMouseExited
-
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-        
-    }//GEN-LAST:event_jLabel6MouseEntered
-
-    private void jPanelRegistrarLineaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseEntered
-      resetColor(jPanelRegistrarLinea);
-    }//GEN-LAST:event_jPanelRegistrarLineaMouseEntered
-
-    private void jPanelRegistrarLineaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseExited
-        setColor(jPanelRegistrarLinea);
-    }//GEN-LAST:event_jPanelRegistrarLineaMouseExited
 
     private void jPanel5AdminMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5AdminMouseEntered
       
@@ -455,27 +404,38 @@ public class Admin2 extends javax.swing.JFrame {
       dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
-    private void jPanelCrearUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelCrearUsuarioMouseClicked
-      
-      crearUsuario2 ad = new crearUsuario2();
-       escritorio.add(ad);
-       ad.show();
-       
-    }//GEN-LAST:event_jPanelCrearUsuarioMouseClicked
-
+    public void registrarSubLinea(){
+        RegistrarSubLineas cu = new RegistrarSubLineas();
+        escritorio.add(cu);
+        cu.show();   
+    }
+    
+    
     private void jPanelEliminarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelEliminarUsuarioMouseClicked
+      EliminarUsuario();
+    }//GEN-LAST:event_jPanelEliminarUsuarioMouseClicked
+
+    private void jPanelModificarUsuario1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuario1MouseClicked
+        modificarUsuario();
+    }//GEN-LAST:event_jPanelModificarUsuario1MouseClicked
+
+    public void modificarUsuario(){
+        
+        modificarUsuarioPersona modificarUsuario = new modificarUsuarioPersona();
+        escritorio.add(modificarUsuario);
+        modificarUsuario.show();
+       
+        
+    }
+    
+    public void EliminarUsuario(){
+        
        EliminarUsuario eliminarUsuario = new EliminarUsuario();
        escritorio.add(eliminarUsuario);
        eliminarUsuario.show();
-    }//GEN-LAST:event_jPanelEliminarUsuarioMouseClicked
-
-    private void jPanelModificarUsuarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelModificarUsuarioMouseClicked
-      modificarUsuarioPersona mu = new modificarUsuarioPersona();
-      escritorio.add(mu);
-       mu.show();
        
-    }//GEN-LAST:event_jPanelModificarUsuarioMouseClicked
-
+    }
+    
     private void jPanelRegistrarDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseClicked
         
         CrearUsuarioDocente cu = new CrearUsuarioDocente();
@@ -485,20 +445,37 @@ public class Admin2 extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelRegistrarDocenteMouseClicked
 
     private void jPanelRegistrarLineaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseClicked
-     RegistrarLienas();
+        RegistrarLienas();
     }//GEN-LAST:event_jPanelRegistrarLineaMouseClicked
 
-    private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel14MouseEntered
+    public void crearDocente(){
+        
+        CrearUsuarioDocente crearDocente = new CrearUsuarioDocente();
+        escritorio.add(crearDocente);
+        crearDocente.show();
+        
+    }
+    
+    
+    private void jPanelRegistrarLineaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseEntered
+          resetColor(jPanelRegistrarLinea);
+    }//GEN-LAST:event_jPanelRegistrarLineaMouseEntered
 
-    private void jPanel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel4MouseClicked
-       
-         RegistrarSubLineas cu = new RegistrarSubLineas();
-         escritorio.add(cu);
-         cu.show();
-         
-    }//GEN-LAST:event_jPanel4MouseClicked
+    private void jPanelRegistrarLineaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseExited
+         setColor(jPanelRegistrarLinea);
+    }//GEN-LAST:event_jPanelRegistrarLineaMouseExited
+
+    private void jPanelRegistrarSubLinea2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarSubLinea2MouseClicked
+       registrarSubLinea();
+    }//GEN-LAST:event_jPanelRegistrarSubLinea2MouseClicked
+
+    private void jPanelRegistrarSubLinea2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarSubLinea2MouseEntered
+        resetColor(jPanelRegistrarSubLinea2);
+    }//GEN-LAST:event_jPanelRegistrarSubLinea2MouseEntered
+
+    private void jPanelRegistrarSubLinea2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarSubLinea2MouseExited
+          setColor(jPanelRegistrarSubLinea2);
+    }//GEN-LAST:event_jPanelRegistrarSubLinea2MouseExited
 
      public void RegistrarLienas(){
     
@@ -557,13 +534,12 @@ public class Admin2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
@@ -571,7 +547,6 @@ public class Admin2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -580,14 +555,13 @@ public class Admin2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5Admin;
     private javax.swing.JPanel jPanelBarras;
-    private javax.swing.JPanel jPanelCrearUsuario;
     private javax.swing.JPanel jPanelEliminarUsuario;
-    private javax.swing.JPanel jPanelModificarUsuario;
+    private javax.swing.JPanel jPanelModificarUsuario1;
     private javax.swing.JPanel jPanelPrincipal;
     private javax.swing.JPanel jPanelRegistrarDocente;
     private javax.swing.JPanel jPanelRegistrarLinea;
+    private javax.swing.JPanel jPanelRegistrarSubLinea2;
     // End of variables declaration//GEN-END:variables
 }

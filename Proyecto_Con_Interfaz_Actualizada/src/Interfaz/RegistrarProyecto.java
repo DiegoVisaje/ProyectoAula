@@ -5,15 +5,33 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoDocentes;
+import Datos.Archivo_TextoSub_Linea;
+import Datos.ArchivoTexto;
+import Modelo.Docente;
 import Modelo.Estudiante;
+import Modelo.LineaDeInvestigacion;
 import Modelo.PropuestaProyecto;
+import Modelo.SubLineaInvestigacion;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author zarel
  */
 public class RegistrarProyecto extends javax.swing.JInternalFrame {
-
+    
+    
+    private ArrayList<Docente> listadocentes = new ArrayList<Docente>();
+    private  ArchivoTextoDocentes archivoTextoDocente = new ArchivoTextoDocentes();
+    private ArrayList<SubLineaInvestigacion> listaSubLineas = new ArrayList<SubLineaInvestigacion>();
+    private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
+    private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
+    private ArchivoTexto archivoTexto = new ArchivoTexto();
+    private SubLineaInvestigacion subLineaInvestigacion;
+     private String codigo="", linea="";
     /**
      * Creates new form RegistrarProyecto
      */
@@ -23,6 +41,19 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     
     public RegistrarProyecto() {
         initComponents();
+        
+        try {
+
+        listadocentes = archivoTextoDocente.leerArchivo();
+        listaDocentes();
+        listaLineas = archivoTexto.leerArchivo();
+        listaLineas();
+        listaSubLineas = archivoSub_linea.leerArchivo();
+
+        
+    } catch (Exception ex) {
+        Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
+    }
      
     }
 
@@ -56,7 +87,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         ComboTiempo = new javax.swing.JComboBox<>();
         jLabel52 = new javax.swing.JLabel();
         ComboSublinea = new javax.swing.JComboBox<>();
-        CombroTiempoInvestigacion = new javax.swing.JComboBox<>();
+        ComboLineaInvestigacion = new javax.swing.JComboBox<>();
         BotonPractica = new javax.swing.JButton();
         BotonTesis = new javax.swing.JButton();
         jPanel10 = new javax.swing.JPanel();
@@ -96,6 +127,11 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
 
         txtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         txtNombre.setCaretColor(new java.awt.Color(51, 153, 0));
+        txtNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombreActionPerformed(evt);
+            }
+        });
         jPanel11.add(txtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 190, 40));
 
         jLabel41.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
@@ -103,10 +139,15 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jPanel11.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 90, 40));
 
         ComboDocente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE", "JUANCHITO PEREZ", "DIEGO MANDON", "SHAROLL ARAUJO", "ANYELA SALGADO" }));
+        ComboDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboDocenteActionPerformed(evt);
+            }
+        });
         jPanel11.add(ComboDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 190, 40));
 
         jLabel47.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel47.setText("Doncente");
+        jLabel47.setText("Docente");
         jPanel11.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 90, 40));
 
         jTextField20.setText("PDF");
@@ -147,11 +188,11 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jLabel52.setText("Sub-linea de Investigación:");
         jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 210, 170, 40));
 
-        ComboSublinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Item 2", "Item 3", "Item 4" }));
+        ComboSublinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
         jPanel11.add(ComboSublinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 210, 150, 40));
 
-        CombroTiempoInvestigacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Item 2", "Item 3", "Item 4" }));
-        jPanel11.add(CombroTiempoInvestigacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 150, 40));
+        ComboLineaInvestigacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
+        jPanel11.add(ComboLineaInvestigacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 120, 150, 40));
 
         BotonPractica.setText("Practico");
         BotonPractica.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -244,11 +285,11 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(24, 24, 24)
                 .addComponent(jLabel57)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,7 +300,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jPanel11.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 660, 90, 30));
+        jPanel11.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 660, 140, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -289,8 +330,37 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         new Inicio().show();
         dispose();
     }
-            
     
+     public String buscarCodigo(String Linea){
+        for(LineaDeInvestigacion a: listaLineas){
+            
+            if(Linea.equals(a.getNombre())){
+                return a.getCodigo();
+            }
+        }
+        return null;
+    }
+    
+    public void listaLineas(){
+         for(LineaDeInvestigacion a: listaLineas){
+            ComboLineaInvestigacion.addItem(a.getNombre());
+        }
+    }
+            
+    public void listaDocentes(){
+         for(Docente a: listadocentes){
+            ComboDocente.addItem(a.getNombre()+" "+a.getApellido());
+        }
+    }
+    
+     public void listaSubLineas(String codigo){
+        
+        for(SubLineaInvestigacion a: listaSubLineas ){
+            if(a.getlCodigo().equals(codigo)){
+             ComboSublinea.addItem(a.getNombre());  
+            }  
+        }
+    }
     
     private void jLabel39MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel39MouseClicked
         System.exit(0);
@@ -321,7 +391,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         String celuar = TxtCelular.getText().trim();
         String docente = ComboDocente.getSelectedItem().toString();
         String tiempoDeEjecucion = ComboTiempo.getSelectedItem().toString();
-        String lineaInvestigacion = CombroTiempoInvestigacion.getSelectedItem().toString();
+        String lineaInvestigacion = ComboLineaInvestigacion.getSelectedItem().toString();
         String subLinea = ComboSublinea.getSelectedItem().toString();
         
         
@@ -337,14 +407,27 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_jPanel6MouseClicked
 
+    private void ComboDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDocenteActionPerformed
+       linea = ComboLineaInvestigacion.getSelectedItem().toString();
+       codigo = buscarCodigo(linea);
+       ComboSublinea.removeAllItems();
+       listaSubLineas(codigo);
+        
+        
+    }//GEN-LAST:event_ComboDocenteActionPerformed
+
+    private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombreActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonPractica;
     private javax.swing.JButton BotonTesis;
     private javax.swing.JComboBox<String> ComboDocente;
+    private javax.swing.JComboBox<String> ComboLineaInvestigacion;
     private javax.swing.JComboBox<String> ComboSublinea;
     private javax.swing.JComboBox<String> ComboTiempo;
-    private javax.swing.JComboBox<String> CombroTiempoInvestigacion;
     private javax.swing.JTextField TxtCelular;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel39;
