@@ -5,3 +5,5 @@ Miembro;Diego;Granados;54323456;Diego;12345;Primera
 Evaluador;Chinomasacre;Kiubo;574747;Chinomasacre;533442;Javier
 Miembro;Diego;Granados;1343143;Diego;41413414;Primera
 Evaluador;vqwqgfq;qwfqfw;wfqfwq;vqwqgfq;wffqwf;Primera
+Miembro;JENNIFER;CUELLO;123;JENNIFER;123;Primera
+Miembro;;;;;;Primera
