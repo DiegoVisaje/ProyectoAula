@@ -1,3 +1,1 @@
-AAA;Primera;Sub1
-321Ad;Javier;Javier2
-AAA;Primera;subli2
+1;CARLOS;INVESTIGACION
