@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;  
 import Datos.*;
+import Modelo.SubLineaInvestigacion;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,10 +24,12 @@ import java.util.logging.Logger;
 public class RegistrarLineas extends javax.swing.JInternalFrame {
 
   private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
-  
-  
+    private ArrayList<SubLineaInvestigacion> listaLineasSubLineas = new ArrayList<SubLineaInvestigacion>();  
+    private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
+    private ArchivoTexto archivoTexto = new ArchivoTexto();
+    private SubLineaInvestigacion subLineaInvestigacion;
   private  LineaDeInvestigacion e;
-  private  ArchivoTexto archivoTexto = new ArchivoTexto();
+
   
     
     public RegistrarLineas() {
@@ -65,6 +68,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -109,7 +114,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
                 BotonGuardarMouseClicked(evt);
             }
         });
-        jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 100, 30));
+        jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 100, 30));
 
         jScrollPane1.setViewportView(jTablaMostrarLineas);
 
@@ -145,9 +150,26 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jLabel6.setText("Codigo:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 70, 30));
 
+        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
+        jLabel14.setText("Eliminar");
+        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 100, 30));
+
+        jLabel17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
+        jLabel17.setText("Modificar");
+        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 100, 30));
+
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 640, 480));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_multiply_30px.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 30, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -203,6 +225,10 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private void TxtRegistrarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtRegistrarLineaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtRegistrarLineaActionPerformed
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+       System.exit(0);
+    }//GEN-LAST:event_jLabel7MouseClicked
 
     
     public LineaDeInvestigacion RegistrarLinea(){
@@ -294,6 +320,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private javax.swing.JTextField TxtRegistrarLinea;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

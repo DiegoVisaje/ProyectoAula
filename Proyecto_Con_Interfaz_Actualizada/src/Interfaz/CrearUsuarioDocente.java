@@ -77,14 +77,12 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         TxtCedulaDocente = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         BotonGuardarDocente = new javax.swing.JLabel();
-        ComboSubLinea = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaDocentes = new javax.swing.JTable();
-        jLabel18 = new javax.swing.JLabel();
         ComboCargo = new javax.swing.JComboBox<>();
         ComboLineaInvestigacion = new javax.swing.JComboBox<>();
         jLabel14 = new javax.swing.JLabel();
@@ -122,13 +120,13 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         jPanel1.add(TxtApellidoDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 140, 30));
 
         TxtContraseñaDocente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TxtContraseñaDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 140, 30));
+        jPanel1.add(TxtContraseñaDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 180, 140, 30));
 
         TxtCedulaDocente.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TxtCedulaDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 140, 30));
+        jPanel1.add(TxtCedulaDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 140, 30));
 
         jLabel16.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel16.setText("Linea de investigacion");
+        jLabel16.setText("Linea de investigacion:");
         jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 120, 180, 30));
 
         BotonGuardarDocente.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -142,17 +140,13 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         });
         jPanel1.add(BotonGuardarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 430, 100, 30));
 
-        ComboSubLinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
-        ComboSubLinea.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(ComboSubLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 140, 30));
-
         jLabel17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel17.setText("Cargo:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, 130, 30));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, 60, 30));
 
         jLabel12.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel12.setText("Contraseña:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 100, 30));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 180, 100, 30));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel8.setText("Apellido:");
@@ -160,15 +154,11 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel13.setText("Cedula:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 80, 30));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 30));
 
         jScrollPane1.setViewportView(TablaDocentes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 630, 120));
-
-        jLabel18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel18.setText("SubLinea investigacion ");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 190, 190, 30));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 630, 190));
 
         ComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
         ComboCargo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -193,6 +183,11 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 660, 470));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_multiply_30px.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
         jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 0, 30, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -252,6 +247,10 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_BotonGuardarDocenteMouseClicked
 
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+       System.exit(0);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
 
     public Docente registrarDocente(){
         
@@ -271,6 +270,8 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
       docente.setApellido(apellido);
       docente.setCedula(cedula);
       docente.setContraseña(contraseña);
+      
+      
      // docente.setUsuario(nombre);
      // docente.setLinea(linea); ME SALE ERROR NO SE PORQUE, ES PORQUE COMO LA LLAMADAS EN LA CLASE DOCENTE.
                                 //CREO QUE HAY QUE CONVERTIRLO (NO ME ACUERDO COMO ES)
@@ -349,7 +350,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel BotonGuardarDocente;
     private javax.swing.JComboBox<String> ComboCargo;
     private javax.swing.JComboBox<String> ComboLineaInvestigacion;
-    private javax.swing.JComboBox<String> ComboSubLinea;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JTable TablaDocentes;
     private javax.swing.JTextField TxtApellidoDocente;
@@ -362,7 +362,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
