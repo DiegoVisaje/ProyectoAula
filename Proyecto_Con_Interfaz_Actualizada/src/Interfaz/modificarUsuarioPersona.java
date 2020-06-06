@@ -30,26 +30,26 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
         Escritorio = new javax.swing.JDesktopPane();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        BotonRegresar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        TxtBuscar = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        BotonGuardar = new javax.swing.JLabel();
+        BotonModificar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaModificar = new javax.swing.JTable();
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        ComboTipoUsuario = new javax.swing.JComboBox<>();
+        ComboCargo = new javax.swing.JComboBox<>();
+        TxtNombre = new javax.swing.JTextField();
+        TxtApellido = new javax.swing.JTextField();
+        TxtCedula = new javax.swing.JTextField();
+        LabelBuscar = new javax.swing.JLabel();
+        TxtContraseña = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -61,8 +61,8 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
+        BotonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        jPanel1.add(BotonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 460, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
@@ -71,10 +71,10 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 480, 10));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
+        TxtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TxtBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        TxtBuscar.setBorder(null);
+        jPanel1.add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jLabel5.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel5.setText("Apellido:");
@@ -88,19 +88,19 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
         jLabel11.setText("Nombre:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 80, 30));
 
-        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
-        jLabel15.setText("Guardar");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 100, 30));
+        BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
+        BotonGuardar.setText("Guardar");
+        BotonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 460, 100, 30));
 
-        jLabel17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
-        jLabel17.setText("Modificar");
-        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 100, 30));
+        BotonModificar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
+        BotonModificar.setText("Modificar");
+        BotonModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 460, 100, 30));
 
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaModificar);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 330, 390));
 
@@ -112,30 +112,30 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
         jLabel18.setText("Tipo de usuario ");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 130, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "ADMINISTRADOR", "DOCENTE" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 140, 30));
+        ComboTipoUsuario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "ADMINISTRADOR", "DOCENTE" }));
+        ComboTipoUsuario.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(ComboTipoUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 380, 140, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "COMITE", "DOCENTE EVALUADOR" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel1.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 140, 30));
+        ComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "COMITE", "DOCENTE EVALUADOR" }));
+        ComboCargo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel1.add(ComboCargo, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 140, 30));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 140, 30));
+        TxtNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(TxtNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 110, 140, 30));
 
-        jTextField4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 140, 30));
+        TxtApellido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(TxtApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 170, 140, 30));
 
-        jTextField5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 140, 30));
+        TxtCedula.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(TxtCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 140, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
-        jLabel4.setText("buscar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
+        LabelBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        LabelBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
+        LabelBuscar.setText("buscar");
+        jPanel1.add(LabelBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
 
-        jTextField6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 140, 30));
+        TxtContraseña.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(TxtContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 140, 30));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel8.setText("Contraseña:");
@@ -183,18 +183,24 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonGuardar;
+    private javax.swing.JLabel BotonModificar;
+    private javax.swing.JLabel BotonRegresar;
+    private javax.swing.JComboBox<String> ComboCargo;
+    private javax.swing.JComboBox<String> ComboTipoUsuario;
     private javax.swing.JDesktopPane Escritorio;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JLabel LabelBuscar;
+    private javax.swing.JTable TablaModificar;
+    private javax.swing.JTextField TxtApellido;
+    private javax.swing.JTextField TxtBuscar;
+    private javax.swing.JTextField TxtCedula;
+    private javax.swing.JTextField TxtContraseña;
+    private javax.swing.JTextField TxtNombre;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -204,11 +210,5 @@ public class modificarUsuarioPersona extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }

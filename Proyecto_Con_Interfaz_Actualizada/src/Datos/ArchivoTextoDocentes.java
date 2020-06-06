@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public class ArchivoTextoDocentes {
     
-     private File archivo;
+    private File archivo;
     private FileWriter aEsc;  // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
     
