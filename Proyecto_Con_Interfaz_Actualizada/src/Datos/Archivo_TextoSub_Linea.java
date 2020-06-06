@@ -24,8 +24,8 @@ public class Archivo_TextoSub_Linea {
     
     
      public Archivo_TextoSub_Linea() {
-      this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
-     //  this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
+      //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
+      this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
     }
      
       public boolean Guardar (SubLineaInvestigacion sub_lineaIn) throws Exception{

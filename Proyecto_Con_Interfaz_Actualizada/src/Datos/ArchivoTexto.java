@@ -23,8 +23,8 @@ public class ArchivoTexto {
     
     
      public ArchivoTexto() {
-        this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
-      // this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
+       // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
+       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
     }
      
       public boolean Guardar (LineaDeInvestigacion lineaInvestigacion) throws Exception{
