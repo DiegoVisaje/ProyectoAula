@@ -297,7 +297,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelBotonLoginMouseClicked
 
     private void jPanelBotonLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotonLogin2MouseClicked
-      consultarPryecto consultarProyecto = new consultarPryecto();
+      consultarProyecto consultarProyecto = new consultarProyecto();
       Escritorio.add(consultarProyecto);
       consultarProyecto.show();     
     }//GEN-LAST:event_jPanelBotonLogin2MouseClicked

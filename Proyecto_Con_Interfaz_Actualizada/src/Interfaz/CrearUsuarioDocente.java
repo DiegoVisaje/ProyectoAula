@@ -296,7 +296,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
       docente.setCedula(cedula);
       docente.setContraseña(contraseña);
 
-      docente.setUsuario(nombre);
+      docente.setUsuario(cedula);
       docente.setLinea(linea); 
                                
 
