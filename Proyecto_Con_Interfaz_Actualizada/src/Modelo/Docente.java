@@ -11,8 +11,7 @@ package Modelo;
  */
 public class Docente extends Persona{
     
-    private String cargo,usuario,contraseña;
-    private LineaDeInvestigacion linea;
+    private String cargo,usuario,contraseña, linea;
 
     public Docente() {
         super();
@@ -78,7 +77,7 @@ public class Docente extends Persona{
     /**
      * @return the linea
      */
-    public LineaDeInvestigacion getLinea() {
+    public String getLinea() {
         return linea;
     }
 
@@ -87,7 +86,7 @@ public class Docente extends Persona{
     /**
      * @param linea the linea to set
      */
-    public void setLinea(LineaDeInvestigacion linea) {
+    public void setLinea(String linea) {
         this.linea = linea;
     }
     

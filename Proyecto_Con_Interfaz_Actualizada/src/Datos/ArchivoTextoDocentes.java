@@ -66,6 +66,7 @@ public class ArchivoTextoDocentes {
                 docente.setCedula(datos[3]);
                 docente.setUsuario(datos[4]);
                 docente.setContraseña(datos[5]);
+                docente.setLinea(datos[6]);
                 listaDocentes.add(docente);
             }
             this.aLect.close();

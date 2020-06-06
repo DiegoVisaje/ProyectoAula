@@ -6,6 +6,7 @@
 package Interfaz;
 
 import Modelo.Estudiante;
+import Modelo.PropuestaProyecto;
 
 /**
  *
@@ -18,6 +19,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
      */
     
     Estudiante estudiante = new Estudiante();
+   // PropuestaProyecto propuesta = new PropuestaProyecto();
     
     public RegistrarProyecto() {
         initComponents();
@@ -316,7 +318,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
       
         String nombre = txtNombre.getText().trim();
         String apellido = txtApellido.getText().trim();
-        String ceular = TxtCelular.getText().trim();
+        String celuar = TxtCelular.getText().trim();
         String docente = ComboDocente.getSelectedItem().toString();
         String tiempoDeEjecucion = ComboTiempo.getSelectedItem().toString();
         String lineaInvestigacion = CombroTiempoInvestigacion.getSelectedItem().toString();
@@ -325,7 +327,8 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         
         estudiante.setNombre(nombre);
         estudiante.setApellido(apellido);
-        estudiante.setCedula(ceular);
+        estudiante.setCedula(celuar);
+        
         
         
         

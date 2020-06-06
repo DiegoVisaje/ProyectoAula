@@ -33,24 +33,26 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
     private ArchivoTexto archivoTexto = new ArchivoTexto();
     private SubLineaInvestigacion subLineaInvestigacion;
+    private String codigo="", linea="";
+    
     /**
      * Creates new form CrearUsuarioDocente
      */
     public CrearUsuarioDocente() {
         initComponents();
-      //  String codigo="";
+     
           
-          try {
-          
-          listaLineas = archivoTexto.leerArchivo();
-          listaLineas();
-          listaSubLineas = archivoSub_linea.leerArchivo();
-         // listaSubLineas(codigo);
-          cargos();
-          mostrarTabla();
-      } catch (Exception ex) {
-          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
-      }
+        try {
+
+        listaLineas = archivoTexto.leerArchivo();
+        listaLineas();
+        listaSubLineas = archivoSub_linea.leerArchivo();
+
+        cargos();
+        mostrarTabla();
+    } catch (Exception ex) {
+        Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
+    }
     }
     
     
@@ -181,6 +183,16 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
 
         ComboLineaInvestigacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
         ComboLineaInvestigacion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        ComboLineaInvestigacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ComboLineaInvestigacionMouseClicked(evt);
+            }
+        });
+        ComboLineaInvestigacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboLineaInvestigacionActionPerformed(evt);
+            }
+        });
         jPanel1.add(ComboLineaInvestigacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 120, 140, 30));
 
         jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -252,17 +264,28 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         
     }//GEN-LAST:event_BotonGuardarDocenteMouseClicked
 
+    private void ComboLineaInvestigacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionMouseClicked
+      
+    }//GEN-LAST:event_ComboLineaInvestigacionMouseClicked
+
+    private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
+       linea = ComboLineaInvestigacion.getSelectedItem().toString();
+       codigo = buscarCodigo(linea);
+       ComboSubLinea.removeAllItems();
+       listaSubLineas(codigo);
+    }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
+
 
     public Docente registrarDocente(){
         
-       String cargo,  nombre, apellido,  cedula,  contraseña,linea,subLinea;
+       String cargo,  nombre, apellido,  cedula,  contraseña,subLinea;
        cargo = ComboCargo.getSelectedItem().toString();
        nombre = TxtNombreDocente.getText();
        apellido = TxtApellidoDocente.getText();
        cedula = TxtCedulaDocente.getText();
        contraseña = TxtContraseñaDocente.getText();
-       linea = ComboLineaInvestigacion.getSelectedItem().toString();
-       //subLinea = ComboSubLinea.getSelectedItem().toString();
+       
+       subLinea = ComboSubLinea.getSelectedItem().toString();
       
       docente = new Docente();
        
@@ -271,13 +294,23 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
       docente.setApellido(apellido);
       docente.setCedula(cedula);
       docente.setContraseña(contraseña);
-     // docente.setUsuario(nombre);
-     // docente.setLinea(linea); ME SALE ERROR NO SE PORQUE, ES PORQUE COMO LA LLAMADAS EN LA CLASE DOCENTE.
-                                //CREO QUE HAY QUE CONVERTIRLO (NO ME ACUERDO COMO ES)
+      docente.setUsuario(nombre);
+      docente.setLinea(linea); 
+                               
     
       
        return docente;
         
+    }
+    
+    public String buscarCodigo(String Linea){
+        for(LineaDeInvestigacion a: listaLineas){
+            
+            if(Linea.equals(a.getNombre())){
+                return a.getCodigo();
+            }
+        }
+        return null;
     }
     
     public void listaLineas(){
@@ -287,16 +320,16 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         }
     }
     
-   /* 
+   
     public void listaSubLineas(String codigo){
         
         for(SubLineaInvestigacion a: listaSubLineas ){
-            if(a.getCodigo().equals(codigo)){
+            if(a.getlCodigo().equals(codigo)){
                ComboSubLinea.addItem(a.getNombre());  
             }  
         }
     }
-    */
+    
     
     public void cargos(){
         ComboCargo.addItem("Miembro");
@@ -331,13 +364,13 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
      }
      
     public void mostrarTabla(){
-         String titulos[]={"cargo", "Cedula","nombre", "Apellido","Contraseña" , "Linea"};
+         String titulos[]={"cargo", "Cedula","nombre", "Apellido","Usuario","Contraseña" , "Linea"};
         
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos);
         
         for(Docente a: listadocentes){
-          Object datos[]={a.getCargo(), a.getCedula(), a.getApellido(), a.getContraseña(), a.getLinea()};
+          Object datos[]={a.getCargo(), a.getCedula(),a.getNombre(), a.getApellido(),a.getUsuario(), a.getContraseña(), a.getLinea()};
            ModeloTabla.addRow(datos);
            }
         
