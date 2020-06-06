@@ -65,10 +65,6 @@ public class Persona {
         this.cedula = cedula;
     }
 
-    public void DiegoEstas(){
-        
-        System.out.println("DIEGO DONDE ESTAS");
-        System.out.println("1");
-    }
+ 
     
 }
