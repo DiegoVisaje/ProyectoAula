@@ -264,9 +264,8 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ComboLineaInvestigacionMouseClicked
 
     private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
-       linea = ComboLineaInvestigacion.getSelectedItem().toString();
-       codigo = buscarCodigo(linea);
-       listaSubLineas(codigo);
+    
+      
     }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -314,16 +313,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         
         for(LineaDeInvestigacion a: listaLineas){
             ComboLineaInvestigacion.addItem(a.getNombre());
-        }
-    }
-    
-   
-    public void listaSubLineas(String codigo){
-        
-        for(SubLineaInvestigacion a: listaSubLineas ){
-            if(a.getlCodigo().equals(codigo)){
-            // ComboSubLinea.addItem(a.getNombre());  
-            }  
         }
     }
     
