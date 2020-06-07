@@ -1,6 +1,7 @@
 
 package Datos;
 
+import Modelo.Docente;
 import Modelo.LineaDeInvestigacion;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,7 +21,6 @@ public class ArchivoTexto {
     public ArchivoTexto(String name) {
         this.archivo = new File(name);
     }
-    
     
      public ArchivoTexto() {
        this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
@@ -64,6 +64,7 @@ public class ArchivoTexto {
         }
   }
       
+     
       
-    
+ 
 }

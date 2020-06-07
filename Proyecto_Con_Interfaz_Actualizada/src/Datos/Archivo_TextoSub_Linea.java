@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import jdk.nashorn.internal.runtime.ListAdapter;
 
 public class Archivo_TextoSub_Linea {
     
@@ -68,6 +69,31 @@ public class Archivo_TextoSub_Linea {
            throw new Exception("Error al abrir archivo para lectura");   
         }
   }
-      
+       public String Eliminar (String nombre) throws Exception{
+           
+       this.aEsc =null;
+       
+       
+       try{
+           
+         ArrayList<SubLineaInvestigacion> listaSubLineaIn = new ArrayList();
+         listaSubLineaIn = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(SubLineaInvestigacion a: listaSubLineaIn){
+             if(!a.getNombre().equals(nombre)){
+              pw.println(a.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+    }
     
 }
