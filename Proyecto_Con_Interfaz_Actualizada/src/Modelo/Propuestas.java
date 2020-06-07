@@ -112,7 +112,7 @@ public class Propuestas {
         propuesta.setNombreP(nombreP);
         propuesta.setSubLineaInvesti(subLineaInvesti);
         propuesta.setTiempoEjeP(tiempoEjeP);
-        propuesta.setTipoProyecto();
+        propuesta.setTipoProyecto("");
         propuesta.setRadicado();
        estudiante.setPropuesta(propuesta);
         
