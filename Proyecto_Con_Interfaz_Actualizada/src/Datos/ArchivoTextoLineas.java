@@ -22,16 +22,11 @@ public class ArchivoTextoLineas {
         this.archivo = new File(name);
     }
     
-<<<<<<< HEAD:Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTexto.java
-     public ArchivoTexto() {
-       this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
-      //  this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
-=======
     
      public ArchivoTextoLineas() {
-       //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
->>>>>>> master:Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoLineas.java
+       this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
+       //this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
+
     }
      
       public boolean Guardar (LineaDeInvestigacion lineaInvestigacion) throws Exception{

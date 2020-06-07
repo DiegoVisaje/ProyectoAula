@@ -1,9 +1,1 @@
-Miembro;JAVIER;VILORIA;123;JAVIER;123;CARLOS
-Evaluador;gloria;gomez;123;gloria;123;CARLOS
-<<<<<<< HEAD
-Miembro;referencia;asd;asd;referencia;213;CARLOS
-Miembro;joel;123;123;joel;123;CARLOS
-Miembro;JAVIER;VIOLADOR;123;JAVIER;123;CARLOS
-=======
-Miembro;Diego;Granados;1231231213;Diego;1234567890;CARLOS
->>>>>>> master
+Miembro;chino;javier;123;123;123;javier

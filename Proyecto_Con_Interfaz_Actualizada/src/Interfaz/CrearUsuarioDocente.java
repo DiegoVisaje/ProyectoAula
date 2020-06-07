@@ -267,11 +267,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
        linea = ComboLineaInvestigacion.getSelectedItem().toString();
        codigo = buscarCodigo(linea);
 
-     ComboSubLinea.removeAllItems();
-     listaSubLineas(codigo);
-
-     listaSubLineas(codigo);
-
     }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
