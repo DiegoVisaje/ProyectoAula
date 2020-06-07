@@ -64,8 +64,8 @@ public class Inicio extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jPanelPrincipalBienvenida = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabelFondoPrincipal = new javax.swing.JLabel();
         Escritorio = new javax.swing.JDesktopPane();
+        jLabelFondoPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -266,17 +266,22 @@ public class Inicio extends javax.swing.JFrame {
         jPanelPrincipalBienvenida.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 290, 80));
 
         jLabelFondoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesUpc/ahhh.JPG"))); // NOI18N
-        jPanelPrincipalBienvenida.add(jLabelFondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1260, 710));
+
+        Escritorio.setLayer(jLabelFondoPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addComponent(jLabelFondoPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 1275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addComponent(jLabelFondoPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanelPrincipalBienvenida.add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1020, 710));
@@ -411,25 +416,8 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -449,8 +437,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelBotonExamen;
     private javax.swing.JLabel jLabelFondoPrincipal;
     private javax.swing.JPanel jPanel1MenuPrincipal;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanelBotonEstudiante;
@@ -461,12 +447,5 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelExamen;
     private javax.swing.JPanel jPanelMenuEstudiante2;
     private javax.swing.JPanel jPanelPrincipalBienvenida;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

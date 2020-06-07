@@ -91,7 +91,7 @@ public class Docente extends Persona{
     }
     
     public String formaArchivo(){
-        return  cargo+ ";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+usuario+ ";"+contraseña +";"+linea ;
+        return  cargo+";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+usuario+ ";"+contraseña +";"+linea ;
     }
 
    

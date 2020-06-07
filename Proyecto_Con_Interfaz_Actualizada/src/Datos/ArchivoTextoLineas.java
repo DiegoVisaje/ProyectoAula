@@ -12,17 +12,17 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class ArchivoTexto {
+public class ArchivoTextoLineas {
     private File archivo;
     private FileWriter aEsc;  // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
     
-    public ArchivoTexto(String name) {
+    public ArchivoTextoLineas(String name) {
         this.archivo = new File(name);
     }
     
     
-     public ArchivoTexto() {
+     public ArchivoTextoLineas() {
        //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
        this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
     }

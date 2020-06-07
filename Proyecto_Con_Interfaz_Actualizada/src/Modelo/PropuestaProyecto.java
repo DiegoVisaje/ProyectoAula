@@ -19,6 +19,7 @@ public class PropuestaProyecto {
     private Practicas practicas;
 
     public PropuestaProyecto() {
+        this.radicado = (int) (Math.random()*100000+1);
         this.estado = "Pendiente";
         this.concepto = "";
         this.correciones = "";
@@ -38,6 +39,7 @@ public class PropuestaProyecto {
         this.practicas = practicas;
         this.concepto = "";
         this.correciones = "";
+        this.radicado = (int) (Math.random()*100000+1);
         
     }
 
@@ -152,32 +154,11 @@ public class PropuestaProyecto {
         return tipoProyecto;
     }
 
-    
     /**
      * @param tipoProyecto the tipoProyecto to set
      */
-    public void setTipoProyecto() {
-       
-        int a;
-        
-        Scanner escaner = new Scanner(System.in);
-        System.out.println("Tipo de proyecto: ");
-        System.out.println("1. Tesis");
-        System.out.println("2. Practicas");
-        System.out.print("Seleccione: ");
-        a = escaner.nextInt();
-        
-        if (a==1){
-            tesis = new Tesis();
-            tesis.registrarTesis();
-            this.tipoProyecto = "tesis";
-            
-        }
-        else{
-            practicas = new Practicas();
-            practicas.registrarPracticas();
-            this.tipoProyecto= "practicas";
-        }
+    public void setTipoProyecto(String tipoProyecto) {
+        this.tipoProyecto = tipoProyecto;
     }
 
     /**
@@ -249,6 +230,8 @@ public class PropuestaProyecto {
     public void setConcepto(String concepto) {
         this.concepto = concepto;
     }
+
+    
     
     
     
