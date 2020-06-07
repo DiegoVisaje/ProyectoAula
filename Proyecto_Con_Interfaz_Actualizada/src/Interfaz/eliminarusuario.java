@@ -29,21 +29,21 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
 
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        BotonRegresar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        BotonBuscar = new javax.swing.JLabel();
+        TxtBuscar = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
+        BotonEliminar = new javax.swing.JLabel();
+        LabelNombre1 = new javax.swing.JLabel();
+        LabelUsuario = new javax.swing.JLabel();
+        LabelComtraseña = new javax.swing.JLabel();
+        BotonGuardar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel23 = new javax.swing.JLabel();
+        LabelNombre = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -55,13 +55,13 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+        BotonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        BotonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel20MouseClicked(evt);
+                BotonRegresarMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, -1, -1));
+        jPanel1.add(BotonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
@@ -70,59 +70,59 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 480, 10));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
-        jLabel4.setText("buscar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
+        BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
+        BotonBuscar.setText("buscar");
+        jPanel1.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        TxtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TxtBuscar.setForeground(new java.awt.Color(255, 255, 255));
+        TxtBuscar.setBorder(null);
+        TxtBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                TxtBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
+        jPanel1.add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jLabel8.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel8.setText("Contraseña:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 110, 30));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 110, 30));
 
-        jLabel13.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel13.setText("Contraseña:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 110, 30));
+        BotonEliminar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 100, 30));
 
-        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
-        jLabel14.setText("Eliminar");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 100, 30));
+        LabelNombre1.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        LabelNombre1.setText("Nombre:");
+        jPanel1.add(LabelNombre1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 90, 30));
 
-        jLabel18.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel18.setText("Usuario:");
-        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 100, 30));
+        LabelUsuario.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        LabelUsuario.setText("()...");
+        jPanel1.add(LabelUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 190, 100, 30));
 
-        jLabel19.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel19.setText("()...");
-        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 100, 30));
+        LabelComtraseña.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        LabelComtraseña.setText("()...");
+        jPanel1.add(LabelComtraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, 100, 30));
 
-        jLabel22.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel22.setText("()...");
-        jPanel1.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 100, 30));
-
-        jLabel21.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel21.setText("()...");
-        jPanel1.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 100, 30));
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
-        jLabel15.setText("Guardar");
-        jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 100, 30));
+        BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
+        BotonGuardar.setText("Guardar");
+        BotonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 100, 30));
 
         jScrollPane1.setViewportView(jTable1);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, 330, 360));
+
+        jLabel23.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        jLabel23.setText("Usuario:");
+        jPanel1.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 100, 30));
+
+        LabelNombre.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        LabelNombre.setText("()...");
+        jPanel1.add(LabelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 100, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 640, 470));
 
@@ -137,7 +137,7 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Eliminar usuario");
+        jLabel1.setText("Eliminar Docente");
         jPanel5.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 460, 70));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 570));
@@ -145,9 +145,9 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+    private void BotonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRegresarMouseClicked
         regresar();
-    }//GEN-LAST:event_jLabel20MouseClicked
+    }//GEN-LAST:event_BotonRegresarMouseClicked
 
     public void regresar(){
         new Admin2().show();
@@ -155,9 +155,9 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
     }
     
     
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void TxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBuscarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_TxtBuscarActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(0);
@@ -165,17 +165,18 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonBuscar;
+    private javax.swing.JLabel BotonEliminar;
+    private javax.swing.JLabel BotonGuardar;
+    private javax.swing.JLabel BotonRegresar;
+    private javax.swing.JLabel LabelComtraseña;
+    private javax.swing.JLabel LabelNombre;
+    private javax.swing.JLabel LabelNombre1;
+    private javax.swing.JLabel LabelUsuario;
+    private javax.swing.JTextField TxtBuscar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
@@ -183,6 +184,5 @@ public class EliminarUsuario extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
