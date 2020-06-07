@@ -223,7 +223,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
          System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
-
+    
     //MODIFIQUE ALGO AQUI, JENY.
     private void BotonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarMouseClicked
     
@@ -241,14 +241,14 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_BotonEliminarMouseClicked
 
     private void TablaPintarSubLineaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPintarSubLineaMouseClicked
-        cargarDatos(); //LO LLAMAMOS EN LA TABLA, JENNY
+     cargarDatos(); //LO LLAMAMOS EN LA TABLA, JENNY
     }//GEN-LAST:event_TablaPintarSubLineaMouseClicked
 
     private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
        modificar();
     }//GEN-LAST:event_BotonModificarMouseClicked
 
-    //PUSE METODO CARGAR_DATOS JENNY, ENFOCA LA TABLA.
+   //PUSE METODO CARGAR_DATOS JENNY, ENFOCA LA TABLA.
     
    private void cargarDatos() {
         try{
