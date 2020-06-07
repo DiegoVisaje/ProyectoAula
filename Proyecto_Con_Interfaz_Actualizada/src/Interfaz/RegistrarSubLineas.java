@@ -107,6 +107,11 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         });
         jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 100, 30));
 
+        TablaPintarSubLinea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaPintarSubLineaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaPintarSubLinea);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 610, 200));
@@ -156,6 +161,11 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
         BotonModificar.setText("Modificar");
         BotonModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        BotonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonModificarMouseClicked(evt);
+            }
+        });
         jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 100, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 640, 480));
@@ -190,12 +200,13 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
        
-         try{
+        try{
            
         LlenarTablaLinea();
         archivoSub_linea.Guardar(subLineaInvestigacion);
         MostrarTabla();
-           
+        LimpiarTabla();
+        
        }catch( Exception exception ){
            
            JOptionPane.showMessageDialog(this, archivoSub_linea, "ERROR", JOptionPane.ERROR_MESSAGE); 
@@ -213,38 +224,106 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
          System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    //MODIFIQUE ALGO AQUI, JENY.
     private void BotonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarMouseClicked
-       
+    
+       //AQUI LLAME EL METODO ELIMINAR, JENNY, EN EL BOTON.
        String mensaje;
+       mensaje = eliminarSubLinea();
        
-       mensaje = EliminarSubLinea();
-       
+       //PARA QUE SE ACTUALICE LA TABLA.
        MostrarTabla();
+       //SE LIMPIE LA TABALA CADA VEZ QUE ELIMINES.
+       LimpiarTabla();
         
        JOptionPane.showMessageDialog(this, mensaje , "MENSAJE ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BotonEliminarMouseClicked
 
-   public String EliminarSubLinea(){
+    private void TablaPintarSubLineaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaPintarSubLineaMouseClicked
+        cargarDatos(); //LO LLAMAMOS EN LA TABLA, JENNY
+    }//GEN-LAST:event_TablaPintarSubLineaMouseClicked
+
+    private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
+       modificar();
+    }//GEN-LAST:event_BotonModificarMouseClicked
+
+    //PUSE METODO CARGAR_DATOS JENNY, ENFOCA LA TABLA.
+    
+   private void cargarDatos() {
+        try{
+            
+            TxtSubLineas.setText(TablaPintarSubLinea.getValueAt(TablaPintarSubLinea.getSelectedRow(), 2).toString());
+            jComboBoxRegistrarLineas.setSelectedItem(TablaPintarSubLinea.getValueAt(TablaPintarSubLinea.getSelectedRow(), 1).toString());      
+            TxtSubLineas.requestFocus();
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "Hay campos vacios");
+        }
+    }
+
+   //AGREGRE UN METODO ELIMINAR SUBLINEA, JENNY, ME ELIMINA UNA SUB LINEA ESPESIFICA.
+     
+   public String eliminarSubLinea(){
      String mensaje;
      
        try{
         
-        String codigo = txtBuscar.getText().trim(); 
-        mensaje = archivoSub_linea.Eliminar(codigo);
+            String codigo = txtBuscar.getText().trim(); 
+            mensaje = archivoSub_linea.Eliminar(codigo);
+            listaLineasSubLineas = archivoSub_linea.leerArchivo();
+
+            }catch( Exception a){
+              mensaje = "ERROR AL ELIMINAR" + a.getMessage() ; 
+            }
+             return mensaje;
+    }
+   
+   //CREAMOS METODO PARA MODIFICAR, JENNY.
+   
+   public void modificar(){
+       
+       String subLineas, lineas, nose;
+       
+       try{
+        
+        nose = TablaPintarSubLinea.getValueAt(TablaPintarSubLinea.getSelectedRow(), 2).toString();
+          
+        subLineas = TxtSubLineas.getText();
+        lineas = jComboBoxRegistrarLineas.getSelectedItem().toString();
+        
+        subLineaInvestigacion = new SubLineaInvestigacion(); 
+         
+        subLineaInvestigacion.setCodigo(lineas);
+        subLineaInvestigacion.setNombre(subLineas);
+        
+        archivoSub_linea.Modificar(subLineaInvestigacion , nose);
         listaLineasSubLineas = archivoSub_linea.leerArchivo();
-      
-        }catch( Exception a){
-          mensaje = "ERROR AL ELIMINAR" + a.getMessage() ; 
-        }
-         return mensaje;
+        
+        MostrarTabla();
+        LimpiarTabla();
+        
+
+       }catch(Exception a){
+          JOptionPane.showMessageDialog(this, a, "Excepcion", JOptionPane.ERROR_MESSAGE); 
+       }
+       
+       
+       
+   }
+ 
+    //CREE METODO LIMPIAR TABLA DE SUB-LINEA, JENY
+   private void LimpiarTabla(){
+        
+        this.TxtSubLineas.setText("");
+        this.jComboBoxRegistrarLineas.setSelectedItem("");
+        this.txtBuscar.setText("");
     }
     
    
    
-   
-   
    /*
+   ESTO SOLO ES UN COMENTARIO, DEJALO ASI.
    
      public String EliminarSubLinea(){
      String mensaje;
@@ -339,9 +418,6 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
     
  
-      
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonBuscar;
     private javax.swing.JLabel BotonEliminar;
