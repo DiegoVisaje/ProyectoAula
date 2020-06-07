@@ -5,8 +5,7 @@
  */
 package Datos;
 
-import Modelo.Docente;
-import Modelo.LineaDeInvestigacion;
+import Modelo.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -31,8 +30,8 @@ public class ArchivoTextoDocentes {
     
     
      public ArchivoTextoDocentes() {
-       // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+      // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+        this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
     }
      
       public boolean Guardar (Docente docente) throws Exception{
@@ -78,7 +77,40 @@ public class ArchivoTextoDocentes {
   }
       
       
+          
+        public static String modificar(ArrayList<Docente> lista){
+        String respuesta = "";
+        FileWriter file = null;
+        PrintWriter escritor = null;
+        try{
+            file = new FileWriter("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+            escritor = new PrintWriter(file);
+            for(Docente a: lista){
+            escritor.println(a.getCargo()+"&"+a.getLinea()+"&"+a.getNombre()+"&"+a.getApellido()+"&"+a.getCedula()+"&" + a.getContraseña() + "" + a.getUsuario());
+            }
+            respuesta = "!!!REGISTRO MODIFICADO INCORRECTO!!!";
+        }catch(IOException e){
+            respuesta = "!!!NO SE PUEDE MODIFICAR EN EL ARCHIVO!!!";
+        }finally{
+            if(escritor!=null)
+                escritor.close();
+            try{
+                if(file!=null)
+                    file.close();
+            }catch(IOException e){
+                respuesta = "!!!NO SE LOGRO CERRAR EL ARCHIVO!!!";
+            }
+        }
+        
+        return respuesta;
+    }
     
-    
+       
+     public String eliminarArchivo(String cedula){
+       String name = this.archivo.getName();
+       if (this.archivo.delete()) return name;
+        else return null;
+    }
+
     
 }

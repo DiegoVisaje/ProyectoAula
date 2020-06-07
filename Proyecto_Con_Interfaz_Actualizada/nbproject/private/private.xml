@@ -3,7 +3,24 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Login.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Admin2.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoDocentes.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/modificarUsuarioPersona.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/inicio.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_TextoSub_Linea.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_Eliminar_Docente.java</file>
+=======
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/CrearUsuarioDocente.java</file>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTexto.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_TextoSub_Linea.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoDocentes.java</file>
+>>>>>>> master
+>>>>>>> 0c1eca1db23cf453b26c52553369abefa951f582
         </group>
     </open-files>
 </project-private>

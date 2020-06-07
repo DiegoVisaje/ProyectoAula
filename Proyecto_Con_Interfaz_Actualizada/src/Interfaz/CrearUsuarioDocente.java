@@ -253,8 +253,10 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
            
            JOptionPane.showMessageDialog(this, archivoSub_linea, "ERROR", JOptionPane.ERROR_MESSAGE); 
            
+           
+           
        }
-        
+        //lo que sea
         
     }//GEN-LAST:event_BotonGuardarDocenteMouseClicked
 
@@ -264,9 +266,11 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_ComboLineaInvestigacionMouseClicked
 
     private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
+
        linea = ComboLineaInvestigacion.getSelectedItem().toString();
        codigo = buscarCodigo(linea);
-       listaSubLineas(codigo);
+
+
     }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -317,7 +321,8 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         }
     }
     
-   
+
+  
     public void listaSubLineas(String codigo){
         
         for(SubLineaInvestigacion a: listaSubLineas ){
@@ -326,15 +331,14 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
             }  
         }
     }
-    
-    
+
     public void cargos(){
         ComboCargo.addItem("Miembro");
         ComboCargo.addItem("Evaluador");
     }
     
      public void LlenarTablaLinea(){
-   
+         
         try{
             Docente e = this.registrarDocente();
             if(this.listadocentes.add(e)){

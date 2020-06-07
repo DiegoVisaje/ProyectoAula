@@ -1,3 +1,2 @@
-1;CARLOS;INVESTIGACION
-1;CARLOS;Sub2
-AAA;Juan;Sub3
+1;javier;SubLineajavier2
+1;javier;SubLineajavier1
