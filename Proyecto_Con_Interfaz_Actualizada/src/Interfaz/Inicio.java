@@ -64,8 +64,8 @@ public class Inicio extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jPanelPrincipalBienvenida = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        jLabelFondoPrincipal = new javax.swing.JLabel();
         Escritorio = new javax.swing.JDesktopPane();
+        jLabelFondoPrincipal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -266,17 +266,22 @@ public class Inicio extends javax.swing.JFrame {
         jPanelPrincipalBienvenida.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 290, 80));
 
         jLabelFondoPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ImagenesUpc/ahhh.JPG"))); // NOI18N
-        jPanelPrincipalBienvenida.add(jLabelFondoPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1260, 710));
+
+        Escritorio.setLayer(jLabelFondoPrincipal, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1020, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addComponent(jLabelFondoPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 1275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 710, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EscritorioLayout.createSequentialGroup()
+                .addComponent(jLabelFondoPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jPanelPrincipalBienvenida.add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 1020, 710));
@@ -297,7 +302,7 @@ public class Inicio extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanelBotonLoginMouseClicked
 
     private void jPanelBotonLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotonLogin2MouseClicked
-      consultarPryecto consultarProyecto = new consultarPryecto();
+      consultarProyecto consultarProyecto = new consultarProyecto();
       Escritorio.add(consultarProyecto);
       consultarProyecto.show();     
     }//GEN-LAST:event_jPanelBotonLogin2MouseClicked

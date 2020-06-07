@@ -5,12 +5,15 @@
  */
 package Interfaz;
 
+import Modelo.Practicas;
+
 /**
  *
  * @author zarel
  */
 public class Practico extends javax.swing.JFrame {
 
+    private Modelo.Practicas practica;
     /**
      * Creates new form Practico
      */
@@ -34,17 +37,17 @@ public class Practico extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtDireccion = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        txtAreaTrabajo = new javax.swing.JTextField();
+        txtRepresentanteLegal = new javax.swing.JTextField();
+        txtTelefono = new javax.swing.JTextField();
+        txtNombreEmpresa = new javax.swing.JTextField();
+        txtFunciones = new javax.swing.JTextField();
+        botonGuardar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -79,7 +82,7 @@ public class Practico extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel2.setText("Nombre del lugar: ");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 130, 40));
-        jPanel1.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 260, 40));
+        jPanel1.add(txtDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 260, 40));
 
         jLabel3.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel3.setText("Direccion:");
@@ -96,19 +99,19 @@ public class Practico extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel6.setText("Area de Trabajo:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 140, 50));
-        jPanel1.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 260, 40));
-        jPanel1.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 260, 40));
-        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 260, 40));
-        jPanel1.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 260, 40));
-        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 260, 40));
+        jPanel1.add(txtAreaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 500, 260, 40));
+        jPanel1.add(txtRepresentanteLegal, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 410, 260, 40));
+        jPanel1.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, 260, 40));
+        jPanel1.add(txtNombreEmpresa, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 260, 40));
+        jPanel1.add(txtFunciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 260, 40));
 
-        jButton1.setText("Guardar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonGuardar.setText("Guardar");
+        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 660, 80, 30));
+        jPanel1.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 660, 100, 30));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -123,10 +126,34 @@ public class Practico extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+       
+        guardarPractica();
+        
+    }//GEN-LAST:event_botonGuardarActionPerformed
 
+    public Practicas guardarPractica(){
+        
+        //LLENO LOS DATOS DE LAS PRACTICAS
+        
+        String nombreEmp, direccionEmp, telefonoEmp,repreLegal,areaTrbajo,funciones;
+        
+        nombreEmp = txtNombreEmpresa.getText().trim();
+        direccionEmp = txtDireccion.getText().trim();
+        telefonoEmp = txtTelefono.getText().trim();
+        repreLegal = txtRepresentanteLegal.getText().trim();
+        areaTrbajo = txtAreaTrabajo.getText().trim();
+        funciones = txtFunciones.getText().trim();
+        
+        practica.setNombreEmp(nombreEmp);
+        practica.setDireccionEmp(direccionEmp);
+        practica.setTelefonoEmp(telefonoEmp);
+        practica.setRepreLegal(repreLegal);
+        practica.setAreaTrbajo(areaTrbajo);
+        practica.setFunciones(funciones);
+        return practica;
+    }
+    
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
       new Inicio().setVisible(true);
       dispose();
@@ -173,7 +200,7 @@ public class Practico extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botonGuardar;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -185,11 +212,11 @@ public class Practico extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
+    private javax.swing.JTextField txtAreaTrabajo;
+    private javax.swing.JTextField txtDireccion;
+    private javax.swing.JTextField txtFunciones;
+    private javax.swing.JTextField txtNombreEmpresa;
+    private javax.swing.JTextField txtRepresentanteLegal;
+    private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

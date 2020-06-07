@@ -1,3 +1,7 @@
 1;CARLOS
+<<<<<<< HEAD
 2;chino
 12;INGENIERIA 
+=======
+AAA;Juan
+>>>>>>> master

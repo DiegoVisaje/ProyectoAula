@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import Datos.ArchivoTexto;
+import Datos.ArchivoTextoLineas;
 import Datos.ArchivoTextoDocentes;
 import Datos.Archivo_TextoSub_Linea;
 import Modelo.*;
@@ -31,8 +31,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private ArrayList<SubLineaInvestigacion> listaSubLineas = new ArrayList<SubLineaInvestigacion>();
     private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
-    private ArchivoTexto archivoTexto = new ArchivoTexto();
-    private SubLineaInvestigacion subLineaInvestigacion;
+    private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
     private String codigo="", linea="";
     
     /**
@@ -267,8 +266,12 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
        linea = ComboLineaInvestigacion.getSelectedItem().toString();
        codigo = buscarCodigo(linea);
-     //ComboSubLinea.removeAllItems();
-    //   listaSubLineas(codigo);
+/*
+     ComboSubLinea.removeAllItems();
+     listaSubLineas(codigo);
+
+     listaSubLineas(codigo);
+*/
     }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -285,8 +288,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
        apellido = TxtApellidoDocente.getText();
        cedula = TxtCedulaDocente.getText();
        contraseña = TxtContraseñaDocente.getText();
-       
-   // subLinea = ComboSubLinea.getSelectedItem().toString();
+     
       
       docente = new Docente();
        
@@ -296,18 +298,9 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
       docente.setCedula(cedula);
       docente.setContraseña(contraseña);
 
-      docente.setUsuario(nombre);
+      docente.setUsuario(cedula);
       docente.setLinea(linea); 
-                               
-
-      
-      
-     // docente.setUsuario(nombre);
-     // docente.setLinea(linea); ME SALE ERROR NO SE PORQUE, ES PORQUE COMO LA LLAMADAS EN LA CLASE DOCENTE.
-                                //CREO QUE HAY QUE CONVERTIRLO (NO ME ACUERDO COMO ES)
-
-    
-      
+                            
        return docente;
         
     }
