@@ -1,3 +1,6 @@
-1;CARLOS;INVESTIGACION
-1;CARLOS;Sub2
-AAA;Juan;Sub3
+1;javier;SubLineaJavier2
+2;Chino;JAJAJAJAJJA
+AAA;Jenni;JEJEJEJJE
+1;javier;JIJIJIJIJ
+2;Chino;jojojojjojojo
+AAA;Jenni;jujujujujuju

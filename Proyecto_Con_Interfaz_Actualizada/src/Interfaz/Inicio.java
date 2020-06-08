@@ -52,6 +52,8 @@ public class Inicio extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         jLabel35 = new javax.swing.JLabel();
+        botonRegresar = new javax.swing.JLabel();
+        botonSalir = new javax.swing.JLabel();
         jPanelBotonLogin = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -184,6 +186,22 @@ public class Inicio extends javax.swing.JFrame {
         jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 40, 40));
 
         jPanelMenuEstudiante2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 180, 110));
+
+        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarMouseClicked(evt);
+            }
+        });
+        jPanelMenuEstudiante2.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, -1, -1));
+
+        botonSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_multiply_30px.png"))); // NOI18N
+        botonSalir.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonSalirMouseClicked(evt);
+            }
+        });
+        jPanelMenuEstudiante2.add(botonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 0, -1, -1));
 
         jPanel1MenuPrincipal.add(jPanelMenuEstudiante2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 710));
 
@@ -369,6 +387,14 @@ public class Inicio extends javax.swing.JFrame {
         resetColor(jPanelBotonLogin);
     }//GEN-LAST:event_jPanelBotonLoginMouseExited
 
+    private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
+        new Admin2().show();
+    }//GEN-LAST:event_botonRegresarMouseClicked
+
+    private void botonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalirMouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_botonSalirMouseClicked
+
     public void regresar(){
         new Inicio().show();
         dispose();
@@ -416,6 +442,8 @@ public class Inicio extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JLabel botonRegresar;
+    private javax.swing.JLabel botonSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

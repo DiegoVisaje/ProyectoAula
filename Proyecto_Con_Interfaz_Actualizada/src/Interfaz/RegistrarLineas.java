@@ -24,10 +24,10 @@ import java.util.logging.Logger;
 public class RegistrarLineas extends javax.swing.JInternalFrame {
 
   private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
-    private ArrayList<SubLineaInvestigacion> listaLineasSubLineas = new ArrayList<SubLineaInvestigacion>();  
-    private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
+  //  private ArrayList<SubLineaInvestigacion> listaLineasSubLineas = new ArrayList<SubLineaInvestigacion>();   ****NO SE USA****
+  //  private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();    ****NO SE USA****
     private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
-    private SubLineaInvestigacion subLineaInvestigacion;
+   // private SubLineaInvestigacion subLineaInvestigacion;  ****NO SE USA****
   private  LineaDeInvestigacion e;
 
   
@@ -54,7 +54,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         Escritorio = new javax.swing.JDesktopPane();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel20 = new javax.swing.JLabel();
+        botonRegresar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jTextField1 = new javax.swing.JTextField();
@@ -86,8 +86,13 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
+        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonRegresarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 440, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
@@ -230,6 +235,10 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
        System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
+      new Admin2().show();
+    }//GEN-LAST:event_botonRegresarMouseClicked
+
     
     public LineaDeInvestigacion RegistrarLinea(){
           
@@ -289,7 +298,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
          for(LineaDeInvestigacion a: listaLineas){
           Object datos[]={a.getCodigo(), a.getNombre()};
            ModeloTabla.addRow(datos);
-            }
+         }
          jTablaMostrarLineas.setModel(ModeloTabla);
     }
 
@@ -318,11 +327,11 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JTextField TxtCodigo;
     private javax.swing.JTextField TxtRegistrarLinea;
+    private javax.swing.JLabel botonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

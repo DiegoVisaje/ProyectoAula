@@ -5,8 +5,7 @@
  */
 package Datos;
 
-import Modelo.Docente;
-import Modelo.LineaDeInvestigacion;
+import Modelo.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -31,8 +30,8 @@ public class ArchivoTextoDocentes {
     
     
      public ArchivoTextoDocentes() {
-       // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+      // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+        this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
     }
      
       public boolean Guardar (Docente docente) throws Exception{
@@ -76,9 +75,66 @@ public class ArchivoTextoDocentes {
            throw new Exception("Error al abrir archivo para lectura");   
         }
   }
+     
+
+    public String Modificar(Docente docente, String llave) throws Exception{
+        
+             
+       this.aEsc =null;
+       
+       try{
+           
+         ArrayList<Docente> listaDocente = new ArrayList();
+         listaDocente = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(Docente a: listaDocente){
+             if(!a.getCedula().equals(llave)){
+              pw.println(a.formaArchivo());
+             }else{
+             docente.setUsuario(a.getCedula());
+              pw.println(docente.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+       
+    }
+
+    public String Eliminar(String cedula) throws Exception {
+        this.aEsc =null;
+       
+       try{
+           
+         ArrayList<Docente> listaDocentes = new ArrayList();
+         listaDocentes = leerArchivo();
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(Docente a: listaDocentes){
+             if(!a.getCedula().equals(cedula)){
+              pw.println(a.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+          
+       } 
       
-      
-    
-    
+       finally{
+           
+            if(this.aEsc!=null)
+             this.aEsc.close();    
+       }
+    }
+
     
 }

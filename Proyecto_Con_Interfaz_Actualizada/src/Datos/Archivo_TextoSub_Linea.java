@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
+import jdk.nashorn.internal.runtime.ListAdapter;
 
 public class Archivo_TextoSub_Linea {
     
@@ -24,7 +25,7 @@ public class Archivo_TextoSub_Linea {
     
     
      public Archivo_TextoSub_Linea() {
-     // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
+      //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
     }
      
@@ -69,5 +70,61 @@ public class Archivo_TextoSub_Linea {
         }
   }
       
-    
+      //CREE ARCHIVO ELIMINAR, JENY.
+       public String Eliminar (String nombre) throws Exception{
+           
+       this.aEsc =null;
+       
+       try{
+           
+         ArrayList<SubLineaInvestigacion> listaSubLineaIn = new ArrayList();
+         listaSubLineaIn = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(SubLineaInvestigacion a: listaSubLineaIn){
+             if(!a.getNombre().equals(nombre)){
+              pw.println(a.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+    }
+       
+      
+    public String Modificar (SubLineaInvestigacion subLinea, String nose) throws Exception{
+           
+       this.aEsc =null;
+       
+       try{
+           
+         ArrayList<SubLineaInvestigacion> listaSubLineaIn = new ArrayList();
+         listaSubLineaIn = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(SubLineaInvestigacion a: listaSubLineaIn){
+             if(!a.getNombre().equals(nose)){
+              pw.println(a.formaArchivo());
+             }else{
+              subLinea.setlCodigo(a.getlCodigo()); 
+              pw.println(subLinea.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+    }
+  
 }
