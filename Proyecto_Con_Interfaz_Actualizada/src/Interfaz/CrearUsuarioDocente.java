@@ -169,6 +169,14 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         jLabel13.setText("Cedula:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 30));
 
+        TablaDocentes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         TablaDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaDocentesMouseClicked(evt);
@@ -499,7 +507,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
      }
      
     public void mostrarTabla(){
-         String titulos[]={"Cargo", "Cedula","Nombre", "Apellido","Usuario","Contraseña" , "Linea"};
+        String titulos[]={"Cargo", "Cedula","Nombre", "Apellido","Usuario","Contraseña" , "Linea"};
         
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos);

@@ -46,7 +46,7 @@ public class ArchivoTextoLineas {
     }
     
      
-      public ArrayList<LineaDeInvestigacion> leerArchivo () throws Exception{
+    public ArrayList<LineaDeInvestigacion> leerArchivo () throws Exception{
        
         try {
             ArrayList<LineaDeInvestigacion> lista = new ArrayList();
@@ -64,7 +64,7 @@ public class ArchivoTextoLineas {
         } catch (FileNotFoundException ex) {
            throw new Exception("Error al abrir archivo para lectura");   
         }
-  }
+    }
       
      
       

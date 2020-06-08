@@ -1,11 +1,15 @@
 
 package Interfaz;
 
+import Datos.ArchivoTextoProyectos;
+import Modelo.Estudiante;
+import javax.swing.table.DefaultTableModel;
 
-public class consultarProyecto extends javax.swing.JInternalFrame {
-
+public class consultarProyecto extends javax.swing.JInternalFrame {     
+        private Estudiante estudiante;
     public consultarProyecto() {
         initComponents();
+        
     }
 
     
@@ -15,13 +19,13 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        txtBuscarProyecto = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        botonBuscar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel5 = new javax.swing.JLabel();
+        TablaProyecto = new javax.swing.JTable();
+        botonVolver = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -33,16 +37,15 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextField1.setBackground(new java.awt.Color(240, 240, 240));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.setForeground(new java.awt.Color(255, 255, 255));
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtBuscarProyecto.setBackground(new java.awt.Color(240, 240, 240));
+        txtBuscarProyecto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtBuscarProyecto.setBorder(null);
+        txtBuscarProyecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtBuscarProyectoActionPerformed(evt);
             }
         });
-        jPanel3.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 480, 20));
+        jPanel3.add(txtBuscarProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, 480, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
@@ -51,21 +54,26 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, 30, 20));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
-        jLabel4.setText("buscar");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 80, -1));
+        botonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
+        botonBuscar.setText("buscar");
+        botonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonBuscarMouseClicked(evt);
+            }
+        });
+        jPanel3.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 80, -1));
 
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaProyecto);
 
         jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 980, 490));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                botonVolverMouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 560, 30, 30));
+        jPanel3.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 560, 30, 30));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1000, 600));
 
@@ -91,13 +99,13 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-       
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void txtBuscarProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtBuscarProyectoActionPerformed
+      
+    }//GEN-LAST:event_txtBuscarProyectoActionPerformed
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void botonVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVolverMouseClicked
         regresar();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_botonVolverMouseClicked
 
     public void regresar(){
         
@@ -106,24 +114,42 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         
     }
     
+      public void mostrarTablaProyecto(){
+         
+        String titulos[]={"Cedula", "Nombre", "Apellido","Proyecto","Estado" , "Linea"};
+        DefaultTableModel ModeloTabla = new DefaultTableModel();
+        ModeloTabla.setColumnIdentifiers(titulos);
+        
+         
+    }
+    
     
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    private void botonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarMouseClicked
+       String radicado = txtBuscarProyecto.getText().trim();
+       estudiante = new Estudiante();
+       
+       
+      // estudiante = ArchivoTextoProyectos.leer(radicado);
+       
+    }//GEN-LAST:event_botonBuscarMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TablaProyecto;
+    private javax.swing.JLabel botonBuscar;
+    private javax.swing.JLabel botonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField txtBuscarProyecto;
     // End of variables declaration//GEN-END:variables
 }
