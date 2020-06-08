@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import Modelo.Practicas;
+import Modelo.*;
 
 /**
  *
@@ -13,7 +13,9 @@ import Modelo.Practicas;
  */
 public class Practico extends javax.swing.JFrame {
 
-    private Modelo.Practicas practica;
+    private Practicas practica;
+    private RegistrarProyecto registrarPractica;
+            
     /**
      * Creates new form Practico
      */
@@ -106,6 +108,11 @@ public class Practico extends javax.swing.JFrame {
         jPanel1.add(txtFunciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 260, 40));
 
         botonGuardar.setText("Guardar");
+        botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonGuardarMouseClicked(evt);
+            }
+        });
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);
@@ -145,6 +152,8 @@ public class Practico extends javax.swing.JFrame {
         areaTrbajo = txtAreaTrabajo.getText().trim();
         funciones = txtFunciones.getText().trim();
         
+        practica = new Practicas();
+        
         practica.setNombreEmp(nombreEmp);
         practica.setDireccionEmp(direccionEmp);
         practica.setTelefonoEmp(telefonoEmp);
@@ -164,6 +173,15 @@ public class Practico extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
+       //BOTON GUARDAR, PRACTICA, JENNY
+
+       
+    }//GEN-LAST:event_botonGuardarMouseClicked
+
+   
+            
+    
     /**
      * @param args the command line arguments
      */

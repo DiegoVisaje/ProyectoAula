@@ -5,7 +5,9 @@
  */
 package Interfaz;
 
-import Modelo.Tesis;
+import Datos.ArchivoTextoProyectos;
+import Modelo.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,14 +15,21 @@ import Modelo.Tesis;
  */
 public class RegistrarTesis extends javax.swing.JFrame {
 
-    private Modelo.Tesis tesis;
+    private Tesis tesis ;
+    private RegistrarProyecto registrarProyecto;
+    private static Estudiante estudiante;
+    private ArchivoTextoProyectos archivoProyecto = new ArchivoTextoProyectos();
+    private PropuestaProyecto propuestaProyecto;
     
     /**
      * Creates new form Tesis
      */
-    public RegistrarTesis() {
+    public  RegistrarTesis(Estudiante estudiante) {
         initComponents();
         this.setLocationRelativeTo(null);
+        
+       this.estudiante = estudiante; 
+       
     }
 
     /**
@@ -94,6 +103,11 @@ public class RegistrarTesis extends javax.swing.JFrame {
 
         botonGuardar.setText("Guardar");
         botonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonGuardarMouseClicked(evt);
+            }
+        });
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);
@@ -127,7 +141,6 @@ public class RegistrarTesis extends javax.swing.JFrame {
         
        guardarTesis();
         
-        
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     public Tesis guardarTesis(){
@@ -140,6 +153,8 @@ public class RegistrarTesis extends javax.swing.JFrame {
         objGeneral = txtObjetivoGeneral.getText().trim();
         objEspecifico = txtObjetivoEspecifico.getText().trim();
         justificacion = txtJustificacion.getText().trim();
+        
+        tesis = new Tesis();
         
         tesis.setPlanteamientoproblema(planteamientoproblema);
         tesis.setObjGeneral(objGeneral);
@@ -157,6 +172,38 @@ public class RegistrarTesis extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jBotonDevolverMouseClicked
 
+    private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
+     
+       //BOTON GUARDAR, JENNY
+       propuestaProyecto = new PropuestaProyecto();
+       tesis = guardarTesis();
+       propuestaProyecto = estudiante.getPropuesta();
+       propuestaProyecto.setTesis(tesis);
+       estudiante.setPropuesta(propuestaProyecto);
+
+       guardarProyecto();
+       
+    }//GEN-LAST:event_botonGuardarMouseClicked
+
+    
+    
+    public void guardarProyecto(){
+        String mensaje=".";
+        
+        try{
+           
+        mensaje = archivoProyecto.Guardar(estudiante);
+           JOptionPane.showMessageDialog(this, mensaje, "GUARDO PROYECTO", JOptionPane.ERROR_MESSAGE); 
+       }catch( Exception e){
+           JOptionPane.showMessageDialog(this, e.getMessage() + mensaje, "ERROR AL GUARDAR PROYECTO", JOptionPane.ERROR_MESSAGE); 
+         }
+        
+    }
+    
+    
+    //HAGO UN METODO APARTE, POR SI ACASO, AL BORRAR EL BOTON NO SE ELIMINE LO QUE HICIMOS, JENNY
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -188,7 +235,7 @@ public class RegistrarTesis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistrarTesis().setVisible(true);
+                new RegistrarTesis(estudiante).setVisible(true);
             }
         });
     }

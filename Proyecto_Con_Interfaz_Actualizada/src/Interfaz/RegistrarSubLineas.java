@@ -36,9 +36,9 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         initComponents();
           try {
           listaLineas = archivoTexto.leerArchivo();
-           ListaDeLineas();
+          ListaDeLineas();
           listaLineasSubLineas = archivoSub_linea.leerArchivo();
-           MostrarTabla();
+          MostrarTabla();
       } catch (Exception ex) {
           Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
       }

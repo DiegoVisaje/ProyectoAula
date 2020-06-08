@@ -316,7 +316,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
             ComboLineaInvestigacion.addItem(a.getNombre());
         }
     }
-    
   
     public void listaSubLineas(String codigo){
         
@@ -326,7 +325,6 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
             }  
         }
     }
-    
     
     public void cargos(){
         ComboCargo.addItem("Miembro");
