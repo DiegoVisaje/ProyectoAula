@@ -290,5 +290,10 @@ public class Administrador {
             
         }while(op!=4);
     }
+ 
+    
+    public void funcion(){
+        
+    }
     
 }

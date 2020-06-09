@@ -24,8 +24,8 @@ public class ArchivoTextoLineas {
     
     
      public ArchivoTextoLineas() {
-       //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoLineaInvestigacion.txt");
+      
+       this("CatalogoLineaInvestigacion.txt");
 
     }
      

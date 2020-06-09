@@ -30,8 +30,8 @@ public class ArchivoTextoDocentes {
     
     
      public ArchivoTextoDocentes() {
-      // this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
-        this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Docentes.txt");
+   
+        this("Docentes.txt");
     }
      
       public boolean Guardar (Docente docente) throws Exception{
@@ -49,7 +49,7 @@ public class ArchivoTextoDocentes {
                this.aEsc.close();
        }
     }
-    
+
      
       public ArrayList<Docente> leerArchivo () throws Exception{
        

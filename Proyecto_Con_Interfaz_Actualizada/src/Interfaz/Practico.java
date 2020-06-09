@@ -5,7 +5,9 @@
  */
 package Interfaz;
 
-import Modelo.Practicas;
+import Datos.*;
+import Modelo.*;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,15 +15,23 @@ import Modelo.Practicas;
  */
 public class Practico extends javax.swing.JFrame {
 
-    private Modelo.Practicas practica;
+
+    private RegistrarProyecto registrarPractica;
+    private Practicas practica;
+    private static Estudiante estudiante;
+    private ArchivoTextoProyectos archivoProyecto;
+    private PropuestaProyecto propuestaProyecto;
+    
     /**
      * Creates new form Practico
      */
-    public Practico() {
+    public Practico( Estudiante estudiante) {
         initComponents();
         this.setLocationRelativeTo(null);
+       this.estudiante = estudiante;
     }
 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -106,6 +116,11 @@ public class Practico extends javax.swing.JFrame {
         jPanel1.add(txtFunciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, 260, 40));
 
         botonGuardar.setText("Guardar");
+        botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonGuardarMouseClicked(evt);
+            }
+        });
         botonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonGuardarActionPerformed(evt);
@@ -130,6 +145,9 @@ public class Practico extends javax.swing.JFrame {
        
         guardarPractica();
         
+        this.estudiante=estudiante;
+        archivoProyecto = new ArchivoTextoProyectos();
+        
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     public Practicas guardarPractica(){
@@ -144,6 +162,8 @@ public class Practico extends javax.swing.JFrame {
         repreLegal = txtRepresentanteLegal.getText().trim();
         areaTrbajo = txtAreaTrabajo.getText().trim();
         funciones = txtFunciones.getText().trim();
+        
+        practica = new Practicas();
         
         practica.setNombreEmp(nombreEmp);
         practica.setDireccionEmp(direccionEmp);
@@ -164,6 +184,44 @@ public class Practico extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel7MouseClicked
 
+    private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
+       //BOTON GUARDAR, PRACTICA, JENNY
+        guardarCarlos();
+       
+    }//GEN-LAST:event_botonGuardarMouseClicked
+
+      //JENNY
+       private void guardarCarlos(){
+           
+       propuestaProyecto = new PropuestaProyecto();
+       practica =guardarPractica();  
+       propuestaProyecto= estudiante.getPropuesta();
+       propuestaProyecto.setPracticas(practica);
+       estudiante.setPropuesta(propuestaProyecto);
+       
+       guardarProyecto();
+   
+       
+   }
+    
+     //JENNY
+   public void guardarProyecto(){
+        String mensaje=".";
+        
+        try{
+           
+        mensaje = archivoProyecto.Guardar(estudiante);
+           JOptionPane.showMessageDialog(this, mensaje,"GUARDO PROYECTO", JOptionPane.INFORMATION_MESSAGE); 
+       }catch( Exception e){
+           JOptionPane.showMessageDialog(this, e.getMessage() + mensaje, "ERROR AL GUARDAR PROYECTO", JOptionPane.ERROR_MESSAGE); 
+         }
+        
+    }
+    
+    
+    
+
+  
     /**
      * @param args the command line arguments
      */
@@ -194,7 +252,7 @@ public class Practico extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Practico().setVisible(true);
+                new Practico(estudiante).setVisible(true);
             }
         });
     }
