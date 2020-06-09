@@ -45,8 +45,10 @@ public class ArchivoTextoDocentes {
           throw new Exception("Error al abrir archivo para escritura"); 
        } 
        finally{
+           
            if(this.aEsc!=null)
                this.aEsc.close();
+           
        }
     }
 
