@@ -2,3 +2,4 @@
 41487;a;a;a;a;a;1 mes;asd;1;a;asd asd;Tesis;Pendiente;;;a;a;a;a
 32672;a;a;a;a;a;1 mes;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
 61154;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Practicas;Pendiente;;;a;a;a;a;a;a
+27506;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
