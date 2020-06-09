@@ -1,6 +1,0 @@
-1;javier;SubLineaJavier2
-2;Chino;JAJAJAJAJJA
-AAA;Jenni;JEJEJEJJE
-1;javier;JIJIJIJIJ
-2;Chino;jojojojjojojo
-AAA;Jenni;jujujujujuju
