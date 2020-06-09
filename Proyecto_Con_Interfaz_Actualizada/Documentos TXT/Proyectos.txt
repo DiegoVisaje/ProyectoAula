@@ -1,3 +1,0 @@
-15919;Diego;Granados;11923232323;300300300;Proyecto1;2 meses;asd;1;Primer proyecto en tesis;asd asd;Tesis;Pendiente;;;El primer problema;Primer objetivo;Otrosobjetivos;La justificacion
-15919;Diego;Granados;11923232323;300300300;Proyecto1;2 meses;asd;1;Primer proyecto en tesis;asd asd;Tesis;Pendiente;;;El primer problema;Primer objetivo;Otrosobjetivos;La justificacion
-61938;Juan;aadw;35235;5151513;sgewhweh;1 mes;asd;1;awffwfwqfwvsvevegqgevhhfmfwfwwwfjfkfgjfgjfjg;asd asd;Practicas;Pendiente;;;egwegqg;gesgsgeg;egsgseg;gegsegsge;sgegsg;gseegseg

@@ -4,3 +4,4 @@
 61154;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Practicas;Pendiente;;;a;a;a;a;a;a
 27506;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
 25740;ESABEABA;EAEGAG;GAGAG;AGAGAG;AGAGA;1 mes;asd;1;AFAFAFAFAFAGSVAAGASASVA;asd asd;Tesis;Pendiente;;;BSBSBS;BSBSBSABEABABAB;ABABABAB;BABAB
+78951;A;B;C;D;E;2 meses;asd;1;RRR;asd asd;Tesis;Pendiente;;;F;G;G;G
