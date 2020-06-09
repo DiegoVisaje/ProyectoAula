@@ -49,7 +49,12 @@ public class ArchivoTextoDocentes {
                this.aEsc.close();
        }
     }
-    
+        
+      
+      
+      
+      
+      
      
       public ArrayList<Docente> leerArchivo () throws Exception{
        
