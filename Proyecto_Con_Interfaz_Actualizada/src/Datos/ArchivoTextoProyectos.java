@@ -30,11 +30,13 @@ public class ArchivoTextoProyectos {
         this.archivo = new File(name);
     }
     
+
+    
     
      public ArchivoTextoProyectos() {
          
          //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
-         
+      
         this("Proyectos.txt");
      
     }
@@ -47,7 +49,7 @@ public class ArchivoTextoProyectos {
            this.aEsc = new FileWriter(this.archivo, true);
            PrintWriter pw = new PrintWriter(this.aEsc);
            pw.println( estudiante.formaArchivo());
-           mensaje = "GUARDO CORRECTAMENTE EL PROYECTO";
+           mensaje = "GUARDO CORRECTAMENTE EL PROYECTO,SU RADICADO ES: "+estudiante.getPropuesta().getRadicado();
            
            return mensaje;
            

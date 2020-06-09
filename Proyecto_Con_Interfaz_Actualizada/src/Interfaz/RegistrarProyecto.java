@@ -279,7 +279,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
                 LabelContinuarMouseClicked(evt);
             }
         });
-        botonContinuar.add(LabelContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 90, 30));
+        botonContinuar.add(LabelContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 30));
 
         jPanel11.add(botonContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 140, 30));
 

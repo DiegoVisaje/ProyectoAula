@@ -185,7 +185,9 @@ public class RegistrarTesis extends javax.swing.JFrame {
        
     }//GEN-LAST:event_botonGuardarMouseClicked
 
-    
+    public void NADITA(){
+        
+    }
     
     public void guardarProyecto(){
         String mensaje=".";
@@ -193,7 +195,7 @@ public class RegistrarTesis extends javax.swing.JFrame {
         try{
            
         mensaje = archivoProyecto.Guardar(estudiante);
-           JOptionPane.showMessageDialog(this, mensaje, "GUARDO PROYECTO", JOptionPane.ERROR_MESSAGE); 
+           JOptionPane.showMessageDialog(this, mensaje, "GUARDO PROYECTO CORRECTAMENTE", JOptionPane.INFORMATION_MESSAGE); 
        }catch( Exception e){
            JOptionPane.showMessageDialog(this, e.getMessage() + mensaje, "ERROR AL GUARDAR PROYECTO", JOptionPane.ERROR_MESSAGE); 
          }
