@@ -33,8 +33,8 @@ public class ArchivoTextoProyectos {
          
         //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
          
-        //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Proyectos.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Proyectos.txt");
+       
+       this("Proyectos.txt");
     }
      
     public boolean Guardar (Estudiante estudiante) throws Exception{
