@@ -5,3 +5,5 @@
 27506;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
 25740;ESABEABA;EAEGAG;GAGAG;AGAGAG;AGAGA;1 mes;asd;1;AFAFAFAFAFAGSVAAGASASVA;asd asd;Tesis;Pendiente;;;BSBSBS;BSBSBSABEABABAB;ABABABAB;BABAB
 78951;A;B;C;D;E;2 meses;asd;1;RRR;asd asd;Tesis;Pendiente;;;F;G;G;G
+62628;ee;d;gt;t;r;1 mes;asd;1;ff33fqf3f3fw;asd asd;Practicas;Pendiente;;;3f3r3;uubu;guub;uubu;ubub;ubu
+22853;u;unun;kmikn;kninini;jni;2 meses;asd;1;sas;asd asd;Tesis;Pendiente;;;a|;ssss;sss;ssss
