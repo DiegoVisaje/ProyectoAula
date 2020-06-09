@@ -30,6 +30,8 @@ public class ArchivoTextoProyectos {
         this.archivo = new File(name);
     }
     
+
+    
     
      public ArchivoTextoProyectos() {
          
