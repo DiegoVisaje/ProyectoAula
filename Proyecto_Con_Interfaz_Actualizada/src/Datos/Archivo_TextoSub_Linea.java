@@ -16,7 +16,7 @@ public class Archivo_TextoSub_Linea {
     
     
     private File archivo;
-    private FileWriter aEsc;  // abre archivo para escritura
+    private FileWriter aEsc; // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
     
     public Archivo_TextoSub_Linea(String name){
@@ -117,6 +117,7 @@ public class Archivo_TextoSub_Linea {
               pw.println(subLinea.formaArchivo());
              }
          }
+         
            return "EL ARCHIVO FUE ELIMINADO";
        }catch(IOException ioe){
           throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 

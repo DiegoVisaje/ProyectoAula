@@ -56,17 +56,16 @@ public class Estudiante extends Persona{
     
     
     public String formaArchivo(){
-        if(propuesta.getTipoProyecto().equals("tesis")){
-           return propuesta.getRadicado()+";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+celular+";"+propuesta.getNombreP()+";"+
+        String mensaje =   propuesta.getRadicado()+";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+celular+";"+propuesta.getNombreP()+";"+
                propuesta.getTiempoEjeP()+";"+propuesta.getLineaInvesti()+";"+propuesta.getSubLineaInvesti()+";"+
                propuesta.getDescripcion()+";"+propuesta.getDocenteAux()+";"+propuesta.getTipoProyecto()+";"+propuesta.getEstado()+";"+
-               propuesta.getCorreciones()+";"+propuesta.getConcepto()+";"+propuesta.getTesis().getPlanteamientoproblema()+";"+
+               propuesta.getCorreciones()+";"+propuesta.getConcepto();
+        
+        if(propuesta.getTipoProyecto().equals("Tesis")){
+           return mensaje + ";"+ propuesta.getTesis().getPlanteamientoproblema()+";"+
                propuesta.getTesis().getObjGeneral()+";"+propuesta.getTesis().getObjEspecifico()+";"+propuesta.getTesis().getJustificacion(); 
         }else{
-           return propuesta.getRadicado()+";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+celular+";"+propuesta.getNombreP()+";"+
-               propuesta.getTiempoEjeP()+";"+propuesta.getLineaInvesti()+";"+propuesta.getSubLineaInvesti()+";"+
-               propuesta.getDescripcion()+";"+propuesta.getDocenteAux()+";"+propuesta.getTipoProyecto()+";"+propuesta.getEstado()+";"+
-               propuesta.getCorreciones()+";"+propuesta.getConcepto()+";"+propuesta.getPracticas().getNombreEmp()+";"+
+           return mensaje +";"+propuesta.getPracticas().getNombreEmp()+";"+
                propuesta.getPracticas().getDireccionEmp()+";"+propuesta.getPracticas().getTelefonoEmp()+";"+propuesta.getPracticas().getRepreLegal()+";"+
                propuesta.getPracticas().getAreaTrbajo()+";"+propuesta.getPracticas().getFunciones(); 
         }

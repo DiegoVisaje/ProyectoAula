@@ -462,7 +462,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
             ComboLineaInvestigacion.addItem(a.getNombre());
         }
     }
-    
+
     public void cargos(){
         ComboCargo.addItem("Miembro");
         ComboCargo.addItem("Evaluador");

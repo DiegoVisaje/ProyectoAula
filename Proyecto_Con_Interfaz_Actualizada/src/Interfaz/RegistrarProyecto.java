@@ -32,14 +32,16 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private ArchivoTextoDocentes archivoTextoDocente = new ArchivoTextoDocentes();
     private ArrayList<SubLineaInvestigacion> listaSubLineas = new ArrayList<SubLineaInvestigacion>();
     private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
+    private ArrayList<Estudiante> listaEstudiante = new ArrayList<Estudiante>();
     private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();
     private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
     private ArchivoTextoProyectos archivoProyecto = new ArchivoTextoProyectos();
     private SubLineaInvestigacion subLineaInvestigacion;
-    private PropuestaProyecto proyecto = new PropuestaProyecto();
-    private Estudiante estudiante = new Estudiante();
-    private Tesis tesis = new Tesis();
-    private Practicas practicas = new Practicas();
+    private PropuestaProyecto proyecto;
+    private Estudiante estudiante;
+    private Tesis tesis;
+    private Practicas practicas;
+    private  RegistrarTesis registrarTesis = new RegistrarTesis(estudiante);
     
      private String codigo="", linea="";
     /**
@@ -51,6 +53,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     
     public RegistrarProyecto() {
         initComponents();
+       
         
         try {
 
@@ -96,7 +99,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jLabel51 = new javax.swing.JLabel();
         ComboTiempo = new javax.swing.JComboBox<>();
         jLabel52 = new javax.swing.JLabel();
-        ComboSublinea = new javax.swing.JComboBox<>();
+        ComboModalidadGrado = new javax.swing.JComboBox<>();
         ComboLineaInvestigacion = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
         jLabel53 = new javax.swing.JLabel();
@@ -104,9 +107,8 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
-        botonEnviar123 = new javax.swing.JPanel();
-        jLabel57 = new javax.swing.JLabel();
-        jLabel58 = new javax.swing.JLabel();
+        botonContinuar = new javax.swing.JPanel();
+        LabelContinuar = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
         txtNombreProyecto = new javax.swing.JTextField();
         ComboSublinea1 = new javax.swing.JComboBox<>();
@@ -178,7 +180,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         txtDescripcionProyecto.setRows(5);
         jScrollPane4.setViewportView(txtDescripcionProyecto);
 
-        jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 930, 170));
+        jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 480, 930, 160));
 
         jLabel49.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel49.setText("Tiempo de ejecucion: ");
@@ -199,8 +201,8 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jLabel52.setText("Sub-linea de Investigación:");
         jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 180, 40));
 
-        ComboSublinea.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Tesis", "Practicas" }));
-        jPanel11.add(ComboSublinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, 190, 40));
+        ComboModalidadGrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE", "Tesis", "Practicas" }));
+        jPanel11.add(ComboModalidadGrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 360, 190, 40));
 
         ComboLineaInvestigacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
         ComboLineaInvestigacion.addActionListener(new java.awt.event.ActionListener() {
@@ -260,23 +262,26 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
                 jLabel40MouseClicked(evt);
             }
         });
-        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 660, -1, 30));
+        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 650, -1, 30));
 
-        botonEnviar123.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        botonEnviar123.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonContinuar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        botonContinuar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonEnviar123MouseClicked(evt);
+                botonContinuarMouseClicked(evt);
             }
         });
-        botonEnviar123.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        botonContinuar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel57.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_secured_letter_30px.png"))); // NOI18N
-        botonEnviar123.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 1, -1, -1));
+        LabelContinuar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_secured_letter_30px.png"))); // NOI18N
+        LabelContinuar.setText("Continuar");
+        LabelContinuar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelContinuarMouseClicked(evt);
+            }
+        });
+        botonContinuar.add(LabelContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 0, 90, 30));
 
-        jLabel58.setText("Enviar");
-        botonEnviar123.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 1, 60, 30));
-
-        jPanel11.add(botonEnviar123, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 660, 140, 30));
+        jPanel11.add(botonContinuar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 650, 140, 30));
 
         jLabel38.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel38.setText("Nombre del Proyecto:");
@@ -304,11 +309,12 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 714, Short.MAX_VALUE)
+            .addGap(0, 721, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 710, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(22, 22, 22)))
         );
 
         pack();
@@ -362,23 +368,17 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     //
     }//GEN-LAST:event_jTextField15jTextField5ActionPerformed
 
-    private void botonEnviar123MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonEnviar123MouseClicked
+    private void botonContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContinuarMouseClicked
         
-        try{
-           
-        registrarProyecto();
-        archivoProyecto.Guardar(estudiante);
-       
-           
-       }catch( Exception exception ){
-           
-           JOptionPane.showMessageDialog(this, archivoSub_linea, "ERROR", JOptionPane.ERROR_MESSAGE); 
-           
-       }
+      cambiarInterfaz();
           
-    }//GEN-LAST:event_botonEnviar123MouseClicked
+    }//GEN-LAST:event_botonContinuarMouseClicked
 
-    public void registrarProyecto(){
+    //GUARDAR PROYECTO, JENY
+    
+    
+    
+        public Estudiante registrarProyecto(){
         
         //REGISTRE LOS DATOS DEL ESTUDIANTE Y EL PROYECTO
         
@@ -393,8 +393,11 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         String subLinea = ComboSublinea1.getSelectedItem().toString();
         String Descripcion = txtDescripcionProyecto.getText().trim();
         String nombreProyecto = txtNombreProyecto.getText().trim();
-        String tipoProyecto = ComboSublinea.getSelectedItem().toString();
+        String tipoProyecto = ComboModalidadGrado.getSelectedItem().toString();
         
+        estudiante = new Estudiante();
+        proyecto = new PropuestaProyecto();
+       
         
         estudiante.setNombre(nombre);
         estudiante.setApellido(apellido);
@@ -409,22 +412,50 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         proyecto.setDescripcion(Descripcion);
         proyecto.setTipoProyecto(tipoProyecto);
         
-        if (proyecto.getTipoProyecto().equals("tesis")){
-            
-           RegistrarTesis registrarTesis = new RegistrarTesis();
+      /*  
+        if (proyecto.getTipoProyecto().equals("Tesis")){
+           
+           tesis = new Tesis();
            tesis = registrarTesis.guardarTesis();
            proyecto.setTesis(tesis);
            
         }else{
             
             Practico practica = new Practico();
+            practicas = new Practicas();
             practicas = practica.guardarPractica();
             proyecto.setPracticas(practicas);
         }
-        
+        */
+         
+       estudiante.setPropuesta(proyecto);
+          
+        return estudiante;
     }
     
-    
+     
+    //LLENAR DATOS DEL PROYECTO, JENNY
+        
+         public void llenarArchivo(){
+   
+        try{
+            Estudiante e = this.registrarProyecto();
+            if(this.listaEstudiante.add(e) && e != null){
+                
+            JOptionPane.showMessageDialog(this, "PROYECTO REGISTRADO CON EXITO", "CONFIRMACION", JOptionPane.INFORMATION_MESSAGE);
+             //SI QUIERES AGREGAMOS UN LIMPIAR DATOS, PARA LOS CAMPOS QUE LLENAMOS.
+                
+            }
+            else{
+               JOptionPane.showMessageDialog(this, "ERROR AL REGISTRAR PROYECTO", "ERROR", JOptionPane.ERROR_MESSAGE); 
+            }
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, e, "EXCEPCION", JOptionPane.ERROR_MESSAGE); 
+        }
+        
+    }
+        
+      
     private void ComboDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboDocenteActionPerformed
       
     }//GEN-LAST:event_ComboDocenteActionPerformed
@@ -435,27 +466,58 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
 
     private void ComboLineaInvestigacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboLineaInvestigacionActionPerformed
       
-        //LLENE LOS COMBOS DE LINEA Y SUBLINEA DE INVESTIGACION
+       //LLENE LOS COMBOS DE LINEA Y SUBLINEA DE INVESTIGACION
         
-        linea = ComboLineaInvestigacion.getSelectedItem().toString();
+       linea = ComboLineaInvestigacion.getSelectedItem().toString();
        codigo = buscarCodigo(linea);
        ComboSublinea1.removeAllItems();
        listaSubLineas(codigo);
+       
     }//GEN-LAST:event_ComboLineaInvestigacionActionPerformed
 
     private void txtNombreProyectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreProyectoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreProyectoActionPerformed
 
+    private void LabelContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelContinuarMouseClicked
+          cambiarInterfaz();
+    }//GEN-LAST:event_LabelContinuarMouseClicked
+
+          //PUSE UN METODO PARA LA INTERFAZ DE TESIS Y PRACTICA, PARA EL COMBOX, JENY
+    
+          public void cambiarInterfaz(){
+          
+            estudiante = registrarProyecto();
+            
+              
+            if(ComboModalidadGrado.getSelectedItem().equals("Tesis")){
+                
+            new RegistrarTesis(estudiante).show();
+            dispose();
+            
+          //  archivoProyecto.Guardar(estudiante); 
+            
+            }else if(ComboModalidadGrado.getSelectedItem().equals("Practicas")){
+            new Practico(estudiante).show();
+            dispose();
+           
+           // archivoProyecto.Guardar(estudiante); 
+            
+        }
+          
+      }
+    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboDocente;
     private javax.swing.JComboBox<String> ComboLineaInvestigacion;
-    private javax.swing.JComboBox<String> ComboSublinea;
+    private javax.swing.JComboBox<String> ComboModalidadGrado;
     private javax.swing.JComboBox<String> ComboSublinea1;
     private javax.swing.JComboBox<String> ComboTiempo;
+    private javax.swing.JLabel LabelContinuar;
     private javax.swing.JTextField TxtCelular;
-    private javax.swing.JPanel botonEnviar123;
+    private javax.swing.JPanel botonContinuar;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -471,8 +533,6 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

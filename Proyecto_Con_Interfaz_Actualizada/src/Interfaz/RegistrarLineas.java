@@ -281,6 +281,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         
     }
     
+    
+    
     public void limpiarDatosLineas(){
         
         this.TxtCodigo.setText("");
@@ -314,7 +316,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     
     
     public void RegistrarSub_Lineas(){
-         
+    
        RegistrarSubLineas mu = new RegistrarSubLineas();
        Escritorio.add(mu);
        mu.show();
