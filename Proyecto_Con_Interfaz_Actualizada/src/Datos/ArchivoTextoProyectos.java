@@ -5,6 +5,7 @@
  */
 package Datos;
 
+import Modelo.Docente;
 import Modelo.Estudiante;
 import Modelo.PropuestaProyecto;
 import java.io.File;
@@ -34,21 +35,27 @@ public class ArchivoTextoProyectos {
     
      public ArchivoTextoProyectos() {
          
-        //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
-         
-        //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Proyectos.txt");
-       this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\Proyectos.txt");
+         //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
+      
+        this("Proyectos.txt");
+     
     }
      
-    public boolean Guardar (Estudiante estudiante) throws Exception{
+    public String Guardar (Estudiante estudiante) throws Exception{
        this.aEsc =null;
+       String mensaje;
+
        try{
            this.aEsc = new FileWriter(this.archivo, true);
            PrintWriter pw = new PrintWriter(this.aEsc);
            pw.println( estudiante.formaArchivo());
-           return true;
+           mensaje = "GUARDO CORRECTAMENTE EL PROYECTO,SU RADICADO ES: "+estudiante.getPropuesta().getRadicado();
+           
+           return mensaje;
+           
        }catch(IOException ioe){
-          throw new Exception("Error al abrir archivo para escritura"); 
+          mensaje = "ERROR AL GUARDAR PROYECTO" + ioe.getMessage();
+          return mensaje;
        } 
        finally{
            if(this.aEsc!=null)
@@ -56,37 +63,31 @@ public class ArchivoTextoProyectos {
        }
     }
     
-    // ++++++++++++FALTA CREAR METODO LEER+++++++++++++++ 
+
     
-    /*
-    public ArrayList<Estudiante> leer(String radicado) throws Exception{
-        try{
-            listaEstudiante = new ArrayList();
+      public ArrayList<Estudiante> leerArchivo () throws Exception{
+       
+        try {
+            ArrayList<Estudiante> listaEstudiante = new ArrayList();
             this.aLect = new Scanner(this.archivo);
-             while(this.aLect.hasNext()){
-                  String datos[] = this.aLect.nextLine().split(";");
-                 Estudiante estudiante = new Estudiante();
-                 PropuestaProyecto proyecto = new PropuestaProyecto();
-                 
-                 estudiante.setNombre();
-                 estudiante.setApellido();
-                 estudiante.setCedula();
-                 estudiante.setCelular();
-                 
+            while(this.aLect.hasNext()){
+                String datos[] = this.aLect.nextLine().split(";");
+                Estudiante estudiante = new Estudiante();
+                estudiante.setNombre(datos[0]);
+                estudiante.setApellido(datos[1]);
+                estudiante.setCelular(datos[2]);
+                estudiante.setCedula(datos[3]);
+              
                 
-                 
-             }    
-                 
-            listaEstudiante.add(estudiante);
-        
-             return listaEstudiante;
-         } catch (FileNotFoundException ex) {
+                listaEstudiante.add(estudiante);
+            }
+            this.aLect.close();
+            return listaEstudiante;
+            
+        } catch (FileNotFoundException ex) {
            throw new Exception("Error al abrir archivo para lectura");   
         }
-       
-    }
+  }
     
-    */
-    
- }
+}
  

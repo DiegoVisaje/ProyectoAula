@@ -331,8 +331,8 @@ public class Inicio extends javax.swing.JFrame {
 
         
       RegistrarProyecto ad = new RegistrarProyecto();
-       Escritorio.add(ad);
-       ad.show();
+      Escritorio.add(ad);
+      ad.show();
        
        
     }//GEN-LAST:event_jPanelBotonEstudiante1MouseClicked

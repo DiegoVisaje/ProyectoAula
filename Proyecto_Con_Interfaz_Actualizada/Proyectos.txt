@@ -1,0 +1,9 @@
+46479;calor;daza;1;2;2;1 mes;asd;asd;hola calor;asd asd;Tesis;Pendiente;;;a;b;c;d
+41487;a;a;a;a;a;1 mes;asd;1;a;asd asd;Tesis;Pendiente;;;a;a;a;a
+32672;a;a;a;a;a;1 mes;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
+61154;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Practicas;Pendiente;;;a;a;a;a;a;a
+27506;a;a;a;a;a;2 meses;asd;asd;a;asd asd;Tesis;Pendiente;;;a;a;a;a
+25740;ESABEABA;EAEGAG;GAGAG;AGAGAG;AGAGA;1 mes;asd;1;AFAFAFAFAFAGSVAAGASASVA;asd asd;Tesis;Pendiente;;;BSBSBS;BSBSBSABEABABAB;ABABABAB;BABAB
+10879;Jennifer;Cuello;121313131;000000;ajaidnidanda;4 meses;asd;asd;DHDFHDHDHDHHDSFHFDHDSHDFHHHSDHFHR;asd asd;Tesis;Pendiente;;;VVVVVVVVVVVVVVV;FFFFFFFFFFFFF;HHHHHHHHHH;KKKKKKKKKKKKK
+16002;A;B;C;D;E;1 mes;asd;1;123;asd asd;Tesis;Pendiente;;;5;6;7;8
+16002;A;B;C;D;E;1 mes;asd;1;123;asd asd;Tesis;Pendiente;;;5;6;7;8

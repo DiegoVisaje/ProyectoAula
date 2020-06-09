@@ -16,7 +16,7 @@ public class Archivo_TextoSub_Linea {
     
     
     private File archivo;
-    private FileWriter aEsc;  // abre archivo para escritura
+    private FileWriter aEsc; // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
     
     public Archivo_TextoSub_Linea(String name){
@@ -25,8 +25,8 @@ public class Archivo_TextoSub_Linea {
     
     
      public Archivo_TextoSub_Linea() {
-      //this("C:\\Users\\zarel\\OneDrive\\Documentos\\NetBeansProjects\\PROYECTO GIT\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
-      this("C:\\Users\\ADMIN\\Documents\\NetBeansProjects\\ProyectoGit\\Proyecto_Con_Interfaz_Actualizada\\Documentos TXT\\CatalogoSubLineaInvestigacion.txt");
+     
+      this("CatalogoSubLineaInvestigacion.txt");
     }
      
       public boolean Guardar (SubLineaInvestigacion sub_lineaIn) throws Exception{
@@ -117,6 +117,7 @@ public class Archivo_TextoSub_Linea {
               pw.println(subLinea.formaArchivo());
              }
          }
+         
            return "EL ARCHIVO FUE ELIMINADO";
        }catch(IOException ioe){
           throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
