@@ -33,10 +33,10 @@ public class ArchivoTextoProyectos {
     
      public ArchivoTextoProyectos() {
          
-        //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
+         //AQUI CAMBIE TU DIRECCION Y LA  MIA PARA CREAR UN ARCHIVO DE TEXTO PARA LOS PROYECTOS
          
-       
-       this("Proyectos.txt");
+        this("Proyectos.txt");
+     
     }
      
     public String Guardar (Estudiante estudiante) throws Exception{

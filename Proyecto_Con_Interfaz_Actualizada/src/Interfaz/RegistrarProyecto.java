@@ -483,7 +483,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
           cambiarInterfaz();
     }//GEN-LAST:event_LabelContinuarMouseClicked
 
-          //PUSE UN METODO PARA LA INTERFAZ DE TESIS Y PRACTICA, PARA EL COMBO, JENY
+          //PUSE UN METODO PARA LA INTERFAZ DE TESIS Y PRACTICA, PARA EL COMBOX, JENY
     
           public void cambiarInterfaz(){
           
@@ -498,7 +498,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
           //  archivoProyecto.Guardar(estudiante); 
             
             }else if(ComboModalidadGrado.getSelectedItem().equals("Practicas")){
-            new Practico().show();
+            new Practico(estudiante).show();
             dispose();
            
            // archivoProyecto.Guardar(estudiante); 
@@ -507,6 +507,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
           
       }
     
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> ComboDocente;

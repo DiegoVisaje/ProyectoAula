@@ -3,28 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarTesis.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Modelo/PropuestaProyecto.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Practico.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_TextoSub_Linea.java</file>
-<<<<<<< HEAD
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_Eliminar_Docente.java</file>
-=======
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/CrearUsuarioDocente.java</file>
-<<<<<<< HEAD
-=======
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTexto.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_TextoSub_Linea.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoDocentes.java</file>
->>>>>>> master
->>>>>>> 0c1eca1db23cf453b26c52553369abefa951f582
-=======
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Modelo/Propuestas.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoProyectos.java</file>
-            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/PROYECTO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarLineas.java</file>
->>>>>>> 2679bac7742990cac908fc4e3a41c8ebc4f61301
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoDocentes.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Modelo/Administrador.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Admin2.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/Archivo_TextoSub_Linea.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoLineas.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoProyectos.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarLineas.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
         </group>
     </open-files>
 </project-private>

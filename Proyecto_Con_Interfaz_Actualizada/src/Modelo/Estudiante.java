@@ -61,7 +61,7 @@ public class Estudiante extends Persona{
                propuesta.getDescripcion()+";"+propuesta.getDocenteAux()+";"+propuesta.getTipoProyecto()+";"+propuesta.getEstado()+";"+
                propuesta.getCorreciones()+";"+propuesta.getConcepto();
         
-        if(propuesta.getTipoProyecto().equals("tesis")){
+        if(propuesta.getTipoProyecto().equals("Tesis")){
            return mensaje + ";"+ propuesta.getTesis().getPlanteamientoproblema()+";"+
                propuesta.getTesis().getObjGeneral()+";"+propuesta.getTesis().getObjEspecifico()+";"+propuesta.getTesis().getJustificacion(); 
         }else{
