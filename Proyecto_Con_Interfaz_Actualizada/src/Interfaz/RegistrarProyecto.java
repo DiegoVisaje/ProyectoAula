@@ -48,7 +48,8 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
      * Creates new form RegistrarProyecto
      */
     
-   
+     
+     
    // PropuestaProyecto propuesta = new PropuestaProyecto();
     
     public RegistrarProyecto() {
