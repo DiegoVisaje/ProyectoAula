@@ -9,12 +9,12 @@ package Interfaz;
  *
  * @author zarel
  */
-public class VerDatosProyecto extends javax.swing.JFrame {
+public class VerDatosPractica extends javax.swing.JFrame {
 
     /**
-     * Creates new form VerDatos
+     * Creates new form VerDatosPractica
      */
-    public VerDatosProyecto() {
+    public VerDatosPractica() {
         initComponents();
     }
 
@@ -98,10 +98,6 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         txtDescripcionProyecto8 = new javax.swing.JTextArea();
         jPanel20 = new javax.swing.JPanel();
         jLabel68 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel69 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
@@ -116,15 +112,23 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         txtDescripcionProyecto10 = new javax.swing.JTextArea();
         jScrollPane15 = new javax.swing.JScrollPane();
         txtDescripcionProyecto11 = new javax.swing.JTextArea();
+        BotonGuardar = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
-        BotonGuardar = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(500, 500));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(650, 650));
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
         jPanel11.setForeground(new java.awt.Color(0, 153, 255));
@@ -167,7 +171,7 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         txtDescripcionProyecto.setRows(5);
         jScrollPane4.setViewportView(txtDescripcionProyecto);
 
-        jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1630, 400, 310));
+        jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1270, 400, 310));
 
         jLabel49.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel49.setText("Tiempo de ejecucion: ");
@@ -272,7 +276,7 @@ public class VerDatosProyecto extends javax.swing.JFrame {
                 jLabel56jLabel40MouseClicked(evt);
             }
         });
-        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 1960, -1, -1));
+        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 1590, -1, -1));
 
         jLabel38.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel38.setText("Nombre del Proyecto:");
@@ -340,7 +344,7 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         txtDescripcionProyecto5.setRows(5);
         jScrollPane9.setViewportView(txtDescripcionProyecto5);
 
-        jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1630, 400, 310));
+        jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1270, 400, 310));
 
         jPanel16.setBackground(new java.awt.Color(0, 153, 0));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -402,7 +406,7 @@ public class VerDatosProyecto extends javax.swing.JFrame {
 
         jPanel16.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 890, 350, 310));
 
-        jPanel11.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 1580, 400, 40));
+        jPanel11.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1220, 400, 40));
 
         jPanel20.setBackground(new java.awt.Color(0, 153, 0));
         jPanel20.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -414,22 +418,6 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         jPanel20.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(379, 0, 204, 40));
 
         jPanel11.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 590, 930, 40));
-
-        jLabel1.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel1.setText("Planteamiento del problema:");
-        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 900, 220, 30));
-
-        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel13.setText("Objetivo General:");
-        jPanel11.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1040, 190, 30));
-
-        jLabel14.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel14.setText("Objetivo Especificos:");
-        jPanel11.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1190, 190, 30));
-
-        jLabel15.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel15.setText("Justificacion:");
-        jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1350, 190, 30));
 
         jPanel21.setBackground(new java.awt.Color(0, 153, 0));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -491,23 +479,7 @@ public class VerDatosProyecto extends javax.swing.JFrame {
 
         jPanel21.add(jScrollPane15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 890, 350, 310));
 
-        jPanel11.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1580, 400, 40));
-
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setText("Tesis");
-        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1390, 920, 110));
-
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setText("Tesis");
-        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 930, 920, 110));
-
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Tesis");
-        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1070, 920, 110));
-
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel19.setText("Tesis");
-        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1230, 920, 110));
+        jPanel11.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1220, 400, 40));
 
         BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
@@ -518,7 +490,55 @@ public class VerDatosProyecto extends javax.swing.JFrame {
                 BotonGuardarMouseClicked(evt);
             }
         });
-        jPanel11.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 1960, 100, 30));
+        jPanel11.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 1590, 100, 30));
+
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel13.setText("Nombre del lugar: ");
+        jPanel11.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 890, 130, 40));
+
+        jLabel14.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel14.setText("Direccion:");
+        jPanel11.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 890, 100, 40));
+
+        jLabel15.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel15.setText("Telefono:");
+        jPanel11.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 980, 110, 50));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel16.setText("Representante Legal:");
+        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 990, 150, 50));
+
+        jLabel17.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel17.setText("Area de Trabajo:");
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1070, 120, 50));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel1.setText("Funciones a Realizar:");
+        jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 1090, 160, 40));
+
+        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel18.setText("Practica\n");
+        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 890, 260, 40));
+
+        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel19.setText("Practica\n");
+        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1090, 260, 40));
+
+        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel20.setText("Practica\n");
+        jPanel11.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 890, 260, 40));
+
+        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel21.setText("Practica\n");
+        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1080, 260, 40));
+
+        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel22.setText("Practica\n");
+        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 990, 260, 40));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel23.setText("Practica\n");
+        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1000, 260, 40));
 
         jScrollPane1.setViewportView(jPanel11);
 
@@ -526,11 +546,11 @@ public class VerDatosProyecto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 990, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 2011, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1883, Short.MAX_VALUE)
         );
 
         pack();
@@ -549,7 +569,6 @@ public class VerDatosProyecto extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel56jLabel40MouseClicked
 
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
-
 
     }//GEN-LAST:event_BotonGuardarMouseClicked
 
@@ -570,21 +589,20 @@ public class VerDatosProyecto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VerDatosProyecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerDatosPractica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VerDatosProyecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerDatosPractica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VerDatosProyecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerDatosPractica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VerDatosProyecto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerDatosPractica.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VerDatosProyecto().setVisible(true);
+                new VerDatosPractica().setVisible(true);
             }
         });
     }
@@ -606,6 +624,10 @@ public class VerDatosProyecto extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;

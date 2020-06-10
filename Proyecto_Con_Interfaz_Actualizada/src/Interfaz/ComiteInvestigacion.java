@@ -184,7 +184,7 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         jLabel58.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(255, 255, 255));
         jLabel58.setText("Investigacion");
-        jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 160, 40));
+        jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 160, 40));
 
         jPanel10.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 160));
 
