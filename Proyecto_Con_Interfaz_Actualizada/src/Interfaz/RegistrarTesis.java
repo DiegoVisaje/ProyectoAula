@@ -185,9 +185,8 @@ public class RegistrarTesis extends javax.swing.JFrame {
        
     }//GEN-LAST:event_botonGuardarMouseClicked
 
-    public void NADITA(){
-        
-    }
+ 
+    
     
     public void guardarProyecto(){
         String mensaje=".";

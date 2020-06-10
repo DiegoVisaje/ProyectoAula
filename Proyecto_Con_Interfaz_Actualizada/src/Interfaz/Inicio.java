@@ -9,7 +9,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
+ * 
+ * 
+ * 
+ * 
+ * 
  * @author zarel
  */
 public class Inicio extends javax.swing.JFrame {

@@ -3,12 +3,36 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/consultarProyecto.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Modelo/PropuestaProyecto.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Practico.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoProyectos.java</file>
             <file>file:/C:/Users/ADMIN/Documents/NetBeansProjects/ProyectoGit/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarTesis.java</file>
+=======
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/VerDatosTesis.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Inicio.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoProyectos.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Login.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/ProyectoAceptados.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarTesis.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/DocenteEvaluador.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Modelo/PropuestaProyecto.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Datos/ArchivoTextoDocentes.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Admin2.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarSubLineas.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/CrearUsuarioDocente.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/consultarProyecto.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/ComiteInvestigacion.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/Practico.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarLineas.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/VerDatosPractica.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/RegistrarProyecto.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/ListaProyectos.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/ListaDocente.java</file>
+            <file>file:/C:/Users/zarel/OneDrive/Documentos/NetBeansProjects/NUEVO%20GIT/Proyecto_Con_Interfaz_Actualizada/src/Interfaz/ProyectoEvaluados.java</file>
+>>>>>>> f8c65f41bc1b57fc319f1b603693452a56e25695
         </group>
     </open-files>
 </project-private>

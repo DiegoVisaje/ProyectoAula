@@ -5,6 +5,11 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoDocentes;
+import Modelo.Docente;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +18,10 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
+    private ArchivoTextoDocentes archivo;
+    private ArrayList<Docente> listadocentes;
+    
+    
     /**
      * Creates new form Login
      */
@@ -179,6 +188,27 @@ public class Login extends javax.swing.JFrame {
             new Admin2().show();
             dispose();
         }else{
+            
+            try{
+             archivo = new ArchivoTextoDocentes();
+             listadocentes = new ArrayList();
+             listadocentes = archivo.leerArchivo();
+                
+            }catch(Exception ex){
+               Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex); 
+            }
+            
+            for(Docente a: listadocentes){
+                if(TxtUsuario.getText().equals(a.getUsuario())&& TxtContraseña.getText().equals(a.getContraseña())){
+                   if(a.getCargo().equals("Miembro")){
+                      new ComiteInvestigacion().show(); 
+                   }else{
+                       new DocenteEvaluador().show();
+                   } 
+                }
+            }
+           
+            
             JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrecto");
         }
 
