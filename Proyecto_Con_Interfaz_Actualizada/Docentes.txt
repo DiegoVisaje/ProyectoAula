@@ -1,2 +1,1 @@
-SELECCIONE;asd;asd;sad;sad;asd;asd
-Miembro;as;as;as;as;a;asd
+Evaluador;DiegoAAA;Granados;1;1;AAA;PrimeraLinea
