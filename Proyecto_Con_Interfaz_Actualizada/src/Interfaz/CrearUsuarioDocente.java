@@ -107,7 +107,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
                 botonRegresarMouseClicked(evt);
             }
         });
-        jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 430, -1, -1));
+        jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 470, -1, -1));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 30, -1));
@@ -151,7 +151,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
                 BotonGuardarDocenteMouseClicked(evt);
             }
         });
-        jPanel1.add(BotonGuardarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 430, 100, 30));
+        jPanel1.add(BotonGuardarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 470, 100, 30));
 
         jLabel17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel17.setText("Cargo:");
@@ -176,7 +176,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(TablaDocentes);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 630, 160));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 630, 190));
 
         ComboCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE" }));
         ComboCargo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -217,7 +217,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
                 BotonEliminarMouseClicked(evt);
             }
         });
-        jPanel1.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 430, 100, 30));
+        jPanel1.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 470, 100, 30));
 
         BotonModificar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
@@ -228,7 +228,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
                 BotonModificarMouseClicked(evt);
             }
         });
-        jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 430, 100, 30));
+        jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 470, 100, 30));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -240,7 +240,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 630, 30));
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 660, 490));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 650, 510));
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_multiply_30px.png"))); // NOI18N
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -262,11 +262,13 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 675, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(EscritorioLayout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 602, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         setJMenuBar(jMenuBar1);
