@@ -1,3 +1,2 @@
-1;asd;1
-1;asd;asd
-A;A;A
+1;carlos;investigacion
+2;Linea;informatica

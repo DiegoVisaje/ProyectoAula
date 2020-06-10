@@ -53,6 +53,7 @@ public class ArchivoTextoDocentes {
     }
 
      
+      
       public ArrayList<Docente> leerArchivo () throws Exception{
        
         try {
@@ -73,9 +74,10 @@ public class ArchivoTextoDocentes {
             this.aLect.close();
             return listaDocentes;
             
-        } catch (FileNotFoundException ex) {
+        }catch (FileNotFoundException ex) {
            throw new Exception("Error al abrir archivo para lectura");   
         }
+        
   }
      
 

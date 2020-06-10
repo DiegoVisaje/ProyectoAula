@@ -1,3 +1,1 @@
-SELECCIONE;asd;asd;sad;sad;asd;asd
-Miembro;as;as;as;as;a;asd
-Miembro;A;A;A;A;A;asd
+Evaluador;1;2;3;3;1;carlos

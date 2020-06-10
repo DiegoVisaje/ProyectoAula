@@ -41,12 +41,13 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
         initComponents();
   
         try {
-       
+            
+        cargos();
         listaLineas = archivoTexto.leerArchivo();
         listaLineas();
         listadocentes = archivoTextoDocente.leerArchivo();
         mostrarTabla();
-        cargos();
+      
         
         } catch (Exception ex) {
          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
