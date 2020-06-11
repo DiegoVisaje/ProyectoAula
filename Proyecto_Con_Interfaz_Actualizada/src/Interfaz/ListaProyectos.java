@@ -5,17 +5,36 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoProyectos;
+import Modelo.Estudiante;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author zarel
  */
 public class ListaProyectos extends javax.swing.JInternalFrame {
-
+        
+    private ArrayList<Estudiante> listaEstudiante;
+    private ArchivoTextoProyectos  archivo;
     /**
      * Creates new form ListaProyectos
      */
     public ListaProyectos() {
         initComponents();
+        try {
+            listaEstudiante = new ArrayList();
+            archivo = new ArchivoTextoProyectos();
+            listaEstudiante = archivo.leerArchivo();
+            llenarTabla();
+            
+         } catch (Exception ex) {
+         Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     /**
@@ -111,6 +130,18 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
        dispose();
     }
     
+    public void llenarTabla(){
+        String titulos[]={"Cedula", "Nombre Proyecto","Linea", "Tipo Proyecto"};
+        DefaultTableModel ModeloTabla = new DefaultTableModel();
+        ModeloTabla.setColumnIdentifiers(titulos); 
+        
+        for(Estudiante a: listaEstudiante){
+            Object datos[]={a.getCedula(),a.getPropuesta().getNombreP(),a.getPropuesta().getLineaInvesti(),a.getPropuesta().getTipoProyecto()};
+           ModeloTabla.addRow(datos);
+        }
+        TablaListaProyecto.setModel(ModeloTabla);
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonBuscar;

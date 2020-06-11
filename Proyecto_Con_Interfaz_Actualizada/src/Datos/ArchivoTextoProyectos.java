@@ -7,6 +7,9 @@ package Datos;
 
 import Modelo.Docente;
 import Modelo.Estudiante;
+import Modelo.Practicas;
+import Modelo.PropuestaProyecto;
+import Modelo.Tesis;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -25,6 +28,9 @@ public class ArchivoTextoProyectos {
     private File archivo;
     private FileWriter aEsc;  // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
+    PropuestaProyecto propuesta;
+    Tesis tesis;
+    Practicas practica;
     
     public ArchivoTextoProyectos(String name) {
         this.archivo = new File(name);
@@ -68,15 +74,50 @@ public class ArchivoTextoProyectos {
        
         try {
             ArrayList<Estudiante> listaEstudiante = new ArrayList();
+            propuesta = new PropuestaProyecto();
+           
             this.aLect = new Scanner(this.archivo);
             while(this.aLect.hasNext()){
                 String datos[] = this.aLect.nextLine().split(";");
                 Estudiante estudiante = new Estudiante();
-                estudiante.setNombre(datos[0]);
-                estudiante.setApellido(datos[1]);
-                estudiante.setCelular(datos[2]);
+                
+                propuesta.setRadicado(0);
+                estudiante.setNombre(datos[1]);
+                estudiante.setApellido(datos[2]);
                 estudiante.setCedula(datos[3]);
-              
+                estudiante.setCelular(datos[4]);
+                propuesta.setNombreP(datos[5]);
+                propuesta.setTiempoEjeP(datos[6]);
+                propuesta.setLineaInvesti(datos[7]);
+                propuesta.setSubLineaInvesti(datos[8]);
+                propuesta.setDescripcion(datos[9]);
+                propuesta.setDocenteAux(datos[10]);
+                propuesta.setTipoProyecto(datos[11]);
+                propuesta.setEstado(datos[12]);
+                propuesta.setCorreciones(datos[13]);
+                propuesta.setConcepto(datos[14]);
+                propuesta.setEvaluador1(datos[15]);
+                propuesta.setEvaluador2(datos[16]);
+                
+                if(propuesta.getTipoProyecto().equals("Tesis")){
+                   tesis = new Tesis();
+                   tesis.setPlanteamientoproblema(datos[17]);
+                   tesis.setObjGeneral(datos[18]);
+                   tesis.setObjEspecifico(datos[19]);
+                   tesis.setJustificacion(datos[20]);
+                   propuesta.setTesis(tesis);
+                }else{
+                    practica = new Practicas();
+                    practica.setNombreEmp(datos[17]);
+                    practica.setDireccionEmp(datos[18]);
+                    practica.setTelefonoEmp(datos[19]);
+                    practica.setRepreLegal(datos[20]);
+                    practica.setAreaTrbajo(datos[21]);
+                    practica.setFunciones(datos[22]);
+                    propuesta.setPracticas(practica);   
+                }
+         
+                estudiante.setPropuesta(propuesta);
                 
                 listaEstudiante.add(estudiante);
             }

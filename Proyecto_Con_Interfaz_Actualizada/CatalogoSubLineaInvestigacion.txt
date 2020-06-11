@@ -1,4 +1,4 @@
-1;asd;asdAAA
-A;A;A
-2;as;Sublinea
-AAA;Sharol1;SubSharoll1
+AAA;Linea1;Sub1
+AAA;Linea1;Sub3
+BBB;Linea1;Sub1
+BBB;Linea2;Sub3
