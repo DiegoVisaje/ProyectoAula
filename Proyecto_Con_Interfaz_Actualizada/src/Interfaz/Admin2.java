@@ -122,7 +122,7 @@ public class Admin2 extends javax.swing.JFrame {
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_registration_20px_1.png"))); // NOI18N
         jPanelRegistrarDocente.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelRegistrarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 210, 40));
+        jPanel1.add(jPanelRegistrarDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 270, 210, 40));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -175,7 +175,7 @@ public class Admin2 extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
         jPanelRegistrarLinea.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelRegistrarLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 290, 210, -1));
+        jPanel1.add(jPanelRegistrarLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 210, -1));
 
         jPanelRegistrarSubLinea2.setBackground(new java.awt.Color(255, 255, 255));
         jPanelRegistrarSubLinea2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -198,7 +198,7 @@ public class Admin2 extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_maintenance_date_20px.png"))); // NOI18N
         jPanelRegistrarSubLinea2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel1.add(jPanelRegistrarSubLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 210, -1));
+        jPanel1.add(jPanelRegistrarSubLinea2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 210, -1));
 
         jLabel13.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_open_door_20px.png"))); // NOI18N
@@ -325,7 +325,7 @@ public class Admin2 extends javax.swing.JFrame {
     
     private void jPanelRegistrarDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseClicked
         
-        RegistrarDocente cu = new RegistrarDocente();
+        RegistrarDocentes cu = new RegistrarDocentes();
           escritorio.add(cu);
           cu.show();
           
@@ -337,7 +337,8 @@ public class Admin2 extends javax.swing.JFrame {
 
     public void crearDocente(){
         
-        RegistrarDocente crearDocente = new RegistrarDocente();
+
+        RegistrarDocentes crearDocente = new RegistrarDocentes();
         escritorio.add(crearDocente);
         crearDocente.show();
         

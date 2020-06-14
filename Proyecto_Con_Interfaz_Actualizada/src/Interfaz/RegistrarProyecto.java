@@ -48,7 +48,8 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
      * Creates new form RegistrarProyecto
      */
     
-   
+     
+     
    // PropuestaProyecto propuesta = new PropuestaProyecto();
     
     public RegistrarProyecto() {
@@ -106,7 +107,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
-        jLabel56 = new javax.swing.JLabel();
+        botonVolver = new javax.swing.JLabel();
         botonContinuar = new javax.swing.JPanel();
         LabelContinuar = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
@@ -256,13 +257,13 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
 
         jPanel11.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 40));
 
-        jLabel56.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jLabel56.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonVolver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel40MouseClicked(evt);
             }
         });
-        jPanel11.add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 650, -1, 30));
+        jPanel11.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 650, -1, 30));
 
         botonContinuar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         botonContinuar.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -411,23 +412,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
         proyecto.setSubLineaInvesti(subLinea);
         proyecto.setDescripcion(Descripcion);
         proyecto.setTipoProyecto(tipoProyecto);
-        
-      /*  
-        if (proyecto.getTipoProyecto().equals("Tesis")){
-           
-           tesis = new Tesis();
-           tesis = registrarTesis.guardarTesis();
-           proyecto.setTesis(tesis);
-           
-        }else{
-            
-            Practico practica = new Practico();
-            practicas = new Practicas();
-            practicas = practica.guardarPractica();
-            proyecto.setPracticas(practicas);
-        }
-        */
-         
+       
        estudiante.setPropuesta(proyecto);
           
         return estudiante;
@@ -518,6 +503,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel LabelContinuar;
     private javax.swing.JTextField TxtCelular;
     private javax.swing.JPanel botonContinuar;
+    private javax.swing.JLabel botonVolver;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
@@ -532,7 +518,6 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
-    private javax.swing.JLabel jLabel56;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;

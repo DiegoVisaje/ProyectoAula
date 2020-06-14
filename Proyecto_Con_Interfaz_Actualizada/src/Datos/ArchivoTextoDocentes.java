@@ -53,7 +53,6 @@ public class ArchivoTextoDocentes {
        }
     }
 
-     
       
       public ArrayList<Docente> leerArchivo () throws Exception{
        
@@ -133,11 +132,13 @@ public class ArchivoTextoDocentes {
           throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
           
        } 
+       
       
        finally{
            
             if(this.aEsc!=null)
              this.aEsc.close();    
+       
        }
     }
  

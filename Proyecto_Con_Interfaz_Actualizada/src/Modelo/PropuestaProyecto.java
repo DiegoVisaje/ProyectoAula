@@ -21,10 +21,10 @@ public class PropuestaProyecto {
     public PropuestaProyecto() {
         this.radicado = (int) (Math.random()*100000+1);
         this.estado = "Pendiente";
-        this.concepto = "";
-        this.correciones = "";
-        this.evaluador1 = "";
-        this.evaluador2 = "";
+        this.concepto = " ";
+        this.correciones = " ";
+        this.evaluador1 = " ";
+        this.evaluador2 = " ";
     }
 
     public PropuestaProyecto(String nombreP, String tiempoEjeP, String lineaInvesti, String subLineaInvesti, String descripcion, String docenteAux, String tipoProyecto, int radicado, Tesis tesis, Practicas practicas ) {
@@ -39,11 +39,11 @@ public class PropuestaProyecto {
         this.radicado = radicado;
         this.tesis = tesis;
         this.practicas = practicas;
-        this.concepto = "";
-        this.correciones = "";
+        this.concepto = " ";
+        this.correciones = " ";
         this.radicado = (int) (Math.random()*100000+1);
-         this.evaluador1 = "";
-         this.evaluador2 = "";
+         this.evaluador1 = " ";
+         this.evaluador2 = " ";
         
     }
 
@@ -131,9 +131,9 @@ public class PropuestaProyecto {
     /**
      * @param radi the radi to set
      */
-    public void setRadicado() {
+    public void setRadicado(int radicado) {
         
-        this.radicado = (int) (Math.random()*100000+1);
+        this.radicado = radicado ;
         
     }
 

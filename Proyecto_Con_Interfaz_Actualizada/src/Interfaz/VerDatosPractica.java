@@ -5,17 +5,50 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoDocentes;
+import Datos.ArchivoTextoProyectos;
+import Modelo.Docente;
+import Modelo.Estudiante;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author zarel
  */
 public class VerDatosPractica extends javax.swing.JFrame {
-
+    private int radicado;
+    private ArrayList<Estudiante> listaEstudiante;
+    private ArchivoTextoProyectos  archivoProyectos;
+    private ArchivoTextoDocentes archivoDocente;
+    private ArrayList<Docente> listadocentes ;
+    
     /**
      * Creates new form VerDatosPractica
      */
     public VerDatosPractica() {
         initComponents();
+        this.radicado=radicado;
+    }
+    
+     public VerDatosPractica(int radicado) {
+        initComponents();
+        this.radicado=radicado;
+        try {
+            
+            listaEstudiante = new ArrayList();
+            archivoProyectos = new ArchivoTextoProyectos();
+            listaEstudiante = archivoProyectos.leerArchivo();
+            listadocentes = new ArrayList();
+            archivoDocente = new ArchivoTextoDocentes();
+            listadocentes = archivoDocente.leerArchivo();
+            
+            llenarDatos();
+            
+         } catch (Exception ex) {
+         Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -37,7 +70,7 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jTextField20 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto = new javax.swing.JTextArea();
+        txtCorreccionProyecto = new javax.swing.JTextArea();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -61,27 +94,24 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        ComboEstado = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
+        labelNombre = new javax.swing.JLabel();
+        labelApellido = new javax.swing.JLabel();
+        labelCedula = new javax.swing.JLabel();
+        labelCelular = new javax.swing.JLabel();
+        labelNombreProyecto = new javax.swing.JLabel();
+        labelTiempoEjecucion = new javax.swing.JLabel();
+        labelLinea = new javax.swing.JLabel();
+        labelSublinea = new javax.swing.JLabel();
+        labelModalidad = new javax.swing.JLabel();
+        comboEvaluador2 = new javax.swing.JComboBox<>();
+        labelDocente = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
-        ComboEstado1 = new javax.swing.JComboBox<>();
-        ComboEstado2 = new javax.swing.JComboBox<>();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto1 = new javax.swing.JTextArea();
+        comboEstado = new javax.swing.JComboBox<>();
+        comboEvaluador1 = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto5 = new javax.swing.JTextArea();
+        txtConceptoProyecto = new javax.swing.JTextArea();
         jPanel16 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
@@ -119,12 +149,13 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel23 = new javax.swing.JLabel();
+        labelDireccionEmp = new javax.swing.JLabel();
+        labelFunciones = new javax.swing.JLabel();
+        labelNombreEmp = new javax.swing.JLabel();
+        labelAreaTrabajo = new javax.swing.JLabel();
+        labelTelefonoEmp = new javax.swing.JLabel();
+        labelRepresentanteEmp = new javax.swing.JLabel();
+        labelDescripcion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -167,9 +198,9 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel48.setText("Evaluador 2: ");
         jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 90, 40));
 
-        txtDescripcionProyecto.setColumns(20);
-        txtDescripcionProyecto.setRows(5);
-        jScrollPane4.setViewportView(txtDescripcionProyecto);
+        txtCorreccionProyecto.setColumns(20);
+        txtCorreccionProyecto.setRows(5);
+        jScrollPane4.setViewportView(txtCorreccionProyecto);
 
         jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1270, 400, 310));
 
@@ -281,40 +312,39 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel38.setText("Nombre del Proyecto:");
         jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 160, 40));
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 200, 40));
 
-        jLabel3.setText(".");
-        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 40));
+        labelNombre.setText(".");
+        jPanel11.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 40));
 
-        jLabel4.setText(".");
-        jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, 40));
+        labelApellido.setText(".");
+        jPanel11.add(labelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, 40));
 
-        jLabel5.setText(".");
-        jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, 40));
+        labelCedula.setText(".");
+        jPanel11.add(labelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, 40));
 
-        jLabel6.setText(".");
-        jPanel11.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, 40));
+        labelCelular.setText(".");
+        jPanel11.add(labelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, 40));
 
-        jLabel7.setText(".");
-        jPanel11.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 200, 40));
+        labelNombreProyecto.setText(".");
+        jPanel11.add(labelNombreProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 200, 40));
 
-        jLabel8.setText(".");
-        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 200, 40));
+        labelTiempoEjecucion.setText(".");
+        jPanel11.add(labelTiempoEjecucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 200, 40));
 
-        jLabel9.setText(".");
-        jPanel11.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 200, 40));
+        labelLinea.setText(".");
+        jPanel11.add(labelLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 200, 40));
 
-        jLabel10.setText(".");
-        jPanel11.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 200, 40));
+        labelSublinea.setText(".");
+        jPanel11.add(labelSublinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 200, 40));
 
-        jLabel11.setText(".");
-        jPanel11.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 200, 40));
+        labelModalidad.setText(".");
+        jPanel11.add(labelModalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 200, 40));
 
-        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
-        jPanel11.add(ComboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 150, 40));
+        comboEvaluador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
+        jPanel11.add(comboEvaluador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 150, 40));
 
-        jLabel12.setText(".");
-        jPanel11.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 40));
+        labelDocente.setText(".");
+        jPanel11.add(labelDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 40));
 
         jLabel57.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel57.setText("Documento");
@@ -328,21 +358,15 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel59.setText("Evaluador 1: ");
         jPanel11.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 90, 40));
 
-        ComboEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE" }));
-        jPanel11.add(ComboEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 150, 40));
+        comboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE" }));
+        jPanel11.add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 150, 40));
 
-        ComboEstado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
-        jPanel11.add(ComboEstado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 150, 40));
+        comboEvaluador1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
+        jPanel11.add(comboEvaluador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 150, 40));
 
-        txtDescripcionProyecto1.setColumns(20);
-        txtDescripcionProyecto1.setRows(5);
-        jScrollPane5.setViewportView(txtDescripcionProyecto1);
-
-        jPanel11.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 930, 160));
-
-        txtDescripcionProyecto5.setColumns(20);
-        txtDescripcionProyecto5.setRows(5);
-        jScrollPane9.setViewportView(txtDescripcionProyecto5);
+        txtConceptoProyecto.setColumns(20);
+        txtConceptoProyecto.setRows(5);
+        jScrollPane9.setViewportView(txtConceptoProyecto);
 
         jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1270, 400, 310));
 
@@ -516,29 +540,32 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel1.setText("Funciones a Realizar:");
         jPanel11.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 1090, 160, 40));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel18.setText("Practica\n");
-        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 890, 260, 40));
+        labelDireccionEmp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelDireccionEmp.setText("Practica\n");
+        jPanel11.add(labelDireccionEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 890, 260, 40));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel19.setText("Practica\n");
-        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1090, 260, 40));
+        labelFunciones.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelFunciones.setText("Practica\n");
+        jPanel11.add(labelFunciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1090, 260, 40));
 
-        jLabel20.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel20.setText("Practica\n");
-        jPanel11.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 890, 260, 40));
+        labelNombreEmp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelNombreEmp.setText("Practica\n");
+        jPanel11.add(labelNombreEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 890, 260, 40));
 
-        jLabel21.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel21.setText("Practica\n");
-        jPanel11.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1080, 260, 40));
+        labelAreaTrabajo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelAreaTrabajo.setText("Practica\n");
+        jPanel11.add(labelAreaTrabajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 1080, 260, 40));
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel22.setText("Practica\n");
-        jPanel11.add(jLabel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 990, 260, 40));
+        labelTelefonoEmp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelTelefonoEmp.setText("Practica\n");
+        jPanel11.add(labelTelefonoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 990, 260, 40));
 
-        jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel23.setText("Practica\n");
-        jPanel11.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1000, 260, 40));
+        labelRepresentanteEmp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        labelRepresentanteEmp.setText("Practica\n");
+        jPanel11.add(labelRepresentanteEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 1000, 260, 40));
+
+        labelDescripcion.setText("Descripcion");
+        jPanel11.add(labelDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 930, 180));
 
         jScrollPane1.setViewportView(jPanel11);
 
@@ -572,6 +599,49 @@ public class VerDatosPractica extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotonGuardarMouseClicked
 
+    public void llenarDatos(){
+        
+         for(Estudiante a: listaEstudiante){
+              
+            if(this.radicado == a.getPropuesta().getRadicado()){
+               
+                labelNombre.setText(a.getNombre());
+                labelApellido.setText(a.getApellido());
+                labelCedula.setText(a.getCedula());
+                labelCelular.setText(a.getCelular());
+                labelDocente.setText(a.getPropuesta().getDocenteAux());
+                labelNombreProyecto.setText(a.getPropuesta().getNombreP());
+                labelTiempoEjecucion.setText(a.getPropuesta().getTiempoEjeP());
+                labelLinea.setText(a.getPropuesta().getLineaInvesti());
+                labelSublinea.setText(a.getPropuesta().getSubLineaInvesti());
+                labelModalidad.setText(a.getPropuesta().getTipoProyecto());
+                labelDescripcion.setText(a.getPropuesta().getDescripcion());
+                labelNombreEmp.setText(a.getPropuesta().getPracticas().getNombreEmp());
+                labelDireccionEmp.setText(a.getPropuesta().getPracticas().getDireccionEmp());
+                labelAreaTrabajo.setText(a.getPropuesta().getPracticas().getAreaTrbajo());
+                labelRepresentanteEmp.setText(a.getPropuesta().getPracticas().getRepreLegal());
+                labelTelefonoEmp.setText(a.getPropuesta().getPracticas().getTelefonoEmp());
+                labelFunciones.setText(a.getPropuesta().getPracticas().getFunciones());
+            }
+        }
+        
+        for (Docente e: listadocentes){
+            if(labelLinea.getText().toString().equals(e.getLinea())){
+                comboEvaluador1.addItem(e.getNombre()+" "+e.getApellido());
+            }
+        }
+        
+        for (Docente e: listadocentes){
+            if(labelLinea.getText().toString().equals(e.getLinea())){
+                comboEvaluador2.addItem(e.getNombre()+" "+e.getApellido());
+            }
+        }
+        
+        comboEstado.addItem("Aceptado");
+        comboEstado.addItem("Rechazado");
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -609,36 +679,23 @@ public class VerDatosPractica extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonGuardar;
-    private javax.swing.JComboBox<String> ComboEstado;
-    private javax.swing.JComboBox<String> ComboEstado1;
-    private javax.swing.JComboBox<String> ComboEstado2;
+    private javax.swing.JComboBox<String> comboEstado;
+    private javax.swing.JComboBox<String> comboEvaluador1;
+    private javax.swing.JComboBox<String> comboEvaluador2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -649,7 +706,6 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
@@ -659,12 +715,9 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -688,20 +741,35 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextArea txtDescripcionProyecto;
-    private javax.swing.JTextArea txtDescripcionProyecto1;
+    private javax.swing.JLabel labelApellido;
+    private javax.swing.JLabel labelAreaTrabajo;
+    private javax.swing.JLabel labelCedula;
+    private javax.swing.JLabel labelCelular;
+    private javax.swing.JLabel labelDescripcion;
+    private javax.swing.JLabel labelDireccionEmp;
+    private javax.swing.JLabel labelDocente;
+    private javax.swing.JLabel labelFunciones;
+    private javax.swing.JLabel labelLinea;
+    private javax.swing.JLabel labelModalidad;
+    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelNombreEmp;
+    private javax.swing.JLabel labelNombreProyecto;
+    private javax.swing.JLabel labelRepresentanteEmp;
+    private javax.swing.JLabel labelSublinea;
+    private javax.swing.JLabel labelTelefonoEmp;
+    private javax.swing.JLabel labelTiempoEjecucion;
+    private javax.swing.JTextArea txtConceptoProyecto;
+    private javax.swing.JTextArea txtCorreccionProyecto;
     private javax.swing.JTextArea txtDescripcionProyecto10;
     private javax.swing.JTextArea txtDescripcionProyecto11;
     private javax.swing.JTextArea txtDescripcionProyecto2;
     private javax.swing.JTextArea txtDescripcionProyecto3;
     private javax.swing.JTextArea txtDescripcionProyecto4;
-    private javax.swing.JTextArea txtDescripcionProyecto5;
     private javax.swing.JTextArea txtDescripcionProyecto6;
     private javax.swing.JTextArea txtDescripcionProyecto7;
     private javax.swing.JTextArea txtDescripcionProyecto8;

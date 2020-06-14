@@ -1,3 +1,6 @@
-
 Evaluador;1;2;3;3;1;carlos
+Evaluador;DiegoAAA;Granados;1;1;AAA;PrimeraLinea
+Miembro;DiegoAA;Granados;1192790335;1192790335;12345;Linea1
+Evaluador;Juan;Andres;11927903356;11927903356;54321;Linea2
+
 

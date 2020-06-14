@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Interfaz;
 
 import Datos.ArchivoTextoLineas;
@@ -21,7 +17,9 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author zarel
  */
-public class RegistrarDocente extends javax.swing.JInternalFrame {
+
+public class RegistrarDocentes extends javax.swing.JInternalFrame {
+
  
     private Docente docente;
     private ArrayList<Docente> listadocentes = new ArrayList<Docente>();
@@ -37,18 +35,18 @@ public class RegistrarDocente extends javax.swing.JInternalFrame {
     /**
      * Creates new form CrearUsuarioDocente
      */
-    public RegistrarDocente() {
+
+   
+    public RegistrarDocentes() {
         initComponents();
   
         try {
-            
-        cargos();
-        listaLineas = archivoTexto.leerArchivo();
-        listaLineas();
-        listadocentes = archivoTextoDocente.leerArchivo();
-        mostrarTabla();
-      
-        
+         cargos();
+         listaLineas = archivoTexto.leerArchivo();
+         listaLineas();
+         listadocentes = archivoTextoDocente.leerArchivo();
+         mostrarTabla();
+         
         } catch (Exception ex) {
          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -170,6 +168,14 @@ public class RegistrarDocente extends javax.swing.JInternalFrame {
         jLabel13.setText("Cedula:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 80, 30));
 
+        TablaDocentes.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
         TablaDocentes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaDocentesMouseClicked(evt);
@@ -502,7 +508,7 @@ public class RegistrarDocente extends javax.swing.JInternalFrame {
      }
      
     public void mostrarTabla(){
-         String titulos[]={"Cargo", "Cedula","Nombre", "Apellido","Usuario","Contraseña" , "Linea"};
+        String titulos[]={"Cargo", "Cedula","Nombre", "Apellido","Usuario","Contraseña" , "Linea"};
         
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos);
