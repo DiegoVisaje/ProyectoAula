@@ -9,7 +9,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
- *
+ * 
+ * 
+ * 
+ * 
+ * DIEGO A VER SI TE DESCARGA...
+ * 
+ * 
  * @author zarel
  */
 public class Inicio extends javax.swing.JFrame {
@@ -320,7 +326,7 @@ public class Inicio extends javax.swing.JFrame {
     private void jPanelBotonLogin2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotonLogin2MouseClicked
       consultarProyecto consultarProyecto = new consultarProyecto();
       Escritorio.add(consultarProyecto);
-      consultarProyecto.show();     
+      consultarProyecto.show(); 
     }//GEN-LAST:event_jPanelBotonLogin2MouseClicked
 
     private void jPanelBotonLogin3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotonLogin3MouseClicked
@@ -333,8 +339,6 @@ public class Inicio extends javax.swing.JFrame {
       RegistrarProyecto ad = new RegistrarProyecto();
       Escritorio.add(ad);
       ad.show();
-       
-       
     }//GEN-LAST:event_jPanelBotonEstudiante1MouseClicked
 
     private void jPanelBotonEstudianteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelBotonEstudianteMouseEntered

@@ -341,28 +341,6 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         this.jComboBoxRegistrarLineas.setSelectedItem("");
         
     }
-   
-   /*
-   ESTO SOLO ES UN COMENTARIO, DEJALO ASI.
-   
-     public String EliminarSubLinea(){
-     String mensaje;
-     
-       try{
-        
-        String codigo = txtBuscar.getText().trim(); 
-        mensaje = archivoSub_linea.Eliminar(codigo);
-        MostrarTabla();
-        
-        }catch( Exception a){
-          mensaje = "ERROR AL ELIMINAR" + a.getMessage() ; 
-        }
-         return mensaje;
-    }
-   
-   
-   */
-   
     
     public SubLineaInvestigacion RegistrarSubLineas(){
         

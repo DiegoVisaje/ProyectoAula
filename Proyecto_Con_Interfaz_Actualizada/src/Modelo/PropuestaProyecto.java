@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class PropuestaProyecto {
     
-    private String nombreP,tiempoEjeP,lineaInvesti,subLineaInvesti,descripcion, docenteAux,tipoProyecto,estado, correciones, concepto;
+    private String nombreP,tiempoEjeP,lineaInvesti,subLineaInvesti,descripcion, docenteAux,tipoProyecto,estado, correciones, concepto, evaluador1, evaluador2;
     private int radicado;
     private Tesis tesis;
     private Practicas practicas;
@@ -21,11 +21,13 @@ public class PropuestaProyecto {
     public PropuestaProyecto() {
         this.radicado = (int) (Math.random()*100000+1);
         this.estado = "Pendiente";
-        this.concepto = "";
-        this.correciones = "";
+        this.concepto = " ";
+        this.correciones = " ";
+        this.evaluador1 = " ";
+        this.evaluador2 = " ";
     }
 
-    public PropuestaProyecto(String nombreP, String tiempoEjeP, String lineaInvesti, String subLineaInvesti, String descripcion, String docenteAux, String tipoProyecto, int radicado, Tesis tesis, Practicas practicas) {
+    public PropuestaProyecto(String nombreP, String tiempoEjeP, String lineaInvesti, String subLineaInvesti, String descripcion, String docenteAux, String tipoProyecto, int radicado, Tesis tesis, Practicas practicas ) {
         this.nombreP = nombreP;
         this.tiempoEjeP = tiempoEjeP;
         this.lineaInvesti = lineaInvesti;
@@ -37,9 +39,11 @@ public class PropuestaProyecto {
         this.radicado = radicado;
         this.tesis = tesis;
         this.practicas = practicas;
-        this.concepto = "";
-        this.correciones = "";
+        this.concepto = " ";
+        this.correciones = " ";
         this.radicado = (int) (Math.random()*100000+1);
+         this.evaluador1 = " ";
+         this.evaluador2 = " ";
         
     }
 
@@ -127,9 +131,9 @@ public class PropuestaProyecto {
     /**
      * @param radi the radi to set
      */
-    public void setRadicado() {
+    public void setRadicado(int radicado) {
         
-        this.radicado = (int) (Math.random()*100000+1);
+        this.radicado = radicado ;
         
     }
 
@@ -231,10 +235,35 @@ public class PropuestaProyecto {
         this.concepto = concepto;
     }
 
-    
-    
-    
-    
+    /**
+     * @return the evaluador1
+     */
+    public String getEvaluador1() {
+        return evaluador1;
+    }
+
+    /**
+     * @param evaluador1 the evaluador1 to set
+     */
+    public void setEvaluador1(String evaluador1) {
+        this.evaluador1 = evaluador1;
+    }
+
+    /**
+     * @return the evaluador2
+     */
+    public String getEvaluador2() {
+        return evaluador2;
+    }
+
+    /**
+     * @param evaluador2 the evaluador2 to set
+     */
+    public void setEvaluador2(String evaluador2) {
+        this.evaluador2 = evaluador2;
+    }
+
+   
     
     
 }

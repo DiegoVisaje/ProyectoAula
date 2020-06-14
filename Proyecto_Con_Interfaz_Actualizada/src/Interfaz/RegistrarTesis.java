@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 public class RegistrarTesis extends javax.swing.JFrame {
 
     private Tesis tesis ;
-    private RegistrarProyecto registrarProyecto;
     private static Estudiante estudiante;
     private ArchivoTextoProyectos archivoProyecto = new ArchivoTextoProyectos();
     private PropuestaProyecto propuestaProyecto;
@@ -169,9 +168,19 @@ public class RegistrarTesis extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jBotonDevolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonDevolverMouseClicked
-
+        regresar();
     }//GEN-LAST:event_jBotonDevolverMouseClicked
 
+     public void regresar(){   
+        
+         
+
+    //     ****************FALTA BOTON REGRESAR*********
+         
+         
+         
+    }
+    
     private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
      
        //BOTON GUARDAR, JENNY
@@ -183,8 +192,12 @@ public class RegistrarTesis extends javax.swing.JFrame {
 
        guardarProyecto();
        
+       new Inicio().show();
+       dispose();
+       
     }//GEN-LAST:event_botonGuardarMouseClicked
 
+ 
     
     
     public void guardarProyecto(){
@@ -196,7 +209,7 @@ public class RegistrarTesis extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(this, mensaje, "GUARDO PROYECTO CORRECTAMENTE", JOptionPane.INFORMATION_MESSAGE); 
        }catch( Exception e){
            JOptionPane.showMessageDialog(this, e.getMessage() + mensaje, "ERROR AL GUARDAR PROYECTO", JOptionPane.ERROR_MESSAGE); 
-         }
+        }
         
     }
     

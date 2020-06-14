@@ -5,6 +5,11 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoDocentes;
+import Modelo.Docente;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -13,6 +18,10 @@ import javax.swing.JOptionPane;
  */
 public class Login extends javax.swing.JFrame {
 
+    private ArchivoTextoDocentes archivo;
+    private ArrayList<Docente> listadocentes;
+    
+    
     /**
      * Creates new form Login
      */
@@ -170,20 +179,52 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-       
-        String usuario= "Admin";
-        String contraseña= "123";
+        loginAdmin();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
+    public void loginAdmin(){
+        String usuario= "Admin", contraseña= "123";
+   
         if(TxtUsuario.getText().equals(usuario) && TxtContraseña.getText().equals(contraseña)){
             JOptionPane.showMessageDialog(this, "Bienvenido Administrador");
             new Admin2().show();
             dispose();
         }else{
-            JOptionPane.showMessageDialog(this, "Usuario o contraseña incorrecto");
+            loginDocente();
+        }  
+    }
+    public void loginDocente(){
+        boolean contraseñaIncorrecta = false;
+     try{   
+        archivo = new ArchivoTextoDocentes();
+        listadocentes = new ArrayList();
+        listadocentes = archivo.leerArchivo();
+        
+        for(Docente a: listadocentes){
+            if(TxtUsuario.getText().equals(a.getUsuario())&& TxtContraseña.getText().equals(a.getContraseña())){
+               if(a.getCargo().equals("Miembro")){
+                   contraseñaIncorrecta = true;
+                  new ComiteInvestigacion().show(); 
+                  dispose();
+               }else{
+                   if(a.getCargo().equals("Evaluador")){
+                       contraseñaIncorrecta = true;
+                       new DocenteEvaluador().show();
+                   }
+               } 
+            }
         }
-
-    }//GEN-LAST:event_jButton4ActionPerformed
-
+        if(contraseñaIncorrecta==false){
+            JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecta");
+        }
+               
+      }catch(Exception ex){
+          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex); 
+         
+       }   
+    }
+     
+    
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
        Salir();
     }//GEN-LAST:event_jLabel1MouseClicked
