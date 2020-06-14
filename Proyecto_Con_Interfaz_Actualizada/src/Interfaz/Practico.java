@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
 public class Practico extends javax.swing.JFrame {
 
 
-    private RegistrarProyecto registrarPractica;
+   
     private Practicas practica;
     private static Estudiante estudiante;
     private ArchivoTextoProyectos archivoProyecto;
@@ -58,7 +58,7 @@ public class Practico extends javax.swing.JFrame {
         txtNombreEmpresa = new javax.swing.JTextField();
         txtFunciones = new javax.swing.JTextField();
         botonGuardar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        botonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -128,13 +128,18 @@ public class Practico extends javax.swing.JFrame {
         });
         jPanel1.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 660, 100, 30));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        botonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonVolver.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonVolverMouseClicked(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, 50, 30));
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 660, 50, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 640, 698));
 
@@ -145,9 +150,11 @@ public class Practico extends javax.swing.JFrame {
        
         guardarPractica();
         
-        this.estudiante=estudiante;
+   /*     this.estudiante=estudiante;
         archivoProyecto = new ArchivoTextoProyectos();
-        
+        new Inicio().show();
+        dispose();
+        */
     }//GEN-LAST:event_botonGuardarActionPerformed
 
     public Practicas guardarPractica(){
@@ -174,11 +181,11 @@ public class Practico extends javax.swing.JFrame {
         return practica;
     }
     
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
       new Inicio().setVisible(true);
       dispose();
       
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_botonVolverActionPerformed
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(0);
@@ -186,12 +193,24 @@ public class Practico extends javax.swing.JFrame {
 
     private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
        //BOTON GUARDAR, PRACTICA, JENNY
-        guardarCarlos();
+        guardar();
        
     }//GEN-LAST:event_botonGuardarMouseClicked
 
+    private void botonVolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVolverMouseClicked
+        regresar();
+    }//GEN-LAST:event_botonVolverMouseClicked
+  public void regresar(){   
+      
+      
+      
+        //     ****************FALTA BOTON REGRESAR*********
+        
+        
+        
+    }
       //JENNY
-       private void guardarCarlos(){
+       private void guardar(){
            
        propuestaProyecto = new PropuestaProyecto();
        practica =guardarPractica();  
@@ -200,7 +219,9 @@ public class Practico extends javax.swing.JFrame {
        estudiante.setPropuesta(propuestaProyecto);
        
        guardarProyecto();
-   
+       
+       new Inicio().show();
+        dispose();
        
    }
     
@@ -259,7 +280,7 @@ public class Practico extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonGuardar;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

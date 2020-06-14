@@ -47,6 +47,7 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         LabelBotonInicio = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         Escritorio = new javax.swing.JDesktopPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -130,6 +131,11 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
 
         jLabel57.setForeground(new java.awt.Color(255, 255, 255));
         jLabel57.setText("_____________________________________");
+        jLabel57.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel57MouseClicked(evt);
+            }
+        });
         jPanel10.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 230, 20));
 
         LabelProyectoEvaluados.setBackground(new java.awt.Color(255, 255, 255));
@@ -191,6 +197,17 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         jLabel60.setForeground(new java.awt.Color(255, 255, 255));
         jLabel60.setText("_____________________________________");
         jPanel10.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 230, 20));
+
+        jLabel13.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_open_door_20px.png"))); // NOI18N
+        jLabel13.setText("Salir");
+        jLabel13.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+        jPanel10.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 570, 61, -1));
 
         jPanel2.add(jPanel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 600));
 
@@ -295,6 +312,15 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
        proyectoEvaluados(); //LLAMO AQUI
     }//GEN-LAST:event_LabelProyectoEvaluadosMouseClicked
 
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        new Login().show();
+        dispose();
+    }//GEN-LAST:event_jLabel13MouseClicked
+
+    private void jLabel57MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel57MouseClicked
+
     //AGREGRE ESTOD DOS METODOS DONDE LLAMA INTERFAZ, JENNY
     
     public void listaDocente(){
@@ -365,15 +391,7 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JLabel LabelBotonInicio;
     private javax.swing.JPanel LabelProyectoEvaluados;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
@@ -381,70 +399,16 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
-    private javax.swing.JLabel jLabel44;
-    private javax.swing.JLabel jLabel45;
-    private javax.swing.JLabel jLabel46;
-    private javax.swing.JLabel jLabel47;
-    private javax.swing.JLabel jLabel48;
-    private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel50;
-    private javax.swing.JLabel jLabel51;
-    private javax.swing.JLabel jLabel52;
-    private javax.swing.JLabel jLabel53;
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel16;
-    private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel5Admin;
-    private javax.swing.JPanel jPanel5Admin1;
-    private javax.swing.JPanel jPanel5Admin2;
-    private javax.swing.JPanel jPanel5Admin3;
-    private javax.swing.JPanel jPanel5Admin4;
-    private javax.swing.JPanel jPanel5Admin5;
-    private javax.swing.JPanel jPanel5Admin6;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanelDocenteAsignado;
-    private javax.swing.JPanel jPanelListaProyecto;
-    private javax.swing.JPanel jPanelListaProyecto1;
-    private javax.swing.JPanel jPanelListaProyecto2;
-    private javax.swing.JPanel jPanelListaProyecto3;
-    private javax.swing.JPanel jPanelListaProyecto4;
-    private javax.swing.JPanel jPanelListaProyecto5;
-    private javax.swing.JPanel jPanelListaProyecto6;
     private javax.swing.JPanel jPanelListaProyecto8;
     private javax.swing.JPanel jPanelProyectoAcetado;
     // End of variables declaration//GEN-END:variables

@@ -5,17 +5,51 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoDocentes;
+import Datos.ArchivoTextoProyectos;
+import Modelo.Docente;
+import Modelo.Estudiante;
+import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author zarel
  */
 public class VerDatosTesis extends javax.swing.JFrame {
 
+    private int radicado;
+    private ArrayList<Estudiante> listaEstudiante;
+    private ArchivoTextoProyectos  archivoProyectos;
+    private ArchivoTextoDocentes archivoDocente;
+    private ArrayList<Docente> listadocentes ;
     /**
      * Creates new form VerDatos
      */
-    public VerDatosTesis() {
+    
+    public VerDatosTesis(){
+        
+     initComponents();
+    }
+    
+    public VerDatosTesis(int radicado) {
         initComponents();
+        this.radicado=radicado;
+        try {
+            
+            listaEstudiante = new ArrayList();
+            archivoProyectos = new ArchivoTextoProyectos();
+            listaEstudiante = archivoProyectos.leerArchivo();
+            listadocentes = new ArrayList();
+            archivoDocente = new ArchivoTextoDocentes();
+            listadocentes = archivoDocente.leerArchivo();
+            
+            llenarDatos();
+            
+         } catch (Exception ex) {
+         Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -37,7 +71,7 @@ public class VerDatosTesis extends javax.swing.JFrame {
         jTextField20 = new javax.swing.JTextField();
         jLabel48 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto = new javax.swing.JTextArea();
+        txtCorreccionProyecto = new javax.swing.JTextArea();
         jLabel49 = new javax.swing.JLabel();
         jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
@@ -61,27 +95,24 @@ public class VerDatosTesis extends javax.swing.JFrame {
         jLabel55 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel38 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        ComboEstado = new javax.swing.JComboBox<>();
-        jLabel12 = new javax.swing.JLabel();
+        labelNombre = new javax.swing.JLabel();
+        labelApellido = new javax.swing.JLabel();
+        labelCedula = new javax.swing.JLabel();
+        labelCelular = new javax.swing.JLabel();
+        labelNomProyecto = new javax.swing.JLabel();
+        labelTiempoEjecucion = new javax.swing.JLabel();
+        labelLinea = new javax.swing.JLabel();
+        labelSubLinea = new javax.swing.JLabel();
+        labelModalidad = new javax.swing.JLabel();
+        comboEvaluador2 = new javax.swing.JComboBox<>();
+        labelDocente = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
-        ComboEstado1 = new javax.swing.JComboBox<>();
-        ComboEstado2 = new javax.swing.JComboBox<>();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto1 = new javax.swing.JTextArea();
+        comboEstado = new javax.swing.JComboBox<>();
+        comboEvaluador1 = new javax.swing.JComboBox<>();
         jScrollPane9 = new javax.swing.JScrollPane();
-        txtDescripcionProyecto5 = new javax.swing.JTextArea();
+        txtConceptoProyecto = new javax.swing.JTextArea();
         jPanel16 = new javax.swing.JPanel();
         jLabel64 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
@@ -116,11 +147,12 @@ public class VerDatosTesis extends javax.swing.JFrame {
         txtDescripcionProyecto10 = new javax.swing.JTextArea();
         jScrollPane15 = new javax.swing.JScrollPane();
         txtDescripcionProyecto11 = new javax.swing.JTextArea();
-        jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
+        labelJustificacion = new javax.swing.JLabel();
+        labelPlanteamientoProblema = new javax.swing.JLabel();
+        labelObjGeneral = new javax.swing.JLabel();
+        labelObjEspecifico = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JLabel();
+        labelDescripcion = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -163,9 +195,9 @@ public class VerDatosTesis extends javax.swing.JFrame {
         jLabel48.setText("Evaluador 2: ");
         jPanel11.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 510, 90, 40));
 
-        txtDescripcionProyecto.setColumns(20);
-        txtDescripcionProyecto.setRows(5);
-        jScrollPane4.setViewportView(txtDescripcionProyecto);
+        txtCorreccionProyecto.setColumns(20);
+        txtCorreccionProyecto.setRows(5);
+        jScrollPane4.setViewportView(txtCorreccionProyecto);
 
         jPanel11.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1580, 400, 200));
 
@@ -175,7 +207,7 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
         jLabel50.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel50.setText("Modalidad de grado");
-        jPanel11.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 360, 160, 40));
+        jPanel11.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 350, 170, 40));
 
         jLabel51.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel51.setText("Linea de Investigación:");
@@ -183,7 +215,7 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
         jLabel52.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel52.setText("Sub-linea de Investigación:");
-        jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 180, 40));
+        jPanel11.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 280, 170, 40));
 
         jPanel10.setBackground(new java.awt.Color(0, 153, 0));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -276,41 +308,30 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel38.setText("Nombre del Proyecto:");
-        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 160, 40));
-        jPanel11.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 200, 40));
+        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 160, 40));
+        jPanel11.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 40));
+        jPanel11.add(labelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, 40));
+        jPanel11.add(labelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, 40));
+        jPanel11.add(labelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, 40));
 
-        jLabel3.setText(".");
-        jPanel11.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 40));
+        labelNomProyecto.setText(".");
+        jPanel11.add(labelNomProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 200, 40));
 
-        jLabel4.setText(".");
-        jPanel11.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, 40));
+        labelTiempoEjecucion.setText(".");
+        jPanel11.add(labelTiempoEjecucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 200, 40));
 
-        jLabel5.setText(".");
-        jPanel11.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, 40));
+        labelLinea.setText(".");
+        jPanel11.add(labelLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 200, 40));
 
-        jLabel6.setText(".");
-        jPanel11.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, 40));
+        labelSubLinea.setText(".");
+        jPanel11.add(labelSubLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 200, 40));
 
-        jLabel7.setText(".");
-        jPanel11.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 200, 40));
+        labelModalidad.setText(".");
+        jPanel11.add(labelModalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 190, 40));
 
-        jLabel8.setText(".");
-        jPanel11.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 200, 40));
-
-        jLabel9.setText(".");
-        jPanel11.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 200, 40));
-
-        jLabel10.setText(".");
-        jPanel11.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 200, 40));
-
-        jLabel11.setText(".");
-        jPanel11.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 200, 40));
-
-        ComboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
-        jPanel11.add(ComboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 150, 40));
-
-        jLabel12.setText(".");
-        jPanel11.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 40));
+        comboEvaluador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
+        jPanel11.add(comboEvaluador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 150, 40));
+        jPanel11.add(labelDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 40));
 
         jLabel57.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel57.setText("Documento");
@@ -324,21 +345,15 @@ public class VerDatosTesis extends javax.swing.JFrame {
         jLabel59.setText("Evaluador 1: ");
         jPanel11.add(jLabel59, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 440, 90, 40));
 
-        ComboEstado1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE" }));
-        jPanel11.add(ComboEstado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 150, 40));
+        comboEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PENDIENTE" }));
+        jPanel11.add(comboEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 150, 40));
 
-        ComboEstado2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
-        jPanel11.add(ComboEstado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 150, 40));
+        comboEvaluador1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
+        jPanel11.add(comboEvaluador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 440, 150, 40));
 
-        txtDescripcionProyecto1.setColumns(20);
-        txtDescripcionProyecto1.setRows(5);
-        jScrollPane5.setViewportView(txtDescripcionProyecto1);
-
-        jPanel11.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 650, 930, 160));
-
-        txtDescripcionProyecto5.setColumns(20);
-        txtDescripcionProyecto5.setRows(5);
-        jScrollPane9.setViewportView(txtDescripcionProyecto5);
+        txtConceptoProyecto.setColumns(20);
+        txtConceptoProyecto.setRows(5);
+        jScrollPane9.setViewportView(txtConceptoProyecto);
 
         jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 1580, 400, 200));
 
@@ -493,21 +508,21 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
         jPanel11.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1530, 400, 40));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel16.setText("Tesis");
-        jPanel11.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1390, 920, 110));
+        labelJustificacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelJustificacion.setText("Tesis");
+        jPanel11.add(labelJustificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1390, 920, 110));
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setText("Tesis");
-        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 930, 920, 110));
+        labelPlanteamientoProblema.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelPlanteamientoProblema.setText("Tesis");
+        jPanel11.add(labelPlanteamientoProblema, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 930, 920, 110));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setText("Tesis");
-        jPanel11.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1070, 920, 110));
+        labelObjGeneral.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelObjGeneral.setText("Tesis");
+        jPanel11.add(labelObjGeneral, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1070, 920, 110));
 
-        jLabel19.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel19.setText("Tesis");
-        jPanel11.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1230, 920, 110));
+        labelObjEspecifico.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        labelObjEspecifico.setText("Tesis");
+        jPanel11.add(labelObjEspecifico, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 1230, 920, 110));
 
         BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
@@ -519,6 +534,9 @@ public class VerDatosTesis extends javax.swing.JFrame {
             }
         });
         jPanel11.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 1800, 100, 30));
+
+        labelDescripcion.setText("Descripcion");
+        jPanel11.add(labelDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 930, 170));
 
         jScrollPane1.setViewportView(jPanel11);
 
@@ -555,6 +573,48 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BotonGuardarMouseClicked
 
+    public void llenarDatos(){
+        
+        for(Estudiante a: listaEstudiante){
+              
+            if(this.radicado == a.getPropuesta().getRadicado()){
+               
+                labelNombre.setText(a.getNombre());
+                labelApellido.setText(a.getApellido());
+                labelCedula.setText(a.getCedula());
+                labelCelular.setText(a.getCelular());
+                labelDocente.setText(a.getPropuesta().getDocenteAux());
+                labelNomProyecto.setText(a.getPropuesta().getNombreP());
+                labelTiempoEjecucion.setText(a.getPropuesta().getTiempoEjeP());
+                labelLinea.setText(a.getPropuesta().getLineaInvesti());
+                labelSubLinea.setText(a.getPropuesta().getSubLineaInvesti());
+                labelModalidad.setText(a.getPropuesta().getTipoProyecto());
+                labelDescripcion.setText(a.getPropuesta().getDescripcion());
+                labelPlanteamientoProblema.setText(a.getPropuesta().getTesis().getPlanteamientoproblema());
+                labelObjGeneral.setText(a.getPropuesta().getTesis().getObjGeneral());
+                labelObjEspecifico.setText(a.getPropuesta().getTesis().getObjEspecifico());
+                labelJustificacion.setText(a.getPropuesta().getTesis().getJustificacion());
+            }
+        }
+        
+        for (Docente e: listadocentes){
+            if(labelLinea.getText().toString().equals(e.getLinea())){
+                comboEvaluador1.addItem(e.getNombre()+" "+e.getApellido());
+            }
+        }
+        
+        for (Docente e: listadocentes){
+            if(labelLinea.getText().toString().equals(e.getLinea())){
+                comboEvaluador2.addItem(e.getNombre()+" "+e.getApellido());
+            }
+        }
+        
+        comboEstado.addItem("Aceptado");
+        comboEstado.addItem("Rechazado");
+        
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -595,32 +655,21 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonGuardar;
-    private javax.swing.JComboBox<String> ComboEstado;
-    private javax.swing.JComboBox<String> ComboEstado1;
-    private javax.swing.JComboBox<String> ComboEstado2;
+    private javax.swing.JComboBox<String> comboEstado;
+    private javax.swing.JComboBox<String> comboEvaluador1;
+    private javax.swing.JComboBox<String> comboEvaluador2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel47;
     private javax.swing.JLabel jLabel48;
     private javax.swing.JLabel jLabel49;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel51;
     private javax.swing.JLabel jLabel52;
@@ -631,7 +680,6 @@ public class VerDatosTesis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
@@ -641,12 +689,9 @@ public class VerDatosTesis extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel67;
     private javax.swing.JLabel jLabel68;
     private javax.swing.JLabel jLabel69;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -670,20 +715,33 @@ public class VerDatosTesis extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField20;
-    private javax.swing.JTextArea txtDescripcionProyecto;
-    private javax.swing.JTextArea txtDescripcionProyecto1;
+    private javax.swing.JLabel labelApellido;
+    private javax.swing.JLabel labelCedula;
+    private javax.swing.JLabel labelCelular;
+    private javax.swing.JLabel labelDescripcion;
+    private javax.swing.JLabel labelDocente;
+    private javax.swing.JLabel labelJustificacion;
+    private javax.swing.JLabel labelLinea;
+    private javax.swing.JLabel labelModalidad;
+    private javax.swing.JLabel labelNomProyecto;
+    private javax.swing.JLabel labelNombre;
+    private javax.swing.JLabel labelObjEspecifico;
+    private javax.swing.JLabel labelObjGeneral;
+    private javax.swing.JLabel labelPlanteamientoProblema;
+    private javax.swing.JLabel labelSubLinea;
+    private javax.swing.JLabel labelTiempoEjecucion;
+    private javax.swing.JTextArea txtConceptoProyecto;
+    private javax.swing.JTextArea txtCorreccionProyecto;
     private javax.swing.JTextArea txtDescripcionProyecto10;
     private javax.swing.JTextArea txtDescripcionProyecto11;
     private javax.swing.JTextArea txtDescripcionProyecto2;
     private javax.swing.JTextArea txtDescripcionProyecto3;
     private javax.swing.JTextArea txtDescripcionProyecto4;
-    private javax.swing.JTextArea txtDescripcionProyecto5;
     private javax.swing.JTextArea txtDescripcionProyecto6;
     private javax.swing.JTextArea txtDescripcionProyecto7;
     private javax.swing.JTextArea txtDescripcionProyecto8;

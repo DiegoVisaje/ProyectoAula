@@ -57,9 +57,9 @@ public class Estudiante extends Persona{
     
     public String formaArchivo(){
         String mensaje =   propuesta.getRadicado()+";"+super.getNombre()+";"+super.getApellido()+";"+super.getCedula()+";"+celular+";"+propuesta.getNombreP()+";"+
-               propuesta.getTiempoEjeP()+";"+propuesta.getLineaInvesti()+";"+propuesta.getSubLineaInvesti()+";"+
-               propuesta.getDescripcion()+";"+propuesta.getDocenteAux()+";"+propuesta.getTipoProyecto()+";"+propuesta.getEstado()+";"+
-               propuesta.getCorreciones()+";"+propuesta.getConcepto()+";"+propuesta.getEvaluador1()+";"+propuesta.getEvaluador2();
+           propuesta.getTiempoEjeP()+";"+propuesta.getLineaInvesti()+";"+propuesta.getSubLineaInvesti()+";"+
+           propuesta.getDescripcion()+";"+propuesta.getDocenteAux()+";"+propuesta.getTipoProyecto()+";"+propuesta.getEstado()+";"+
+           propuesta.getCorreciones()+";"+propuesta.getConcepto()+";"+propuesta.getEvaluador1()+";"+propuesta.getEvaluador2();
         
         if(propuesta.getTipoProyecto().equals("Tesis")){
            return mensaje + ";"+ propuesta.getTesis().getPlanteamientoproblema()+";"+

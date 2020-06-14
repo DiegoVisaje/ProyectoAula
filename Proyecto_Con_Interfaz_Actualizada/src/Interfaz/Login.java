@@ -205,6 +205,7 @@ public class Login extends javax.swing.JFrame {
                if(a.getCargo().equals("Miembro")){
                    contraseñaIncorrecta = true;
                   new ComiteInvestigacion().show(); 
+                  dispose();
                }else{
                    if(a.getCargo().equals("Evaluador")){
                        contraseñaIncorrecta = true;

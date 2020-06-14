@@ -28,6 +28,7 @@ public class ArchivoTextoProyectos {
     private File archivo;
     private FileWriter aEsc;  // abre archivo para escritura
     private Scanner aLect; // abre archivo en modo lectura
+    Estudiante estudiante;
     PropuestaProyecto propuesta;
     Tesis tesis;
     Practicas practica;
@@ -74,14 +75,15 @@ public class ArchivoTextoProyectos {
        
         try {
             ArrayList<Estudiante> listaEstudiante = new ArrayList();
-            propuesta = new PropuestaProyecto();
+            
            
             this.aLect = new Scanner(this.archivo);
             while(this.aLect.hasNext()){
                 String datos[] = this.aLect.nextLine().split(";");
-                Estudiante estudiante = new Estudiante();
+                estudiante = new Estudiante();
+                propuesta = new PropuestaProyecto();
                 
-                propuesta.setRadicado(0);
+                propuesta.setRadicado(Integer.parseInt(datos[0]));
                 estudiante.setNombre(datos[1]);
                 estudiante.setApellido(datos[2]);
                 estudiante.setCedula(datos[3]);

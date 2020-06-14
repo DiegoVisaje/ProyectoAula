@@ -10,6 +10,7 @@ import Modelo.Estudiante;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -20,6 +21,9 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
         
     private ArrayList<Estudiante> listaEstudiante;
     private ArchivoTextoProyectos  archivo;
+    private int radicado;
+    private String tipoProyecto;
+   
     /**
      * Creates new form ListaProyectos
      */
@@ -56,7 +60,7 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaListaProyecto = new javax.swing.JTable();
         BotonBuscar = new javax.swing.JLabel();
-        jLabel54 = new javax.swing.JLabel();
+        botonVerDatos = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -81,6 +85,11 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
         LabelBuscar.setBorder(null);
         jPanel2.add(LabelBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
+        TablaListaProyecto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TablaListaProyectoMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TablaListaProyecto);
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 640, 380));
@@ -90,11 +99,16 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
         BotonBuscar.setText("buscar");
         jPanel2.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
 
-        jLabel54.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel54.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_20px_1.png"))); // NOI18N
-        jLabel54.setText("Ver datos");
-        jLabel54.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 51)));
-        jPanel2.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 110, 40));
+        botonVerDatos.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        botonVerDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_20px_1.png"))); // NOI18N
+        botonVerDatos.setText("Ver datos");
+        botonVerDatos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 51)));
+        botonVerDatos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonVerDatosMouseClicked(evt);
+            }
+        });
+        jPanel2.add(botonVerDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 440, 110, 40));
 
         jPanel5.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 660, 490));
 
@@ -124,6 +138,25 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void TablaListaProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaListaProyectoMouseClicked
+        obtenerRadicado();
+        
+    }//GEN-LAST:event_TablaListaProyectoMouseClicked
+
+    private void botonVerDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonVerDatosMouseClicked
+        verInterfaz();
+    }//GEN-LAST:event_botonVerDatosMouseClicked
+
+    public void verInterfaz(){
+        if(tipoProyecto.equals("Tesis")){
+            new VerDatosTesis(radicado).show();
+            dispose();
+            
+        }else{
+            new VerDatosPractica().show();
+            dispose();
+        }
+    }
     
     public void BotonRegresar(){
        new DocenteEvaluador().show();
@@ -131,26 +164,36 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
     }
     
     public void llenarTabla(){
-        String titulos[]={"Cedula", "Nombre Proyecto","Linea", "Tipo Proyecto"};
+        String titulos[]={"Radicado","Cedula", "Nombre Proyecto","Linea", "Tipo Proyecto"};
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos); 
         
         for(Estudiante a: listaEstudiante){
-            Object datos[]={a.getCedula(),a.getPropuesta().getNombreP(),a.getPropuesta().getLineaInvesti(),a.getPropuesta().getTipoProyecto()};
-           ModeloTabla.addRow(datos);
+            if(a.getPropuesta().getEstado().equals("Pendiente")){
+                Object datos[]={a.getPropuesta().getRadicado(),a.getCedula(),a.getPropuesta().getNombreP(),a.getPropuesta().getLineaInvesti(),a.getPropuesta().getTipoProyecto()};
+                ModeloTabla.addRow(datos);
+            }
         }
         TablaListaProyecto.setModel(ModeloTabla);
         
     }
+    
+    public void obtenerRadicado(){
+        radicado = Integer.parseInt(TablaListaProyecto.getValueAt(TablaListaProyecto.getSelectedRow(), 0).toString());
+        tipoProyecto = TablaListaProyecto.getValueAt(TablaListaProyecto.getSelectedRow(), 4).toString();
+       
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonBuscar;
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JTextField LabelBuscar;
     private javax.swing.JTable TablaListaProyecto;
+    private javax.swing.JLabel botonVerDatos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel54;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;

@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author zarel
  */
-public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
+public class RegistrarDocentes extends javax.swing.JInternalFrame {
  
     private Docente docente;
     private ArrayList<Docente> listadocentes = new ArrayList<Docente>();
@@ -37,7 +37,7 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     /**
      * Creates new form CrearUsuarioDocente
      */
-    public CrearUsuarioDocente() {
+    public RegistrarDocentes() {
         initComponents();
   
         try {
