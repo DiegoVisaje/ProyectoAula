@@ -21,7 +21,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author zarel
  */
-public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
+public class RegistrarDocente extends javax.swing.JInternalFrame {
  
     private Docente docente;
     private ArrayList<Docente> listadocentes = new ArrayList<Docente>();
@@ -37,16 +37,17 @@ public class CrearUsuarioDocente extends javax.swing.JInternalFrame {
     /**
      * Creates new form CrearUsuarioDocente
      */
-    public CrearUsuarioDocente() {
+    public RegistrarDocente() {
         initComponents();
   
         try {
-       
+            
+        cargos();
         listaLineas = archivoTexto.leerArchivo();
         listaLineas();
         listadocentes = archivoTextoDocente.leerArchivo();
         mostrarTabla();
-        cargos();
+      
         
         } catch (Exception ex) {
          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);

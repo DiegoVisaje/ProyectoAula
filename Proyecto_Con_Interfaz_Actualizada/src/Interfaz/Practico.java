@@ -209,8 +209,7 @@ public class Practico extends javax.swing.JFrame {
         String mensaje=".";
         
         try{
-           
-        mensaje = archivoProyecto.Guardar(estudiante);
+          mensaje = archivoProyecto.Guardar(estudiante);
            JOptionPane.showMessageDialog(this, mensaje,"GUARDO PROYECTO", JOptionPane.INFORMATION_MESSAGE); 
        }catch( Exception e){
            JOptionPane.showMessageDialog(this, e.getMessage() + mensaje, "ERROR AL GUARDAR PROYECTO", JOptionPane.ERROR_MESSAGE); 

@@ -325,7 +325,7 @@ public class Admin2 extends javax.swing.JFrame {
     
     private void jPanelRegistrarDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseClicked
         
-        CrearUsuarioDocente cu = new CrearUsuarioDocente();
+        RegistrarDocente cu = new RegistrarDocente();
           escritorio.add(cu);
           cu.show();
           
@@ -337,7 +337,7 @@ public class Admin2 extends javax.swing.JFrame {
 
     public void crearDocente(){
         
-        CrearUsuarioDocente crearDocente = new CrearUsuarioDocente();
+        RegistrarDocente crearDocente = new RegistrarDocente();
         escritorio.add(crearDocente);
         crearDocente.show();
         

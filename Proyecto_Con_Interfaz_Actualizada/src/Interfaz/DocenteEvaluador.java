@@ -11,6 +11,9 @@ package Interfaz;
  */
 public class DocenteEvaluador extends javax.swing.JInternalFrame {
 
+    
+    
+    
     /**
      * Creates new form DocenteEvaluador
      */
