@@ -32,6 +32,7 @@ public class ArchivoTextoDocentes {
      public ArchivoTextoDocentes() {
    
         this("Docentes.txt");
+        
     }
      
       public boolean Guardar (Docente docente) throws Exception{
@@ -137,6 +138,5 @@ public class ArchivoTextoDocentes {
              this.aEsc.close();    
        }
     }
-
-    
+ 
 }
