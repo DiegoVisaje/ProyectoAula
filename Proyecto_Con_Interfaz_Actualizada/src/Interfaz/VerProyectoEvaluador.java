@@ -79,20 +79,23 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
 
         BotonRechazado.setBackground(new java.awt.Color(255, 255, 255));
         BotonRechazado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BotonRechazado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_cancel_20px.png"))); // NOI18N
         BotonRechazado.setText("Rechazar");
         BotonRechazado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         jPanel1.add(BotonRechazado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 100, 30));
 
         BotonVerDatos.setBackground(new java.awt.Color(255, 255, 255));
         BotonVerDatos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BotonVerDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_20px_1.png"))); // NOI18N
         BotonVerDatos.setText("Ver datos");
         BotonVerDatos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
         jPanel1.add(BotonVerDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 100, 30));
 
-        BotonAceptados.setBackground(new java.awt.Color(0, 102, 255));
+        BotonAceptados.setBackground(new java.awt.Color(255, 255, 255));
         BotonAceptados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        BotonAceptados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_checked_20px.png"))); // NOI18N
         BotonAceptados.setText("Aceptados");
-        BotonAceptados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 51, 204)));
+        BotonAceptados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
         jPanel1.add(BotonAceptados, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 100, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 640, 480));

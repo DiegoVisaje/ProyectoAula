@@ -41,7 +41,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         LabelProyectoEvaluados = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         LabelBotonInicio = new javax.swing.JLabel();
@@ -154,9 +153,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         LabelProyectoEvaluados.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
         jPanel10.add(LabelProyectoEvaluados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 220, 40));
-
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_multiply_30px.png"))); // NOI18N
-        jPanel10.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, -1));
 
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
         jLabel59.setText("_____________________________________");
@@ -392,7 +388,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private javax.swing.JLabel LabelBotonInicio;
     private javax.swing.JPanel LabelProyectoEvaluados;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
