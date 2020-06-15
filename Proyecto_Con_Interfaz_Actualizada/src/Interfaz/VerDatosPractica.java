@@ -602,7 +602,7 @@ public class VerDatosPractica extends javax.swing.JFrame {
     public void llenarDatos(){
         
          for(Estudiante a: listaEstudiante){
-              
+             
             if(this.radicado == a.getPropuesta().getRadicado()){
                
                 labelNombre.setText(a.getNombre());
