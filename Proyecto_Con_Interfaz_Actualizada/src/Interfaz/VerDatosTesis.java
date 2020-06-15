@@ -9,9 +9,11 @@ import Datos.ArchivoTextoDocentes;
 import Datos.ArchivoTextoProyectos;
 import Modelo.Docente;
 import Modelo.Estudiante;
+import Modelo.PropuestaProyecto;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -24,6 +26,8 @@ public class VerDatosTesis extends javax.swing.JFrame {
     private ArchivoTextoProyectos  archivoProyectos;
     private ArchivoTextoDocentes archivoDocente;
     private ArrayList<Docente> listadocentes ;
+    private Estudiante estudiante;
+    private PropuestaProyecto propuesta;
     /**
      * Creates new form VerDatos
      */
@@ -570,9 +574,35 @@ public class VerDatosTesis extends javax.swing.JFrame {
 
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
 
-
+        guardarCambios();
+        
     }//GEN-LAST:event_BotonGuardarMouseClicked
 
+    public void guardarCambios(){
+        try{
+        estudiante = new Estudiante();
+        propuesta = new PropuestaProyecto();
+                
+        for(Estudiante a: listaEstudiante){
+            if(this.radicado == a.getPropuesta().getRadicado()){
+                estudiante = a;
+                propuesta = a.getPropuesta();
+            }
+        }
+        
+        propuesta.setEstado(comboEstado.getSelectedItem().toString());
+        propuesta.setEvaluador1(comboEvaluador1.getSelectedItem().toString());
+        propuesta.setEvaluador2(comboEvaluador2.getSelectedItem().toString());
+        propuesta.setConcepto(txtConceptoProyecto.getText());
+        propuesta.setCorreciones(txtCorreccionProyecto.getText());
+      
+        estudiante.setPropuesta(propuesta);
+        archivoProyectos.modificar(estudiante, this.radicado);
+        }catch(Exception ae){
+            JOptionPane.showMessageDialog(this, ae, "Error modificar Tesis", JOptionPane.ERROR_MESSAGE); 
+        }
+    }
+    
     public void llenarDatos(){
         
         for(Estudiante a: listaEstudiante){

@@ -9,9 +9,11 @@ import Datos.ArchivoTextoDocentes;
 import Datos.ArchivoTextoProyectos;
 import Modelo.Docente;
 import Modelo.Estudiante;
+import Modelo.PropuestaProyecto;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +25,8 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private ArchivoTextoProyectos  archivoProyectos;
     private ArchivoTextoDocentes archivoDocente;
     private ArrayList<Docente> listadocentes ;
+     private Estudiante estudiante;
+    private PropuestaProyecto propuesta;
     
     /**
      * Creates new form VerDatosPractica
@@ -226,8 +230,8 @@ public class VerDatosPractica extends javax.swing.JFrame {
         jLabel53.setBackground(new java.awt.Color(255, 255, 255));
         jLabel53.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel53.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel53.setText("Datos de la tesis ");
-        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 204, 40));
+        jLabel53.setText("Datos de la practica");
+        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 204, 40));
 
         jPanel13.setBackground(new java.awt.Color(0, 153, 0));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -534,7 +538,7 @@ public class VerDatosPractica extends javax.swing.JFrame {
 
         jLabel17.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel17.setText("Area de Trabajo:");
-        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1070, 120, 50));
+        jPanel11.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 1080, 120, 40));
 
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel1.setText("Funciones a Realizar:");
@@ -596,9 +600,34 @@ public class VerDatosPractica extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel56jLabel40MouseClicked
 
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
-
+         guardarCambios();
     }//GEN-LAST:event_BotonGuardarMouseClicked
 
+     public void guardarCambios(){
+        try{
+        estudiante = new Estudiante();
+        propuesta = new PropuestaProyecto();
+                
+        for(Estudiante a: listaEstudiante){
+            if(this.radicado == a.getPropuesta().getRadicado()){
+                estudiante = a;
+                propuesta = a.getPropuesta();
+            }
+        }
+        
+        propuesta.setEstado(comboEstado.getSelectedItem().toString());
+        propuesta.setEvaluador1(comboEvaluador1.getSelectedItem().toString());
+        propuesta.setEvaluador2(comboEvaluador2.getSelectedItem().toString());
+        propuesta.setConcepto(txtConceptoProyecto.getText());
+        propuesta.setCorreciones(txtCorreccionProyecto.getText());
+      
+        estudiante.setPropuesta(propuesta);
+        archivoProyectos.modificar(estudiante, this.radicado);
+        }catch(Exception ae){
+            JOptionPane.showMessageDialog(this, ae, "Error modificar Practica", JOptionPane.ERROR_MESSAGE); 
+        }
+    }
+    
     public void llenarDatos(){
         
          for(Estudiante a: listaEstudiante){

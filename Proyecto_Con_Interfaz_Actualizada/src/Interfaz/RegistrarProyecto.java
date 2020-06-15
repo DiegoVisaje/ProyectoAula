@@ -480,13 +480,13 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
             new RegistrarTesis(estudiante).show();
             dispose();
             
-          //  archivoProyecto.Guardar(estudiante); 
+          
             
             }else if(ComboModalidadGrado.getSelectedItem().equals("Practicas")){
             new Practico(estudiante).show();
             dispose();
            
-           // archivoProyecto.Guardar(estudiante); 
+            
             
         }
           

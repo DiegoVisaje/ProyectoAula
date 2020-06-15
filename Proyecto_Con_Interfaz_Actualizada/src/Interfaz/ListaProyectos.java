@@ -153,7 +153,8 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
             dispose();
             
         }else{
-            new VerDatosPractica().show();
+            if(tipoProyecto.equals("Practicas"))
+            new VerDatosPractica(radicado).show();
             dispose();
         }
     }
