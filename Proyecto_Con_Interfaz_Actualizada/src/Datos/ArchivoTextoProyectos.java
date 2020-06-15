@@ -129,6 +129,35 @@ public class ArchivoTextoProyectos {
            throw new Exception("Error al abrir archivo para lectura");   
         }
   }
-    
+      
+      public String modificar(Estudiante estudiante, int radicado)throws Exception{
+      
+        this.aEsc =null;
+       
+       try{
+           
+         ArrayList<Estudiante> listaEstudiante = new ArrayList();
+         listaEstudiante = leerArchivo(); 
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(Estudiante a: listaEstudiante){
+           
+            if(a.getPropuesta().getRadicado()!=radicado){
+             pw.println(a.formaArchivo());
+            }else{
+             
+              pw.println(estudiante.formaArchivo());
+            }
+         }
+           return "EL ARCHIVO FUE MODIFICADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+          
+      }
 }
- 

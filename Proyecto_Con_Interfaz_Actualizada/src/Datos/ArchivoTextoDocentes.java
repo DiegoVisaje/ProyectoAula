@@ -101,7 +101,7 @@ public class ArchivoTextoDocentes {
               pw.println(docente.formaArchivo());
              }
          }
-           return "EL ARCHIVO FUE ELIMINADO";
+           return "EL ARCHIVO FUE MODIFICADO";
        }catch(IOException ioe){
           throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
        } 

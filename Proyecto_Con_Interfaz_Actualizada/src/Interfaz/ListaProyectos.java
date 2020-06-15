@@ -153,7 +153,8 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
             dispose();
             
         }else{
-            new VerDatosPractica().show();
+            if(tipoProyecto.equals("Practicas"))
+            new VerDatosPractica(radicado).show();
             dispose();
         }
     }
@@ -164,12 +165,12 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
     }
     
     public void llenarTabla(){
-        String titulos[]={"Radicado","Cedula", "Nombre Proyecto","Linea", "Tipo Proyecto"};
+        String titulos[]={"RADICADO","CEDULA", "NOMBRE PROYECTO","LINEA", "TIPO PROYECTO"};
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos); 
         
         for(Estudiante a: listaEstudiante){
-            if(a.getPropuesta().getEstado().equals("Pendiente")){
+            if(a.getPropuesta().getEstado().equals("PENDIENTE")){
                 Object datos[]={a.getPropuesta().getRadicado(),a.getCedula(),a.getPropuesta().getNombreP(),a.getPropuesta().getLineaInvesti(),a.getPropuesta().getTipoProyecto()};
                 ModeloTabla.addRow(datos);
             }
