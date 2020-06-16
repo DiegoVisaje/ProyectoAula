@@ -160,6 +160,20 @@ public class VerDatosPractica extends javax.swing.JFrame {
         labelTelefonoEmp = new javax.swing.JLabel();
         labelRepresentanteEmp = new javax.swing.JLabel();
         labelDescripcion = new javax.swing.JLabel();
+        jPanel25 = new javax.swing.JPanel();
+        jLabel73 = new javax.swing.JLabel();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel74 = new javax.swing.JLabel();
+        jScrollPane16 = new javax.swing.JScrollPane();
+        txtDescripcionProyecto12 = new javax.swing.JTextArea();
+        jPanel27 = new javax.swing.JPanel();
+        jLabel75 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel76 = new javax.swing.JLabel();
+        jScrollPane17 = new javax.swing.JScrollPane();
+        txtDescripcionProyecto13 = new javax.swing.JTextArea();
+        jScrollPane18 = new javax.swing.JScrollPane();
+        txtDescripcionProyecto14 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -171,7 +185,7 @@ public class VerDatosPractica extends javax.swing.JFrame {
 
         jLabel37.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel37.setText("Nombre:");
-        jPanel11.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 90, 40));
+        jPanel11.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 90, 40));
 
         jLabel39.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel39.setText("Apellido:");
@@ -315,39 +329,19 @@ public class VerDatosPractica extends javax.swing.JFrame {
 
         jLabel38.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
         jLabel38.setText("Nombre del Proyecto:");
-        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 50, 160, 40));
-
-        labelNombre.setText(".");
+        jPanel11.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 60, 160, 40));
         jPanel11.add(labelNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 200, 40));
-
-        labelApellido.setText(".");
         jPanel11.add(labelApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 200, 40));
-
-        labelCedula.setText(".");
         jPanel11.add(labelCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 200, 40));
-
-        labelCelular.setText(".");
         jPanel11.add(labelCelular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 200, 40));
-
-        labelNombreProyecto.setText(".");
         jPanel11.add(labelNombreProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 60, 200, 40));
-
-        labelTiempoEjecucion.setText(".");
         jPanel11.add(labelTiempoEjecucion, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 200, 40));
-
-        labelLinea.setText(".");
         jPanel11.add(labelLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 200, 200, 40));
-
-        labelSublinea.setText(".");
         jPanel11.add(labelSublinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 280, 200, 40));
-
-        labelModalidad.setText(".");
         jPanel11.add(labelModalidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 350, 200, 40));
 
         comboEvaluador2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
         jPanel11.add(comboEvaluador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 510, 150, 40));
-
-        labelDocente.setText(".");
         jPanel11.add(labelDocente, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 200, 40));
 
         jLabel57.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
@@ -571,6 +565,68 @@ public class VerDatosPractica extends javax.swing.JFrame {
         labelDescripcion.setText("Descripcion");
         jPanel11.add(labelDescripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 640, 930, 180));
 
+        jPanel25.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel73.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel73.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel73.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel73.setText("Correción del proyecto");
+        jPanel25.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, 204, 40));
+
+        jPanel26.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel74.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel74.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel74.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel74.setText("Correción del proyecto");
+        jPanel26.add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 204, 40));
+
+        jPanel25.add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 840, 350, 40));
+
+        txtDescripcionProyecto12.setColumns(20);
+        txtDescripcionProyecto12.setRows(5);
+        jScrollPane16.setViewportView(txtDescripcionProyecto12);
+
+        jPanel25.add(jScrollPane16, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 890, 350, 310));
+
+        jPanel27.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel75.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel75.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel75.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel75.setText("Correción del proyecto");
+        jPanel27.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 204, 40));
+
+        jPanel28.setBackground(new java.awt.Color(0, 153, 0));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel76.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel76.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel76.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel76.setText("Correción del proyecto");
+        jPanel28.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 204, 40));
+
+        jPanel27.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 840, 350, 40));
+
+        txtDescripcionProyecto13.setColumns(20);
+        txtDescripcionProyecto13.setRows(5);
+        jScrollPane17.setViewportView(txtDescripcionProyecto13);
+
+        jPanel27.add(jScrollPane17, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 890, 350, 310));
+
+        jPanel25.add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 840, 350, 40));
+
+        txtDescripcionProyecto14.setColumns(20);
+        txtDescripcionProyecto14.setRows(5);
+        jScrollPane18.setViewportView(txtDescripcionProyecto14);
+
+        jPanel25.add(jScrollPane18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 890, 350, 310));
+
+        jPanel11.add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 1220, 400, 40));
+
         jScrollPane1.setViewportView(jPanel11);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -747,6 +803,10 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel70;
     private javax.swing.JLabel jLabel71;
     private javax.swing.JLabel jLabel72;
+    private javax.swing.JLabel jLabel73;
+    private javax.swing.JLabel jLabel74;
+    private javax.swing.JLabel jLabel75;
+    private javax.swing.JLabel jLabel76;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel13;
@@ -762,6 +822,10 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
@@ -769,6 +833,9 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane13;
     private javax.swing.JScrollPane jScrollPane14;
     private javax.swing.JScrollPane jScrollPane15;
+    private javax.swing.JScrollPane jScrollPane16;
+    private javax.swing.JScrollPane jScrollPane17;
+    private javax.swing.JScrollPane jScrollPane18;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
@@ -796,6 +863,9 @@ public class VerDatosPractica extends javax.swing.JFrame {
     private javax.swing.JTextArea txtCorreccionProyecto;
     private javax.swing.JTextArea txtDescripcionProyecto10;
     private javax.swing.JTextArea txtDescripcionProyecto11;
+    private javax.swing.JTextArea txtDescripcionProyecto12;
+    private javax.swing.JTextArea txtDescripcionProyecto13;
+    private javax.swing.JTextArea txtDescripcionProyecto14;
     private javax.swing.JTextArea txtDescripcionProyecto2;
     private javax.swing.JTextArea txtDescripcionProyecto3;
     private javax.swing.JTextArea txtDescripcionProyecto4;

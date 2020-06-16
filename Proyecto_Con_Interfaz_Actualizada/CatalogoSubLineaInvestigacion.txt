@@ -1,9 +1,2 @@
-1;PrimeraLinea;Sub1
-1;PrimeraLinea;Sub2
-2;SegundaLinea;Sub1
-2;SegundaLinea;Sub2
-AAA;Linea1;Sub1
 AAA;Linea1;Sub3
-BBB;Linea1;Sub1
 BBB;Linea2;Sub3
-
