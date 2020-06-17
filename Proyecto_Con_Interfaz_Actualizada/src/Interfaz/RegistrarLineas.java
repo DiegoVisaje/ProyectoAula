@@ -283,10 +283,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     
      public String eliminarLinea(){
      String mensaje;
-     //tampoco me quiere salir
+     
        try{
-           
-           
            
             String codigo = TxtBuscar.getText().trim(); 
             mensaje = archivoTexto.Eliminar(codigo);
@@ -326,7 +324,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     public void LlenarTablaLinea(){
    
         try{
-            //no me quiere salir
+          
             
             LineaDeInvestigacion e = this.RegistrarLinea();
             
