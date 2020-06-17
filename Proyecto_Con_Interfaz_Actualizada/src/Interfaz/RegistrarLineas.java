@@ -230,7 +230,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
      
        try{
-           
+        //esto si
+       
         LlenarTablaLinea();
         
         if(e != null){
@@ -282,8 +283,10 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     
      public String eliminarLinea(){
      String mensaje;
-     
+     //tampoco me quiere salir
        try{
+           
+           
            
             String codigo = TxtBuscar.getText().trim(); 
             mensaje = archivoTexto.Eliminar(codigo);
@@ -293,6 +296,8 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
               mensaje = "ERROR AL ELIMINAR" + a.getMessage() ; 
             }
              return mensaje;
+             
+             
     }
    
     public LineaDeInvestigacion RegistrarLinea(){
@@ -321,6 +326,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     public void LlenarTablaLinea(){
    
         try{
+            //no me quiere salir
             
             LineaDeInvestigacion e = this.RegistrarLinea();
             
@@ -400,7 +406,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
      }
     
     public void modificar(){
-       
+       //tampoco quiere salir
        String lineas, codigo, nose;
        
        try{
