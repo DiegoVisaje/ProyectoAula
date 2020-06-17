@@ -248,6 +248,9 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
          
     }
     
+      public void nada(){
+    
+}
     
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         System.exit(0);
