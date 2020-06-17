@@ -169,8 +169,8 @@ public class Inicio extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Microsoft YaHei UI", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Estudiante");
-        jPanelBotonEstudiante1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 100, 30));
+        jLabel9.setText("Enviar Proyecto");
+        jPanelBotonEstudiante1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 150, 30));
 
         jPanelMenuEstudiante2.add(jPanelBotonEstudiante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 240, 220, 40));
 
@@ -184,10 +184,10 @@ public class Inicio extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Lucida Sans", 2, 36)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));
         jLabel33.setText("Inicio");
-        jPanel5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, 100, 40));
+        jPanel5.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 100, 40));
 
         jLabel35.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_home_40px_3.png"))); // NOI18N
-        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 40, 40));
+        jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 40, 40));
 
         jPanelMenuEstudiante2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 180, 110));
 

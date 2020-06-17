@@ -275,8 +275,6 @@ public class DocenteEvaluador extends javax.swing.JFrame {
     private javax.swing.JPanel PanelHistorial;
     private javax.swing.JPanel PanelListaProyecto;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel30;
@@ -285,9 +283,7 @@ public class DocenteEvaluador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanelListaProyecto8;
     // End of variables declaration//GEN-END:variables
 }
