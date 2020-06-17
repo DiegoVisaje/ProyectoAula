@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 1;ingenieria;carlos
+=======
+AAA;Linea1;Sub3
+BBB;Linea2;Sub3
+>>>>>>> 138a19ea26a12e9f50dfa75a9cfb5e989d4e32c2

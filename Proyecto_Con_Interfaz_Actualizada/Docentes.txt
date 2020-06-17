@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 Miembro;juan;123;123;123;123;ingenieria
+=======
+Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2
+>>>>>>> 138a19ea26a12e9f50dfa75a9cfb5e989d4e32c2
