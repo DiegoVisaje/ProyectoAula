@@ -24,11 +24,16 @@ import java.util.logging.Logger;
 public class RegistrarLineas extends javax.swing.JInternalFrame {
 
   private ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList<LineaDeInvestigacion>();
+  private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
+  private  LineaDeInvestigacion e;
+  
+  
+  
   //  private ArrayList<SubLineaInvestigacion> listaLineasSubLineas = new ArrayList<SubLineaInvestigacion>();   ****NO SE USA****
   //  private Archivo_TextoSub_Linea archivoSub_linea = new Archivo_TextoSub_Linea();    ****NO SE USA****
-    private ArchivoTextoLineas archivoTexto = new ArchivoTextoLineas();
+  
    // private SubLineaInvestigacion subLineaInvestigacion;  ****NO SE USA****
-  private  LineaDeInvestigacion e;
+
 
   
     
@@ -57,19 +62,19 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         botonRegresar = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        TxtBuscar = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablaMostrarLineas = new javax.swing.JTable();
         TxtRegistrarLinea = new javax.swing.JTextField();
         TxtCodigo = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        BotonBuscar = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
+        BotonEliminar = new javax.swing.JLabel();
+        BotonModificar = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -101,9 +106,9 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 480, 10));
 
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
+        TxtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        TxtBuscar.setBorder(null);
+        jPanel1.add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel11.setText("Registrar linea:");
@@ -120,6 +125,11 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         });
         jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, 100, 30));
 
+        jTablaMostrarLineas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTablaMostrarLineasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTablaMostrarLineas);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 610, 200));
@@ -133,12 +143,12 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jPanel1.add(TxtRegistrarLinea, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 170, 30));
 
         TxtCodigo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TxtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 60, 30));
+        jPanel1.add(TxtCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, 50, 30));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
-        jLabel4.setText("buscar");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
+        BotonBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
+        BotonBuscar.setText("buscar");
+        jPanel1.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -154,22 +164,27 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         jLabel6.setText("Codigo:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 80, 70, 30));
 
-        jLabel14.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
-        jLabel14.setText("Eliminar");
-        jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+        BotonEliminar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        BotonEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel14MouseClicked(evt);
+                BotonEliminarMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 100, 30));
+        jPanel1.add(BotonEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 440, 100, 30));
 
-        jLabel17.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
-        jLabel17.setText("Modificar");
-        jLabel17.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 100, 30));
+        BotonModificar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
+        BotonModificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_as_20px.png"))); // NOI18N
+        BotonModificar.setText("Modificar");
+        BotonModificar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
+        BotonModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonModificarMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BotonModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 440, 100, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 640, 480));
 
@@ -215,11 +230,10 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
      
        try{
-           
-           
-           
-        //vamo a ver
+        //esto si
+       
         LlenarTablaLinea();
+        
         if(e != null){
               archivoTexto.Guardar(e);
         }
@@ -228,12 +242,12 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
            
        }catch( Exception exception ){
            
-           JOptionPane.showMessageDialog(this, e, "ERROR", JOptionPane.ERROR_MESSAGE); 
+           JOptionPane.showMessageDialog(this, exception.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE); 
            
        }
        
     }//GEN-LAST:event_BotonGuardarMouseClicked
-
+ 
     private void TxtRegistrarLineaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtRegistrarLineaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TxtRegistrarLineaActionPerformed
@@ -246,11 +260,46 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
       new Admin2().show();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
-    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel14MouseClicked
+    private void jTablaMostrarLineasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablaMostrarLineasMouseClicked
+       cargarDatos();
+    }//GEN-LAST:event_jTablaMostrarLineasMouseClicked
+
+    private void BotonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarMouseClicked
+     
+        String mensaje;
+        
+        mensaje = eliminarLinea();
+        mostrarTabla();
+        limpiarDatosLineas();
+         JOptionPane.showMessageDialog(this, mensaje , "MENSAJE ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
+        
+        
+    }//GEN-LAST:event_BotonEliminarMouseClicked
+
+    private void BotonModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonModificarMouseClicked
+       modificar();
+    }//GEN-LAST:event_BotonModificarMouseClicked
 
     
+     public String eliminarLinea(){
+     String mensaje;
+     //tampoco me quiere salir
+       try{
+           
+           
+           
+            String codigo = TxtBuscar.getText().trim(); 
+            mensaje = archivoTexto.Eliminar(codigo);
+            listaLineas = archivoTexto.leerArchivo();
+
+            }catch( Exception a){
+              mensaje = "ERROR AL ELIMINAR" + a.getMessage() ; 
+            }
+             return mensaje;
+             
+             
+    }
+   
     public LineaDeInvestigacion RegistrarLinea(){
           
         String linea, codigo;
@@ -277,22 +326,25 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     public void LlenarTablaLinea(){
    
         try{
+            //no me quiere salir
+            
             LineaDeInvestigacion e = this.RegistrarLinea();
-            if(this.listaLineas.add(e) && e != null){
-               JOptionPane.showMessageDialog(this, "Linea registrado con exito", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+            
+            
+            if(validarLinea(e.getCodigo())&& (!e.getCodigo().equals("")&& !e.getNombre().equals(""))) {
+               listaLineas.add(e);
+                JOptionPane.showMessageDialog(this, "Linea registrado con exito", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
                 this.limpiarDatosLineas(); 
                 
             }
             else{
-               JOptionPane.showMessageDialog(this, "Error al registrar Linea", "Error", JOptionPane.ERROR_MESSAGE); 
+               JOptionPane.showMessageDialog(this, "Codigo repetido", "Error", JOptionPane.ERROR_MESSAGE); 
             }
-        }catch(Exception e){
-            JOptionPane.showMessageDialog(this, e, "Excepcion", JOptionPane.ERROR_MESSAGE); 
+        }catch(Exception error){
+            JOptionPane.showMessageDialog(this, error.getMessage(), "Excepcion", JOptionPane.ERROR_MESSAGE); 
         }
         
     }
-    
-    
     
     public void limpiarDatosLineas(){
         
@@ -315,6 +367,14 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
          jTablaMostrarLineas.setModel(ModeloTabla);
     }
 
+    private boolean validarLinea(String codigo){
+        for(LineaDeInvestigacion linea: listaLineas){
+            if(linea.getCodigo().equals(codigo)){
+                return false;
+            }
+        }
+        return true;
+    }
     
     private boolean validarSubLinea(String codigo){
         for(LineaDeInvestigacion linea: listaLineas){
@@ -325,7 +385,18 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
         return false;
     }
     
-    
+    private void cargarDatos() {
+        try{
+            
+            TxtRegistrarLinea.setText(jTablaMostrarLineas.getValueAt(jTablaMostrarLineas.getSelectedRow(), 1).toString());
+            TxtCodigo.setText(jTablaMostrarLineas.getValueAt(jTablaMostrarLineas.getSelectedRow(), 0).toString());
+            TxtCodigo.requestFocus();
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(this, "error al seleccionar");
+        }
+    }
+
     public void RegistrarSub_Lineas(){
     
        RegistrarSubLineas mu = new RegistrarSubLineas();
@@ -334,19 +405,48 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     
      }
     
+    public void modificar(){
+       //tampoco quiere salir
+       String lineas, codigo, nose;
+       
+       try{
+        
+        nose = jTablaMostrarLineas.getValueAt(jTablaMostrarLineas.getSelectedRow(), 1).toString();
+          
+        lineas = TxtRegistrarLinea.getText().trim();
+        codigo = TxtCodigo.getText().trim();
+        
+        e = new LineaDeInvestigacion(); 
+         
+        e.setCodigo(codigo);
+        e.setNombre(lineas);
+        
+        archivoTexto.Modificar(e , nose);
+        listaLineas = archivoTexto.leerArchivo();
+        
+        mostrarTabla();
+        limpiarDatosLineas();
+        
 
+       }catch(Exception a){
+          JOptionPane.showMessageDialog(this, a, "Excepcion", JOptionPane.ERROR_MESSAGE); 
+       }  
+   }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel BotonBuscar;
+    private javax.swing.JLabel BotonEliminar;
     private javax.swing.JLabel BotonGuardar;
+    private javax.swing.JLabel BotonModificar;
     private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JTextField TxtBuscar;
     private javax.swing.JTextField TxtCodigo;
     private javax.swing.JTextField TxtRegistrarLinea;
     private javax.swing.JLabel botonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -359,6 +459,5 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTablaMostrarLineas;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
