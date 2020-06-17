@@ -174,11 +174,6 @@ public class RegistrarTesis extends javax.swing.JFrame {
      public void regresar(){   
         
          
-
-    //     ****************FALTA BOTON REGRESAR*********
-         
-         
-         
     }
     
     private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked

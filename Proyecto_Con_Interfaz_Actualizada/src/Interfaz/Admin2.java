@@ -78,7 +78,7 @@ public class Admin2 extends javax.swing.JFrame {
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
         jLabel34.setText("________________");
-        jPanel5Admin.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 100, 20));
+        jPanel5Admin.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 160, 20));
 
         jLabel33.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(255, 255, 255));

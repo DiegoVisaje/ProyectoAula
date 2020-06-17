@@ -240,12 +240,10 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
        //AQUI LLAME EL METODO ELIMINAR, JENNY, EN EL BOTON.
        String mensaje;
        mensaje = eliminarSubLinea();
-       
        //PARA QUE SE ACTUALICE LA TABLA.
        MostrarTabla();
        //SE LIMPIE LA TABALA CADA VEZ QUE ELIMINES.
-       LimpiarTabla();
-        
+       LimpiarTabla();     
        JOptionPane.showMessageDialog(this, mensaje , "MENSAJE ELIMINAR", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_BotonEliminarMouseClicked
@@ -384,8 +382,6 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         }
         
     }
-    
-   
     
     public void ListaDeLineas(){
         

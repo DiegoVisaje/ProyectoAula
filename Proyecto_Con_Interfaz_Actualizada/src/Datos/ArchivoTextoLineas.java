@@ -3,6 +3,7 @@ package Datos;
 
 import Modelo.Docente;
 import Modelo.LineaDeInvestigacion;
+import Modelo.SubLineaInvestigacion;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -44,7 +45,6 @@ public class ArchivoTextoLineas {
                this.aEsc.close();
        }
     }
-    
      
     public ArrayList<LineaDeInvestigacion> leerArchivo () throws Exception{
        
@@ -65,8 +65,64 @@ public class ArchivoTextoLineas {
            throw new Exception("Error al abrir archivo para lectura");   
         }
     }
-      
      
+    
+      public String Eliminar (String codigo) throws Exception{
+           
+       this.aEsc =null;
+       
+       try{
+           
+         ArrayList<LineaDeInvestigacion> listaLineaIn = new ArrayList();
+         listaLineaIn = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(LineaDeInvestigacion a: listaLineaIn){
+             if(!a.getCodigo().equals(codigo)){
+              pw.println(a.formaArchivo());
+             }
+         }
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+    }
+    
+      
+       public String Modificar (LineaDeInvestigacion LineaIn , String nose) throws Exception{
+           
+       this.aEsc =null;
+       
+       try{
+           
+         ArrayList<LineaDeInvestigacion> listaLineas = new ArrayList();
+         listaLineas = leerArchivo();  
+         this.aEsc = new FileWriter(this.archivo, false);
+         PrintWriter pw = new PrintWriter(this.aEsc);
+         
+         for(LineaDeInvestigacion a: listaLineas){
+             if(!a.getNombre().equals(nose)){
+              pw.println(a.formaArchivo());
+             }else{
+              LineaIn.setCodigo(a.getCodigo()); 
+              pw.println(LineaIn.formaArchivo());
+             }
+         }
+         
+           return "EL ARCHIVO FUE ELIMINADO";
+       }catch(IOException ioe){
+          throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
+       } 
+       finally{
+           if(this.aEsc!=null)
+               this.aEsc.close();
+       }
+    }
       
  
 }

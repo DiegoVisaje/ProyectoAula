@@ -165,12 +165,13 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
     }
     
     public void llenarTabla(){
-        String titulos[]={"RADICADO","CEDULA", "NOMBRE PROYECTO","LINEA", "TIPO PROYECTO"};
+        
+        String titulos[]={"Radicado","Cedula", "Nombre Proyecto","Linea", "Tipo Proyecto"};
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos); 
         
         for(Estudiante a: listaEstudiante){
-            if(a.getPropuesta().getEstado().equals("PENDIENTE")){
+            if(a.getPropuesta().getEstado().equals("Pendiente")){
                 Object datos[]={a.getPropuesta().getRadicado(),a.getCedula(),a.getPropuesta().getNombreP(),a.getPropuesta().getLineaInvesti(),a.getPropuesta().getTipoProyecto()};
                 ModeloTabla.addRow(datos);
             }
