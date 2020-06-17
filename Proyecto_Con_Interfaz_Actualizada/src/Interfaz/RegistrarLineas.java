@@ -216,6 +216,9 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
      
        try{
            
+           
+           
+        //vamo a ver
         LlenarTablaLinea();
         if(e != null){
               archivoTexto.Guardar(e);
