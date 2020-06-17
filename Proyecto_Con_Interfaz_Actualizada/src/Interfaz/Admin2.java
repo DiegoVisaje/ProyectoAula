@@ -384,7 +384,9 @@ public class Admin2 extends javax.swing.JFrame {
    }
     
     
-    
+    public void SIFunciono(){
+        //no se
+    }
     /**
      * @param args the command line arguments
      */
