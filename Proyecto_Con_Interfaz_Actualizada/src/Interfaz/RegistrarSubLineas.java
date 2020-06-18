@@ -95,11 +95,6 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
         txtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtBuscar.setBorder(null);
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
@@ -127,7 +122,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 610, 200));
 
         TxtSubLineas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TxtSubLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 150, 30));
+        jPanel1.add(TxtSubLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 280, 30));
 
         BotonBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
@@ -154,7 +149,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
                 jComboBoxRegistrarLineasActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxRegistrarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 150, 30));
+        jPanel1.add(jComboBoxRegistrarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 280, 30));
 
         BotonEliminar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N

@@ -36,7 +36,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         jSeparator1 = new javax.swing.JSeparator();
         TxtBuscar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaProyectos = new javax.swing.JTable();
         BotonBuscar = new javax.swing.JLabel();
         BotonGuardar = new javax.swing.JLabel();
         BotonRechazado = new javax.swing.JLabel();
@@ -62,7 +62,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         TxtBuscar.setBorder(null);
         jPanel1.add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaProyectos);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 500, 390));
 
@@ -134,6 +134,6 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaProyectos;
     // End of variables declaration//GEN-END:variables
 }

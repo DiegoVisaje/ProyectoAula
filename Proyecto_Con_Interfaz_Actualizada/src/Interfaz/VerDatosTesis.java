@@ -596,8 +596,14 @@ public class VerDatosTesis extends javax.swing.JFrame {
         }
         
         propuesta.setEstado(comboEstado.getSelectedItem().toString());
-        propuesta.setEvaluador1(comboEvaluador1.getSelectedItem().toString());
-        propuesta.setEvaluador2(comboEvaluador2.getSelectedItem().toString());
+        if(propuesta.getEstado().equals("Aceptado")){
+            propuesta.setEvaluador1(comboEvaluador1.getSelectedItem().toString());
+            propuesta.setEvaluador2(comboEvaluador2.getSelectedItem().toString());
+        }else{
+            propuesta.setEvaluador1(" ");
+            propuesta.setEvaluador2(" ");
+        }
+        
         propuesta.setConcepto(txtConceptoProyecto.getText());
         propuesta.setCorreciones(txtCorreccionProyecto.getText());
       
@@ -636,13 +642,13 @@ public class VerDatosTesis extends javax.swing.JFrame {
         }
         
         for (Docente e: listadocentes){
-            if(labelLinea.getText().toString().equals(e.getLinea())){
+            if(labelLinea.getText().toString().equals(e.getLinea()) && (e.getCargo().equals("Evaluador"))){
                 comboEvaluador1.addItem(e.getNombre()+" "+e.getApellido());
             }
         }
         
         for (Docente e: listadocentes){
-            if(labelLinea.getText().toString().equals(e.getLinea())){
+            if(labelLinea.getText().toString().equals(e.getLinea())&& (e.getCargo().equals("Evaluador"))){
                 comboEvaluador2.addItem(e.getNombre()+" "+e.getApellido());
             }
         }
