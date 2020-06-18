@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-=======
 96646;Nombre1;Apellido1;Cedula1;celular;Proyecto;1 mes;Linea1;Sub1;Descripcion;Juan Andres;Tesis;Aceptado;Se necesita mejor ortografia;Decision unanime;DiegoAA Granados;DiegoAA Granados;Planteamiento;ObjGeneral;ObjEspecifico;Justificacion
-49253;Nombre2;Ape2;Cedula2;Cell2;Proyecto2;2 meses;Linea2;Sub3;Descripcion2;DiegoAA Granados;Tesis;Pendiente; ; ; ; ;Problema2;ObjGeneral2;ObjEspecifico2;Justificacion2
+49253;Nombre2;Ape2;Cedula2;Cell2;Proyecto2;2 meses;Linea2;Sub3;Descripcion2;DiegoAA Granados;Tesis;Rechazado;falta de ortografia;union libre ;SELECIONE;SELECIONE;Problema2;ObjGeneral2;ObjEspecifico2;Justificacion2
 57203;Nombre3;Ape3;Cedula3;Celular3;Proyecto3;3 meses;Linea2;Sub3;Descrip3;Juan Andres;Tesis;Pendiente; ; ; ; ;Problema3;ObjGen3;ObjEsp3;Justificacion3
 92330;Nom4;Ape4;Ced4;Cell4;Proyec4;4 meses;Linea1;Sub3;Descrp4;Juan Andres;Tesis;Pendiente; ; ; ; ;Problema4;ObjGen4;ObjEspe4;Justi4
 35994;Jennifer;Cuello;0000000;111111;ProyectoPractica1;4 meses;Linea1;Sub3;PROYECTO PRACTICA1;DiegoAAA Granados;Practicas;Pendiente; ; ; ; ;UPC;STREET1;55553333;Gloria;Logistica;Supervisora
->>>>>>> 138a19ea26a12e9f50dfa75a9cfb5e989d4e32c2
