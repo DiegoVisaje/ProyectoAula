@@ -289,7 +289,7 @@ public class RegistrarLineas extends javax.swing.JInternalFrame {
        try{
                       
             String codigo = TxtBuscar.getText().trim();
-            archivoSubLineas.EliminarConLinea(codigo);
+            archivoSubLineas.EliminarConSubLinea(codigo);
             mensaje = archivoTexto.Eliminar(codigo);
             listaLineas = archivoTexto.leerArchivo();
 

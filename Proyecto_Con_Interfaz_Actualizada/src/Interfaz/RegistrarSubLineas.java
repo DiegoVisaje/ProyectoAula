@@ -276,6 +276,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
    //AGREGRE UN METODO ELIMINAR SUBLINEA, JENNY, ME ELIMINA UNA SUB LINEA ESPECIFICA.
      
    public String eliminarSubLinea(){
+       
      String mensaje;
      
        try{
