@@ -95,11 +95,6 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
         txtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtBuscar.setBorder(null);
-        txtBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtBuscarActionPerformed(evt);
-            }
-        });
         jPanel1.add(txtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N

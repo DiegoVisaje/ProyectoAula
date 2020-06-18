@@ -11,6 +11,9 @@ public class Admin2 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    public void DiegoBorraEsto(){
+        //esto agrege
+    }
       public void regresar(){
         new Inicio().show();
         dispose();
