@@ -27,9 +27,6 @@ public class DocenteEvaluador extends javax.swing.JFrame {
         PanelListaProyecto = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        PanelHistorial = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel31 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         jLabel59 = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
@@ -69,29 +66,6 @@ public class DocenteEvaluador extends javax.swing.JFrame {
         PanelListaProyecto.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
         jPanel11.add(PanelListaProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 220, 40));
-
-        PanelHistorial.setBackground(new java.awt.Color(255, 255, 255));
-        PanelHistorial.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                PanelHistorialMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                PanelHistorialMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                PanelHistorialMouseExited(evt);
-            }
-        });
-        PanelHistorial.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel30.setText("Historial");
-        PanelHistorial.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 150, 40));
-
-        jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_wipes_30px.png"))); // NOI18N
-        PanelHistorial.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
-
-        jPanel11.add(PanelHistorial, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 220, -1));
 
         jLabel57.setForeground(new java.awt.Color(255, 255, 255));
         jLabel57.setText("_____________________________________");
@@ -189,20 +163,6 @@ public class DocenteEvaluador extends javax.swing.JFrame {
 
     }//GEN-LAST:event_PanelListaProyectojPanelListaProyectoMouseExited
 
-    private void PanelHistorialMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHistorialMouseClicked
-        HistorialEvaluador a = new HistorialEvaluador();
-        Escritorio.add(a);
-        a.show();
-    }//GEN-LAST:event_PanelHistorialMouseClicked
-
-    private void PanelHistorialMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHistorialMouseEntered
-        resetColor(PanelHistorial);
-    }//GEN-LAST:event_PanelHistorialMouseEntered
-
-    private void PanelHistorialMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelHistorialMouseExited
-        setColor(PanelHistorial);
-    }//GEN-LAST:event_PanelHistorialMouseExited
-
     private void jLabel57MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseClicked
        
     }//GEN-LAST:event_jLabel57MouseClicked
@@ -280,13 +240,10 @@ public class DocenteEvaluador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane Escritorio;
     private javax.swing.JLabel LabelBotonInicio;
-    private javax.swing.JPanel PanelHistorial;
     private javax.swing.JPanel PanelListaProyecto;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;

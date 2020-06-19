@@ -127,6 +127,11 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
 
         jLabel54.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel54.setText("Proyectos Evaluados");
+        jLabel54.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel54MouseClicked(evt);
+            }
+        });
         LabelProyectoEvaluados.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 170, 40));
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_30px.png"))); // NOI18N
@@ -273,7 +278,9 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jPanel11MouseExited
 
     private void LabelProyectoEvaluadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelProyectoEvaluadosMouseClicked
-       proyectoEvaluados(); //LLAMO AQUI
+      ListaEvaluados a = new ListaEvaluados();
+      Escritorio.add(a); 
+      a.show();
     }//GEN-LAST:event_LabelProyectoEvaluadosMouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
@@ -292,6 +299,10 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private void LabelProyectoEvaluadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelProyectoEvaluadosMouseExited
         setColor(LabelProyectoEvaluados);
     }//GEN-LAST:event_LabelProyectoEvaluadosMouseExited
+
+    private void jLabel54MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel54MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel54MouseClicked
 
     //AGREGRE ESTOD DOS METODOS DONDE LLAMA INTERFAZ, JENNY
     
