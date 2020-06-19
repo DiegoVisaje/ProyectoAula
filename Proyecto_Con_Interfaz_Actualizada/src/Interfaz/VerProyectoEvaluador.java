@@ -11,7 +11,7 @@ package Interfaz;
  */
 public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
 
-    
+   
     
     
     /**
