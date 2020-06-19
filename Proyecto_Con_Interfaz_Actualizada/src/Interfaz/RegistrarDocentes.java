@@ -32,15 +32,18 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
  
     private String linea="";
     
-    /**
-     * Creates new form CrearUsuarioDocente
-     */
-
+   
    
     public RegistrarDocentes() {
         initComponents();
-  
-        try {
+        a();
+       
+        
+    }
+    
+    public void a() {
+        
+     try {
          cargos();
          listaLineas = archivoTexto.leerArchivo();
          listaLineas();
@@ -51,7 +54,7 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
          Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-    }
+}
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -298,9 +301,7 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
 
     public void guardarDocente(){
         
-     
-           
-       try{
+        try{
            
         LlenarTablaDocente();
         
@@ -379,7 +380,7 @@ public class RegistrarDocentes extends javax.swing.JInternalFrame {
            TxtNombreDocente.requestFocus();
           
         }catch(Exception e){
-            JOptionPane.showMessageDialog(this, "Hay campos vacios");
+            JOptionPane.showMessageDialog(this, "HAY CAMPOS VACIOS");
         }
     }
 

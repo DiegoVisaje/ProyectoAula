@@ -81,8 +81,6 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
         TxtResumenresultados = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
         TxtTrabajosfuturos = new javax.swing.JTextArea();
-        jLabel37 = new javax.swing.JLabel();
-        labelRadicado = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         botonRegresar = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -108,14 +106,14 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
                 txtBuscarProyectoActionPerformed(evt);
             }
         });
-        jPanel3.add(txtBuscarProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 10, 480, 20));
+        jPanel3.add(txtBuscarProyecto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 480, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 480, 10));
+        jPanel3.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 480, 10));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_search_20px_1.png"))); // NOI18N
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 10, 30, 20));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 20, 30, 20));
 
         botonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
         botonBuscar.setText("buscar");
@@ -124,7 +122,7 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
                 botonBuscarMouseClicked(evt);
             }
         });
-        jPanel3.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 80, -1));
+        jPanel3.add(botonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 20, 80, -1));
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -173,13 +171,6 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
         jScrollPane3.setViewportView(TxtTrabajosfuturos);
 
         jPanel3.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 980, 110));
-
-        jLabel37.setFont(new java.awt.Font("Verdana", 1, 11)); // NOI18N
-        jLabel37.setText("Radicado");
-        jPanel3.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 60, 30));
-
-        labelRadicado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(labelRadicado, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 90, 30));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_secured_letter_30px.png"))); // NOI18N
         jLabel4.setText("Enviar");
@@ -279,24 +270,34 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     
     private void buscarProyecto(){
         
+      
+        
+      try{
+         
         int radicado=Integer.parseInt(txtBuscarProyecto.getText());
         boolean encontrado=false;
         PropuestaProyecto propuesta = new PropuestaProyecto();
-        
+        int radicado2;
        
         for (PropuestaProyecto itemP : listaProyectos) {
             if(itemP.getRadicado()==radicado){
                 propuesta=itemP;
                 propuestaBuscada=itemP;
                 encontrado=true;
+             
             }
         }
         
         if(encontrado){
-            JOptionPane.showMessageDialog(null, "Se encontro la propuesta del proyecto: "+ propuesta.getRadicado() +": "+ propuesta.getNombreP());
+            
+            JOptionPane.showMessageDialog(null, "SE ENCONTRO LA PROPUESTA DEL PROYECTO: "+ propuesta.getRadicado() +": "+ propuesta.getNombreP());
             propuestaBuscada=propuesta;
         }
+    }catch(Exception a){
+            JOptionPane.showMessageDialog(this, "DIGITE UN NUMERO RADICADO VALIDO", "ERROR", JOptionPane.ERROR_MESSAGE);
+        
     }
+   }
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -310,7 +311,6 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -325,7 +325,6 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labelRadicado;
     private javax.swing.JTextField txtBuscarProyecto;
     // End of variables declaration//GEN-END:variables
 }
