@@ -34,9 +34,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         jPanelProyectoAcetado = new javax.swing.JPanel();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jPanelDocenteAsignado = new javax.swing.JPanel();
-        jLabel30 = new javax.swing.JLabel();
-        jLabel55 = new javax.swing.JLabel();
         jLabel57 = new javax.swing.JLabel();
         LabelProyectoEvaluados = new javax.swing.JPanel();
         jLabel54 = new javax.swing.JLabel();
@@ -105,29 +102,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
 
         jPanel10.add(jPanelProyectoAcetado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 220, -1));
 
-        jPanelDocenteAsignado.setBackground(new java.awt.Color(255, 255, 255));
-        jPanelDocenteAsignado.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanelDocenteAsignadoMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jPanelDocenteAsignadoMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jPanelDocenteAsignadoMouseExited(evt);
-            }
-        });
-        jPanelDocenteAsignado.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel30.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        jLabel30.setText("Lista Docente");
-        jPanelDocenteAsignado.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 140, 40));
-
-        jLabel55.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_conference_foreground_selected_30px.png"))); // NOI18N
-        jPanelDocenteAsignado.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
-
-        jPanel10.add(jPanelDocenteAsignado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 220, -1));
-
         jLabel57.setForeground(new java.awt.Color(255, 255, 255));
         jLabel57.setText("_____________________________________");
         jLabel57.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -158,7 +132,7 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_30px.png"))); // NOI18N
         LabelProyectoEvaluados.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 40));
 
-        jPanel10.add(LabelProyectoEvaluados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 220, 40));
+        jPanel10.add(LabelProyectoEvaluados, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 380, 220, 40));
 
         jLabel59.setForeground(new java.awt.Color(255, 255, 255));
         jLabel59.setText("_____________________________________");
@@ -290,18 +264,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
         setColor(jPanelProyectoAcetado);
     }//GEN-LAST:event_jPanelProyectoAcetadoMouseExited
 
-    private void jPanelDocenteAsignadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDocenteAsignadoMouseClicked
-       listaDocente(); //LLAMO AQUI, JENNY
-    }//GEN-LAST:event_jPanelDocenteAsignadoMouseClicked
-
-    private void jPanelDocenteAsignadoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDocenteAsignadoMouseEntered
-        resetColor(jPanelDocenteAsignado);
-    }//GEN-LAST:event_jPanelDocenteAsignadoMouseEntered
-
-    private void jPanelDocenteAsignadoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDocenteAsignadoMouseExited
-        setColor(jPanelDocenteAsignado);
-    }//GEN-LAST:event_jPanelDocenteAsignadoMouseExited
-
     private void jPanel11MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel11MouseEntered
         
     }//GEN-LAST:event_jPanel11MouseEntered
@@ -406,10 +368,8 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel54;
-    private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
@@ -417,7 +377,6 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanelDocenteAsignado;
     private javax.swing.JPanel jPanelListaProyecto8;
     private javax.swing.JPanel jPanelProyectoAcetado;
     // End of variables declaration//GEN-END:variables

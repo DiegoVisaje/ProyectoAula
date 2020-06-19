@@ -235,7 +235,7 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
-        new Admin2().show();
+        new Inicio().show();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
