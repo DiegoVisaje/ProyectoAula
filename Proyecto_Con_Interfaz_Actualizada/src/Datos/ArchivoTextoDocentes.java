@@ -36,6 +36,7 @@ public class ArchivoTextoDocentes {
     }
      
       public boolean Guardar (Docente docente) throws Exception{
+          
        this.aEsc =null;
        try{
            this.aEsc = new FileWriter(this.archivo, true);
@@ -82,8 +83,7 @@ public class ArchivoTextoDocentes {
      
 
     public String Modificar(Docente docente, String llave) throws Exception{
-        
-             
+            
        this.aEsc =null;
        
        try{

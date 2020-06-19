@@ -142,6 +142,12 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 LabelProyectoEvaluadosMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                LabelProyectoEvaluadosMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                LabelProyectoEvaluadosMouseExited(evt);
+            }
         });
         LabelProyectoEvaluados.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -316,6 +322,14 @@ public class ComiteInvestigacion extends javax.swing.JFrame {
     private void jLabel57MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel57MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel57MouseClicked
+
+    private void LabelProyectoEvaluadosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelProyectoEvaluadosMouseEntered
+        resetColor(LabelProyectoEvaluados);
+    }//GEN-LAST:event_LabelProyectoEvaluadosMouseEntered
+
+    private void LabelProyectoEvaluadosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelProyectoEvaluadosMouseExited
+        setColor(LabelProyectoEvaluados);
+    }//GEN-LAST:event_LabelProyectoEvaluadosMouseExited
 
     //AGREGRE ESTOD DOS METODOS DONDE LLAMA INTERFAZ, JENNY
     

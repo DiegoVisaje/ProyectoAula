@@ -1,2 +1,3 @@
 Miembro;juan;123;123;123;123;ingenieria
-Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2
+Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2SELECCIONE;;;;;;
+SELECCIONE;;;;;;

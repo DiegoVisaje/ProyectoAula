@@ -99,7 +99,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
         jLabel11.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel11.setText("Elegir linea:");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, 160, 30));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 50, 160, 30));
 
         BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
@@ -122,7 +122,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 610, 200));
 
         TxtSubLineas.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(TxtSubLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 150, 30));
+        jPanel1.add(TxtSubLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 110, 190, 30));
 
         BotonBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
@@ -141,7 +141,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         jLabel6.setText("Registrar sub-lineas:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 170, 30));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 170, 30));
 
         jComboBoxRegistrarLineas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE" }));
         jComboBoxRegistrarLineas.addActionListener(new java.awt.event.ActionListener() {
@@ -149,7 +149,7 @@ public class RegistrarSubLineas extends javax.swing.JInternalFrame {
                 jComboBoxRegistrarLineasActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxRegistrarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 50, 150, 30));
+        jPanel1.add(jComboBoxRegistrarLineas, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 50, 190, 30));
 
         BotonEliminar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
         BotonEliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_delete_bin_20px_1.png"))); // NOI18N
