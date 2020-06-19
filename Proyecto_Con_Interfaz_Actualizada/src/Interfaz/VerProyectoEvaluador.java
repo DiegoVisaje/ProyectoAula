@@ -10,8 +10,10 @@ import Datos.ArchivoTextoProyectos;
 import Modelo.Estudiante;
 import Modelo.PropuestaProyecto;
 import Modelo.SolicitudEvaluacion;
+import Modelo.SubLineaInvestigacion;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
@@ -20,7 +22,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
    private ArrayList<Estudiante> listaEstudiante;
    private ArrayList<PropuestaProyecto> listaFiltrada;
    private ArrayList<SolicitudEvaluacion> listaSolicitudes;
-    private ArrayList<SolicitudEvaluacion> listaSolicitudesFiltrada;
+   private ArrayList<SolicitudEvaluacion> listaSolicitudesFiltrada;
    private ArchivoTextoPropuestaProyecto solicitudes= new ArchivoTextoPropuestaProyecto();
    private ArchivoTextoProyectos proyectosDB= new ArchivoTextoProyectos();
    
@@ -109,17 +111,29 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "no tiene solicitud de evaluacion asignadas");
         }
-        
-        
-        pintarTabla();
+          pintarTabla();
     }
     
     
-    private void pintarTabla(){
+      public void pintarTabla(){
         
+        String titulos[]={"RADICADO","RESUMEN", "TRABAJOS FUTURO" , "CONCLUSIONES", "ESTADO"};
+      
+        DefaultTableModel ModeloTabla = new DefaultTableModel();
+        ModeloTabla.setColumnIdentifiers(titulos);
         
+        for(SolicitudEvaluacion a: listaSolicitudesFiltrada ){
+          Object datos[]={a.getFk_PropuestaRadicado() ,a.getConclusiones(), a.getTrabajosFuturos(), a.getConclusiones()};
+          
+           ModeloTabla.addRow(datos);
+           }
+        
+         tablaProyectos.setModel(ModeloTabla);
+      
+        
+       
     }
-    
+
     
    
     @SuppressWarnings("unchecked")
@@ -134,9 +148,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaProyectos = new javax.swing.JTable();
         BotonBuscar = new javax.swing.JLabel();
-        BotonGuardar = new javax.swing.JLabel();
         BotonRechazado = new javax.swing.JLabel();
-        BotonVerDatos = new javax.swing.JLabel();
         BotonAceptados = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
@@ -167,32 +179,19 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         BotonBuscar.setText("buscar");
         jPanel1.add(BotonBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, 80, -1));
 
-        BotonGuardar.setFont(new java.awt.Font("Verdana", 1, 14)); // NOI18N
-        BotonGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_save_20px.png"))); // NOI18N
-        BotonGuardar.setText("Guardar");
-        BotonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 0)));
-        jPanel1.add(BotonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 290, 100, 30));
-
         BotonRechazado.setBackground(new java.awt.Color(255, 255, 255));
         BotonRechazado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BotonRechazado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_cancel_20px.png"))); // NOI18N
         BotonRechazado.setText("Rechazar");
         BotonRechazado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        jPanel1.add(BotonRechazado, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 240, 100, 30));
-
-        BotonVerDatos.setBackground(new java.awt.Color(255, 255, 255));
-        BotonVerDatos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        BotonVerDatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_eye_20px_1.png"))); // NOI18N
-        BotonVerDatos.setText("Ver datos");
-        BotonVerDatos.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 102)));
-        jPanel1.add(BotonVerDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 140, 100, 30));
+        jPanel1.add(BotonRechazado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 100, 30));
 
         BotonAceptados.setBackground(new java.awt.Color(255, 255, 255));
         BotonAceptados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BotonAceptados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_checked_20px.png"))); // NOI18N
         BotonAceptados.setText("Aceptados");
         BotonAceptados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
-        jPanel1.add(BotonAceptados, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 100, 30));
+        jPanel1.add(BotonAceptados, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 100, 30));
 
         jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 640, 480));
 
@@ -220,9 +219,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel BotonAceptados;
     private javax.swing.JLabel BotonBuscar;
-    private javax.swing.JLabel BotonGuardar;
     private javax.swing.JLabel BotonRechazado;
-    private javax.swing.JLabel BotonVerDatos;
     private javax.swing.JTextField TxtBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

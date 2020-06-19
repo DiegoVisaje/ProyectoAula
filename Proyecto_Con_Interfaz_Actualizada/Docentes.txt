@@ -1,3 +1,4 @@
 Evaluador;jennifer;cuello;123;123;123;SISTEMAS DE INFORMACION
 Miembro;javier;viloria;1234;1234;1234;SISTEMAS DE INFORMACION
-Evaluador;Hector;viga;456;456;456;LINEA INVENTADA
+Evaluador;Hector;viga;456;456;456;INGENIERIA DE SOFTWARE
+Evaluador;juan;martinez;555;555;555;SISTEMAS DE INFORMACION
