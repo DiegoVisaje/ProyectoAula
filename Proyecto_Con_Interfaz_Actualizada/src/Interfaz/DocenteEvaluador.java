@@ -172,9 +172,11 @@ public class DocenteEvaluador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PanelListaProyectojPanelListaProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelListaProyectojPanelListaProyectoMouseClicked
-        VerProyectoEvaluador a = new VerProyectoEvaluador();
+        VerProyectoEvaluador a = new VerProyectoEvaluador(jLabel58.getText());
         Escritorio.add(a);
         a.show();
+        
+        
     }//GEN-LAST:event_PanelListaProyectojPanelListaProyectoMouseClicked
 
     private void PanelListaProyectojPanelListaProyectoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelListaProyectojPanelListaProyectoMouseEntered

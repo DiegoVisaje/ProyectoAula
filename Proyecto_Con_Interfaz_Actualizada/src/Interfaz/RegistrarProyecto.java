@@ -53,6 +53,7 @@ public class RegistrarProyecto extends javax.swing.JInternalFrame {
    // PropuestaProyecto propuesta = new PropuestaProyecto();
     
     public RegistrarProyecto() {
+        
         initComponents();
        
         
