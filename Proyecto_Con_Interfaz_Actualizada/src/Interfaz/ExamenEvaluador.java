@@ -10,10 +10,8 @@ import Modelo.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author zarel
- */
+
+
 public class ExamenEvaluador extends javax.swing.JInternalFrame {
 
     /**
@@ -28,12 +26,15 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
      
             
     public ExamenEvaluador() {
+        
+        
         initComponents();
         inicarProyectos();
+     
     }
     
    public void inicarProyectos(){
-       
+        
         try {
            
             listaProyectos= new ArrayList<PropuestaProyecto>();
@@ -235,7 +236,7 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
-        new Admin2().show();
+        new Inicio().show();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked

@@ -27,7 +27,7 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
           Logger.getLogger(RegistrarLineas.class.getName()).log(Level.SEVERE, null, ae);
       }    
     }
-
+///
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

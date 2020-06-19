@@ -118,13 +118,13 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
     
       public void pintarTabla(){
         
-        String titulos[]={"RADICADO","RESUMEN", "TRABAJOS FUTURO" , "CONCLUSIONES", "ESTADO"};
+        String titulos[]={"RADICADO","RESUMEN", "TRABAJOS FUTURO" , "CONCLUSIONES", "ESTADO UNO", "ESTADO DOS"};
       
         DefaultTableModel ModeloTabla = new DefaultTableModel();
         ModeloTabla.setColumnIdentifiers(titulos);
         
         for(SolicitudEvaluacion a: listaSolicitudesFiltrada ){
-          Object datos[]={a.getFk_PropuestaRadicado() ,a.getConclusiones(), a.getTrabajosFuturos(), a.getConclusiones()};
+          Object datos[]={a.getFk_PropuestaRadicado() ,a.getConclusiones(), a.getTrabajosFuturos(), a.getConclusiones(),a.getEstado1(),a.getEstado2()};
           
            ModeloTabla.addRow(datos);
            }
@@ -135,15 +135,35 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
        
     }
 
-    public void modificar(){
+    public void modificar(String estado){
         
-         String lineas, codigo, nose;
+        String radicado;
        
        try{
-        
-        nose = tablaProyectos.getValueAt(tablaProyectos.getSelectedRow(), 3).toString();
-          
-        
+           
+           radicado=txtRadicado.getText();
+           
+           SolicitudEvaluacion solicitudBuscada=new SolicitudEvaluacion();
+           
+           for (SolicitudEvaluacion solicitudEvaluacion : listaSolicitudesFiltrada) {
+               if (radicado.equals(solicitudEvaluacion.getFk_PropuestaRadicado())) {
+                   solicitudBuscada=solicitudEvaluacion;
+
+               }
+           }
+           
+           if(evaluador=="1"){
+               solicitudBuscada.setEstado1(estado);
+           }else if(evaluador=="2"){
+               solicitudBuscada.setEstado2(estado);
+           }
+           
+           
+                    JOptionPane.showMessageDialog(this,"se modifico correctamente la solicitud con radicado: "+ radicado);
+           
+           solicitudes.modificar(radicado, solicitudBuscada);
+           ObtenerEvaluacion();
+           
        }catch(Exception a){
           JOptionPane.showMessageDialog(this, a, "Excepcion", JOptionPane.ERROR_MESSAGE); 
        }  
@@ -166,6 +186,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         BotonBuscar = new javax.swing.JLabel();
         BotonRechazado = new javax.swing.JLabel();
         BotonAceptados = new javax.swing.JLabel();
+        txtRadicado = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         jPanel5.setBackground(new java.awt.Color(0, 102, 0));
@@ -184,11 +205,16 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         TxtBuscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         TxtBuscar.setForeground(new java.awt.Color(255, 255, 255));
         TxtBuscar.setBorder(null);
+        TxtBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TxtBuscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(TxtBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 480, 20));
 
         jScrollPane1.setViewportView(tablaProyectos);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 500, 390));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 770, 390));
 
         BotonBuscar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BotonBuscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_replace_20px.png"))); // NOI18N
@@ -200,16 +226,27 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         BotonRechazado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_cancel_20px.png"))); // NOI18N
         BotonRechazado.setText("Rechazar");
         BotonRechazado.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        jPanel1.add(BotonRechazado, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 230, 100, 30));
+        BotonRechazado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonRechazadoMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BotonRechazado, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 220, 100, 30));
 
         BotonAceptados.setBackground(new java.awt.Color(255, 255, 255));
         BotonAceptados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         BotonAceptados.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_checked_20px.png"))); // NOI18N
         BotonAceptados.setText("Aceptados");
         BotonAceptados.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 51)));
-        jPanel1.add(BotonAceptados, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 180, 100, 30));
+        BotonAceptados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonAceptadosMouseClicked(evt);
+            }
+        });
+        jPanel1.add(BotonAceptados, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 170, 100, 30));
+        jPanel1.add(txtRadicado, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 70, 100, 30));
 
-        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 640, 480));
+        jPanel5.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 960, 480));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
@@ -221,7 +258,7 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 660, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 994, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,6 +267,18 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonAceptadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAceptadosMouseClicked
+        modificar("APROBADO");
+    }//GEN-LAST:event_BotonAceptadosMouseClicked
+
+    private void BotonRechazadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRechazadoMouseClicked
+        modificar("RECHAZADO");
+    }//GEN-LAST:event_BotonRechazadoMouseClicked
+
+    private void TxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TxtBuscarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -244,5 +293,6 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tablaProyectos;
+    private javax.swing.JTextField txtRadicado;
     // End of variables declaration//GEN-END:variables
 }

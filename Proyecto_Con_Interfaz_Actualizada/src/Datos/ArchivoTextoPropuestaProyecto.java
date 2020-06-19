@@ -90,16 +90,15 @@ public class ArchivoTextoPropuestaProyecto {
            
          ArrayList<SolicitudEvaluacion> lista = new ArrayList();
          lista = leerArchivo();
-         
          this.aEsc = new FileWriter(this.archivo, false);
          PrintWriter pw = new PrintWriter(this.aEsc);
          
          for(SolicitudEvaluacion a: lista){
            
-            if(a.getFk_PropuestaRadicado() == radicado){
+            if(a.getFk_PropuestaRadicado().equals(radicado)){
                 a.setEstado1(solicitud.getEstado1());
                 a.setEstado2(solicitud.getEstado2());
-             pw.println(a.formaArchivo());
+                pw.println(a.formaArchivo());
              
             }else{
              

@@ -1,7 +1,0 @@
-Interfaz.RegistrarProyecto$1
-Interfaz.RegistrarProyecto$2
-Interfaz.RegistrarProyecto
-Interfaz.RegistrarProyecto$3
-Interfaz.RegistrarProyecto$4
-Interfaz.RegistrarProyecto$5
-Interfaz.RegistrarProyecto$6

@@ -1,4 +1,0 @@
-Interfaz.consultarPryecto$3
-Interfaz.consultarPryecto$2
-Interfaz.consultarPryecto$1
-Interfaz.consultarPryecto
