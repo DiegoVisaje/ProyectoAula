@@ -1,0 +1,3 @@
+65194;1;1;1;1;1;1 mes;SISTEMAS DE INFORMACION;DESARROLLO DE SISTEMAS DE INFORMACION;asd;javier viloria;Tesis;Aceptado;1;1;jennifer cuello;SELECIONE;asd;asd;asd;asd
+19298;matias;2;2;2;2;2 meses;INGENIERIA DE SOFTWARE;METODOLOGIAS Y METODOS DE CONSTRUCCION DE SOFTWARE;asd;jennifer cuello;Tesis;Aceptado;2;2;Hector viga;Hector viga;2;2;2;2
+42297;3;3;3;3;3;2 meses;SISTEMAS DE INFORMACION;DESARROLLO DE SISTEMAS DE INFORMACION;3;jennifer cuello;Practicas;ACEPTADO;3;3;jennifer cuello;juan martinez;3;3;3;3;3;3
