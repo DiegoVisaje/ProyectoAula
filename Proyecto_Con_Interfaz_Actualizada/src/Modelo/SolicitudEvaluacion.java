@@ -17,6 +17,8 @@ public class SolicitudEvaluacion {
     
 
     public SolicitudEvaluacion() {
+        this.estado1 = "PENDIENTE";
+        this.estado2 = "PENDIENTE";
     }
 
     public SolicitudEvaluacion(String resumenResultados, String conclusiones, String trabajosFuturos, String lineaInvestigacion, String estado1, String estado2) {

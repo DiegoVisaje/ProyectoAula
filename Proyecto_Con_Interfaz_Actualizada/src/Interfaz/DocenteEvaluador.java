@@ -159,14 +159,14 @@ public class DocenteEvaluador extends javax.swing.JFrame {
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 940, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 670, 600));
+        getContentPane().add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 940, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
