@@ -8,9 +8,11 @@ package Datos;
 import Modelo.LineaDeInvestigacion;
 import Modelo.SolicitudEvaluacion;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -50,6 +52,29 @@ public class ArchivoTextoPropuestaProyecto {
            if(this.aEsc!=null)
                this.aEsc.close();
        }
+    }
+      
+      
+        public ArrayList<SolicitudEvaluacion> leerArchivo () throws Exception{
+       
+        try {
+            ArrayList<SolicitudEvaluacion> lista = new ArrayList();
+            this.aLect = new Scanner(this.archivo);
+            while(this.aLect.hasNext()){
+                String datos[] = this.aLect.nextLine().split(";");
+                SolicitudEvaluacion evaluacion = new SolicitudEvaluacion();
+                evaluacion.setResumenResultados(datos[0]);
+                evaluacion.setConclusiones(datos[1]);
+                evaluacion.setTrabajosFuturos(datos[2]);
+                evaluacion.setFk_PropuestaRadicado(datos[3]);
+                lista.add(evaluacion);
+            }
+            this.aLect.close();
+            return lista;
+            
+        } catch (FileNotFoundException ex) {
+           throw new Exception("Error al abrir archivo para lectura");   
+        }
     }
            
            

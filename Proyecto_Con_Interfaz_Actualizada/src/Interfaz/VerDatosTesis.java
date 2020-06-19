@@ -569,7 +569,9 @@ public class VerDatosTesis extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel55jLabel39MouseClicked
 
     private void jLabel56jLabel40MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel56jLabel40MouseClicked
-
+        ComiteInvestigacion a = new ComiteInvestigacion();
+        a.show();
+        dispose();
     }//GEN-LAST:event_jLabel56jLabel40MouseClicked
 
     private void BotonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonGuardarMouseClicked
