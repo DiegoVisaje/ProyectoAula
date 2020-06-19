@@ -11,7 +11,7 @@ package Modelo;
  */
 public class Docente extends Persona{
     
-    //hola
+    //hola javier rama
     
     
     private String cargo,usuario,contraseña, linea;
