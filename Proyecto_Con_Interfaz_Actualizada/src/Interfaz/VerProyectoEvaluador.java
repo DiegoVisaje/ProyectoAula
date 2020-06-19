@@ -8,6 +8,7 @@ package Interfaz;
 import Datos.ArchivoTextoPropuestaProyecto;
 import Datos.ArchivoTextoProyectos;
 import Modelo.Estudiante;
+import Modelo.LineaDeInvestigacion;
 import Modelo.PropuestaProyecto;
 import Modelo.SolicitudEvaluacion;
 import Modelo.SubLineaInvestigacion;
@@ -26,13 +27,10 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
    private ArchivoTextoPropuestaProyecto solicitudes= new ArchivoTextoPropuestaProyecto();
    private ArchivoTextoProyectos proyectosDB= new ArchivoTextoProyectos();
    
-   String nombreDocente;
-    
-    
- 
+   String nombreDocente, evaluador;
+   
     public VerProyectoEvaluador() {
         initComponents();
-        
     }
     
     public VerProyectoEvaluador(String nombreDocente ){
@@ -63,16 +61,19 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
        }
     }
      
-  
+     
     public void filtrarProyecto(){
-        
+       
         listaFiltrada = new ArrayList<PropuestaProyecto>();
         
         for (PropuestaProyecto a : listaProyectos) {
             
-            if(a.getEvaluador1().equals(nombreDocente) || a.getEvaluador2().equals(nombreDocente)){
+            if(a.getEvaluador1().equals(nombreDocente)){
                 listaFiltrada.add(a);
-               
+                evaluador = "1";
+            }if(a.getEvaluador2().equals(nombreDocente)){
+                listaFiltrada.add(a);
+                evaluador = "2";
             }
         }
     }
@@ -134,7 +135,22 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
        
     }
 
-    
+    public void modificar(){
+        
+         String lineas, codigo, nose;
+       
+       try{
+        
+        nose = tablaProyectos.getValueAt(tablaProyectos.getSelectedRow(), 3).toString();
+          
+        
+       }catch(Exception a){
+          JOptionPane.showMessageDialog(this, a, "Excepcion", JOptionPane.ERROR_MESSAGE); 
+       }  
+        
+    }
+      
+      
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

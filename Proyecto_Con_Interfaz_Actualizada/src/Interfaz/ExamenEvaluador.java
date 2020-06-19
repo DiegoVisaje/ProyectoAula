@@ -22,9 +22,9 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     
     private ArchivoTextoProyectos proyectosDB= new ArchivoTextoProyectos();
     private ArchivoTextoPropuestaProyecto evaluacionDb= new ArchivoTextoPropuestaProyecto();
-     private ArrayList<PropuestaProyecto> listaProyectos;
-     private ArrayList<Estudiante> listaEstudiante;
-     private PropuestaProyecto propuestaBuscada;
+    private ArrayList<PropuestaProyecto> listaProyectos;
+    private ArrayList<Estudiante> listaEstudiante;
+    private PropuestaProyecto propuestaBuscada;
      
             
     public ExamenEvaluador() {
@@ -249,6 +249,7 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
         solicitud.setTrabajosFuturos(TxtTrabajosfuturos.getText().trim());
         solicitud.setFk_PropuestaRadicado(""+propuestaBuscada.getRadicado());
         
+        
         try {
             
             evaluacionDb.Guardar(solicitud);
@@ -262,14 +263,11 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     
     private void buscarProyecto(){
         
-      
-        
       try{
          
         int radicado=Integer.parseInt(txtBuscarProyecto.getText());
         boolean encontrado=false;
         PropuestaProyecto propuesta = new PropuestaProyecto();
-        int radicado2;
        
         for (PropuestaProyecto itemP : listaProyectos) {
             if(itemP.getRadicado()==radicado){
