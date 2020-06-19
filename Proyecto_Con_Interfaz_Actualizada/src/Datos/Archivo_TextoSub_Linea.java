@@ -96,7 +96,7 @@ public class Archivo_TextoSub_Linea {
                this.aEsc.close();
        }
     }
-    public void EliminarConLinea (String codigo) throws Exception{
+    public void EliminarConSubLinea (String codigo) throws Exception{
            
        this.aEsc =null;
        
@@ -108,12 +108,13 @@ public class Archivo_TextoSub_Linea {
          PrintWriter pw = new PrintWriter(this.aEsc);
          
          for(SubLineaInvestigacion a: listaSubLineaIn){
-             if(!a.getCodigo().equals(codigo)){
+             if(!a.getlCodigo().equals(codigo)){
               pw.println(a.formaArchivo());
              }
          }
          
        }catch(IOException ioe){
+           
           throw new Exception("ERROR AL ABRIR EL ARCHIVO"); 
        } 
        finally{

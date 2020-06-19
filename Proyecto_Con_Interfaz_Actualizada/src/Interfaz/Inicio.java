@@ -128,6 +128,9 @@ public class Inicio extends javax.swing.JFrame {
         jPanelExamen.setBackground(new java.awt.Color(0, 153, 51));
         jPanelExamen.setForeground(new java.awt.Color(0, 153, 0));
         jPanelExamen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelExamenMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jPanelExamenMouseEntered(evt);
             }
@@ -402,6 +405,14 @@ public class Inicio extends javax.swing.JFrame {
     private void botonSalir1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonSalir1MouseClicked
          System.exit(0);
     }//GEN-LAST:event_botonSalir1MouseClicked
+
+    private void jPanelExamenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelExamenMouseClicked
+        
+        ExamenEvaluador ee = new ExamenEvaluador();
+        Escritorio.add(ee);
+        ee.show();
+        
+    }//GEN-LAST:event_jPanelExamenMouseClicked
 
     public void regresar(){
         new Inicio().show();

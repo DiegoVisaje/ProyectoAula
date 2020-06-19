@@ -71,9 +71,9 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtBuscarProyecto.setBackground(new java.awt.Color(240, 240, 240));
         txtBuscarProyecto.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txtBuscarProyecto.setBorder(null);
         txtBuscarProyecto.addActionListener(new java.awt.event.ActionListener() {
@@ -164,10 +164,10 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         jPanel3.add(labelEvaluador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 240, 40));
 
         labelConcepto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(labelConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 310, 370, 210));
+        jPanel3.add(labelConcepto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 350, 370, 210));
 
         labelCorrecciones.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel3.add(labelCorrecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 340, 210));
+        jPanel3.add(labelCorrecciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 340, 210));
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -176,7 +176,7 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         jLabel8.setText("Concepto");
         jPanel1.add(jLabel8);
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 260, 370, 40));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 300, 370, 40));
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 0));
 
@@ -185,9 +185,9 @@ public class consultarProyecto extends javax.swing.JInternalFrame {
         jLabel6.setText("Correcciones");
         jPanel4.add(jLabel6);
 
-        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 340, 40));
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 300, 340, 40));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1000, 600));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 1000, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 48)); // NOI18N
