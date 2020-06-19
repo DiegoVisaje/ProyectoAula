@@ -148,15 +148,22 @@ public class ListaProyectos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_botonVerDatosMouseClicked
 
     public void verInterfaz(){
+        
+       try{
         if(tipoProyecto.equals("Tesis")){
-            new VerDatosTesis(radicado).show();
-            dispose();
+        new VerDatosTesis(radicado).show();
+        dispose();
             
         }else{
             if(tipoProyecto.equals("Practicas"))
             new VerDatosPractica(radicado).show();
             dispose();
         }
+        
+       }catch(Exception a){
+         JOptionPane.showMessageDialog(this, "ERROR SELECIONE UNA OPCION", "ERROR", JOptionPane.ERROR_MESSAGE);
+       }
+  
     }
     
     public void BotonRegresar(){

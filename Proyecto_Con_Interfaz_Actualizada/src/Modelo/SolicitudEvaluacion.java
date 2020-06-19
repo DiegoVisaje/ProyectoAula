@@ -12,17 +12,22 @@ package Modelo;
 public class SolicitudEvaluacion {
     
     
-    private String resumenResultados,conclusiones, trabajosFuturos;
+    private String resumenResultados,conclusiones, trabajosFuturos,estado1, estado2;
     private String Fk_PropuestaRadicado; 
     
 
     public SolicitudEvaluacion() {
+        this.estado1 = "PENDIENTE";
+        this.estado2 = "PENDIENTE";
     }
 
-    public SolicitudEvaluacion(String resumenResultados, String conclusiones, String trabajosFuturos, String lineaInvestigacion) {
+    public SolicitudEvaluacion(String resumenResultados, String conclusiones, String trabajosFuturos, String lineaInvestigacion, String estado1, String estado2) {
         this.resumenResultados = resumenResultados;
         this.conclusiones = conclusiones;
         this.trabajosFuturos = trabajosFuturos;
+        this.estado1 = "PENDIENTE";
+        this.estado2 = "PENDIENTE";
+     
     }
 
     public String getResumenResultados() {
@@ -63,12 +68,39 @@ public class SolicitudEvaluacion {
     }
     
     
-    public String formaArchivo(){
-        return resumenResultados + ";" + conclusiones+";"+trabajosFuturos+";"+Fk_PropuestaRadicado;
+    
+    /**
+     * @return the estado1
+     */
+    public String getEstado1() {
+        return estado1;
     }
-    
-   
-    
+
+    /**
+     * @param estado1 the estado1 to set
+     */
+    public void setEstado1(String estado1) {
+        this.estado1 = estado1;
+    }
+
+    /**
+     * @return the estado2
+     */
+    public String getEstado2() {
+        return estado2;
+    }
+
+    /**
+     * @param estado2 the estado2 to set
+     */
+    public void setEstado2(String estado2) {
+        this.estado2 = estado2;
+    }
+
+    public String formaArchivo(){
+        return getResumenResultados() + ";" + getConclusiones()+";"+getTrabajosFuturos()+";"+getFk_PropuestaRadicado() + ";" + getEstado1() + ";" + getEstado2();
+    }
+
     
     
 }

@@ -1,5 +1,7 @@
 package Interfaz;
 
+import java.util.concurrent.ExecutionException;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -80,7 +82,7 @@ public class Admin2 extends javax.swing.JFrame {
         jPanel5Admin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel34.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel34.setText("________________");
+        jLabel34.setText("____________________");
         jPanel5Admin.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 160, 20));
 
         jLabel33.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
@@ -327,11 +329,11 @@ public class Admin2 extends javax.swing.JFrame {
     
     
     private void jPanelRegistrarDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarDocenteMouseClicked
-        
-        RegistrarDocentes cu = new RegistrarDocentes();
+    
+          RegistrarDocentes cu = new RegistrarDocentes();
           escritorio.add(cu);
           cu.show();
-          
+       
     }//GEN-LAST:event_jPanelRegistrarDocenteMouseClicked
 
     private void jPanelRegistrarLineaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelRegistrarLineaMouseClicked

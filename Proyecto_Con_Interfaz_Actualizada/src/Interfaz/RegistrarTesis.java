@@ -53,13 +53,13 @@ public class RegistrarTesis extends javax.swing.JFrame {
         txtJustificacion = new javax.swing.JTextField();
         txtPlanteamiento = new javax.swing.JTextField();
         botonGuardar = new javax.swing.JButton();
-        jBotonDevolver = new javax.swing.JButton();
+        botonRegresar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 102, 0));
@@ -101,7 +101,6 @@ public class RegistrarTesis extends javax.swing.JFrame {
         jPanel1.add(txtPlanteamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 1000, 80));
 
         botonGuardar.setText("Guardar");
-        botonGuardar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonGuardarMouseClicked(evt);
@@ -114,27 +113,18 @@ public class RegistrarTesis extends javax.swing.JFrame {
         });
         jPanel1.add(botonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 680, 80, 30));
 
-        jBotonDevolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
-        jBotonDevolver.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
+        botonRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jBotonDevolverMouseClicked(evt);
+                botonRegresarMouseClicked(evt);
             }
         });
-        jBotonDevolver.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBotonDevolverActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jBotonDevolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 680, 40, 30));
+        jPanel1.add(botonRegresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 680, -1, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 730));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jBotonDevolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotonDevolverActionPerformed
-      
-    }//GEN-LAST:event_jBotonDevolverActionPerformed
 
     private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
         
@@ -167,10 +157,6 @@ public class RegistrarTesis extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jBotonDevolverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBotonDevolverMouseClicked
-        regresar();
-    }//GEN-LAST:event_jBotonDevolverMouseClicked
-
      public void regresar(){   
         
          
@@ -178,7 +164,13 @@ public class RegistrarTesis extends javax.swing.JFrame {
     
     private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
      
-       //BOTON GUARDAR, JENNY
+      guardar();
+       
+    }//GEN-LAST:event_botonGuardarMouseClicked
+
+    
+    public void guardar(){
+         //BOTON GUARDAR, JENNY
        propuestaProyecto = new PropuestaProyecto();
        tesis = guardarTesis();
        propuestaProyecto = estudiante.getPropuesta();
@@ -189,11 +181,15 @@ public class RegistrarTesis extends javax.swing.JFrame {
        
        new Inicio().show();
        dispose();
-       
-    }//GEN-LAST:event_botonGuardarMouseClicked
+    }
+    
+    
+    private void botonRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonRegresarMouseClicked
+        regresar();
+    }//GEN-LAST:event_botonRegresarMouseClicked
 
  
-    
+   
     
     public void guardarProyecto(){
         String mensaje=".";
@@ -250,7 +246,7 @@ public class RegistrarTesis extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonGuardar;
-    private javax.swing.JButton jBotonDevolver;
+    private javax.swing.JLabel botonRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;

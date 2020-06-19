@@ -9,12 +9,13 @@ public class DocenteEvaluador extends javax.swing.JFrame {
   
     public DocenteEvaluador(){
         initComponents();
+         this.setLocationRelativeTo(null);
     }
     
     public DocenteEvaluador(String nombre) {
         initComponents();
         jLabel58.setText(nombre);
-        this.setLocationRelativeTo(null);
+        
     }
 
    
@@ -158,22 +159,24 @@ public class DocenteEvaluador extends javax.swing.JFrame {
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 940, Short.MAX_VALUE)
         );
         EscritorioLayout.setVerticalGroup(
             EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 600, Short.MAX_VALUE)
         );
 
-        getContentPane().add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 670, 600));
+        getContentPane().add(Escritorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 940, 600));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void PanelListaProyectojPanelListaProyectoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelListaProyectojPanelListaProyectoMouseClicked
-        VerProyectoEvaluador a = new VerProyectoEvaluador();
+        VerProyectoEvaluador a = new VerProyectoEvaluador(jLabel58.getText());
         Escritorio.add(a);
         a.show();
+        
+        
     }//GEN-LAST:event_PanelListaProyectojPanelListaProyectoMouseClicked
 
     private void PanelListaProyectojPanelListaProyectoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PanelListaProyectojPanelListaProyectoMouseEntered
