@@ -11,6 +11,7 @@ package Modelo;
  */
 public class SolicitudEvaluacion {
     
+    
     private String resumenResultados,conclusiones, trabajosFuturos;
     private String Fk_PropuestaRadicado; 
     
@@ -60,7 +61,11 @@ public class SolicitudEvaluacion {
     public void setFk_PropuestaRadicado(String Fk_PropuestaRadicado) {
         this.Fk_PropuestaRadicado = Fk_PropuestaRadicado;
     }
-
+    
+    
+    public String formaArchivo(){
+        return resumenResultados + ";" + conclusiones+";"+trabajosFuturos+";"+Fk_PropuestaRadicado;
+    }
     
    
     

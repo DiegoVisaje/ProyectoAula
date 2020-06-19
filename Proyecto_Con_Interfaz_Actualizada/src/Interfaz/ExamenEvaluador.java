@@ -5,10 +5,12 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoPropuestaProyecto;
 import Datos.ArchivoTextoProyectos;
 import Modelo.Docente;
 import Modelo.Estudiante;
 import Modelo.PropuestaProyecto;
+import Modelo.SolicitudEvaluacion;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
@@ -23,8 +25,10 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
      */
     
     private ArchivoTextoProyectos proyectosDB= new ArchivoTextoProyectos();
+    private ArchivoTextoPropuestaProyecto evaluacionDb= new ArchivoTextoPropuestaProyecto();
      private ArrayList<PropuestaProyecto> listaProyectos;
      private ArrayList<Estudiante> listaEstudiante;
+     private PropuestaProyecto propuestaBuscada;
      
             
     public ExamenEvaluador() {
@@ -35,7 +39,7 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
    public void inicarProyectos(){
        
         try {
-            
+           
             listaProyectos= new ArrayList<PropuestaProyecto>();
             listaEstudiante=new ArrayList<Estudiante>();
             listaEstudiante=proyectosDB.leerArchivo();
@@ -43,7 +47,6 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
             for (Estudiante estudiante : listaEstudiante) {
                 listaProyectos.add(estudiante.getPropuesta());
             }
-
             
        } catch (Exception e) {
            
@@ -181,6 +184,11 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_secured_letter_30px.png"))); // NOI18N
         jLabel4.setText("Enviar");
         jLabel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 560, 80, 30));
 
         botonRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/icons8_back_arrow_30px_1.png"))); // NOI18N
@@ -230,7 +238,8 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtBuscarProyectoActionPerformed
 
     private void botonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscarMouseClicked
-      
+
+        buscarProyecto();
 
     }//GEN-LAST:event_botonBuscarMouseClicked
 
@@ -246,7 +255,50 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
         new Admin2().show();
     }//GEN-LAST:event_botonRegresarMouseClicked
 
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+       guardar();
+    }//GEN-LAST:event_jLabel4MouseClicked
 
+    private void guardar(){
+        SolicitudEvaluacion solicitud= new SolicitudEvaluacion();
+        solicitud.setResumenResultados(TxtResumenresultados.getText().trim());
+        solicitud.setConclusiones(Txtconclusiones.getText().trim());
+        solicitud.setTrabajosFuturos(TxtTrabajosfuturos.getText().trim());
+        solicitud.setFk_PropuestaRadicado(""+propuestaBuscada.getRadicado());
+        
+        try {
+            
+            evaluacionDb.Guardar(solicitud);
+            JOptionPane.showMessageDialog(null, " Se guardo correctamente" );
+        
+        } catch (Exception e) {
+            
+            JOptionPane.showMessageDialog(null, "Error al guardar" );
+        }
+    }
+    
+    private void buscarProyecto(){
+        
+        int radicado=Integer.parseInt(txtBuscarProyecto.getText());
+        boolean encontrado=false;
+        PropuestaProyecto propuesta = new PropuestaProyecto();
+        
+       
+        for (PropuestaProyecto itemP : listaProyectos) {
+            if(itemP.getRadicado()==radicado){
+                propuesta=itemP;
+                propuestaBuscada=itemP;
+                encontrado=true;
+            }
+        }
+        
+        if(encontrado){
+            JOptionPane.showMessageDialog(null, "Se encontro la propuesta del proyecto: "+ propuesta.getRadicado() +": "+ propuesta.getNombreP());
+            propuestaBuscada=propuesta;
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea TxtResumenresultados;
     private javax.swing.JTextArea TxtTrabajosfuturos;
