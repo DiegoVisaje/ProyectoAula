@@ -215,6 +215,7 @@ public class Login extends javax.swing.JFrame {
                } 
             }
         }
+        
         if(contraseñaIncorrecta==false){
             JOptionPane.showMessageDialog(this, "Usuario y/o Contraseña Incorrecta");
         }
