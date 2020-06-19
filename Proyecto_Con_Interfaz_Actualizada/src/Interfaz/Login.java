@@ -210,7 +210,7 @@ public class Login extends javax.swing.JFrame {
                }else{       
                    if(a.getCargo().equals("Evaluador")){
                        contraseñaIncorrecta = true;
-                       new DocenteEvaluador().show();
+                       new DocenteEvaluador(a.getNombre()+" "+a.getApellido()).show();
                        dispose();
                    }
                } 

@@ -1,3 +1,8 @@
 Miembro;juan;123;123;123;123;ingenieria
+<<<<<<< HEAD
 Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2SELECCIONE;;;;;;
 SELECCIONE;;;;;;
+=======
+Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2
+Evaluador;Javier;viloria;1004308815;1004308815;javierviloria;SISTEMAS INTELIGENTES
+>>>>>>> master
