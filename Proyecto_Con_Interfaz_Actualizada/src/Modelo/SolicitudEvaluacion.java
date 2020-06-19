@@ -11,7 +11,9 @@ package Modelo;
  */
 public class SolicitudEvaluacion {
     
-    private String resumenResultados,conclusiones, trabajosFuturos, lineaInvestigacion;
+    private String resumenResultados,conclusiones, trabajosFuturos;
+    private String Fk_PropuestaRadicado; 
+    
 
     public SolicitudEvaluacion() {
     }
@@ -20,65 +22,46 @@ public class SolicitudEvaluacion {
         this.resumenResultados = resumenResultados;
         this.conclusiones = conclusiones;
         this.trabajosFuturos = trabajosFuturos;
-        this.lineaInvestigacion = lineaInvestigacion;
     }
 
-    /**
-     * @return the resumenResultados
-     */
     public String getResumenResultados() {
         return resumenResultados;
     }
 
-    /**
-     * @param resumenResultados the resumenResultados to set
-     */
     public void setResumenResultados(String resumenResultados) {
         this.resumenResultados = resumenResultados;
     }
 
-    /**
-     * @return the conclusiones
-     */
     public String getConclusiones() {
         return conclusiones;
     }
 
-    /**
-     * @param conclusiones the conclusiones to set
-     */
+
     public void setConclusiones(String conclusiones) {
         this.conclusiones = conclusiones;
     }
 
-    /**
-     * @return the trabajosFuturos
-     */
+    
     public String getTrabajosFuturos() {
         return trabajosFuturos;
     }
 
-    /**
-     * @param trabajosFuturos the trabajosFuturos to set
-     */
+    
     public void setTrabajosFuturos(String trabajosFuturos) {
         this.trabajosFuturos = trabajosFuturos;
     }
 
-    /**
-     * @return the lineaInvestigacion
-     */
-    public String getLineaInvestigacion() {
-        return lineaInvestigacion;
+
+    
+    public String getFk_PropuestaRadicado() {
+        return Fk_PropuestaRadicado;
     }
 
-    /**
-     * @param lineaInvestigacion the lineaInvestigacion to set
-     */
-    public void setLineaInvestigacion(String lineaInvestigacion) {
-        this.lineaInvestigacion = lineaInvestigacion;
+    public void setFk_PropuestaRadicado(String Fk_PropuestaRadicado) {
+        this.Fk_PropuestaRadicado = Fk_PropuestaRadicado;
     }
 
+    
    
     
     

@@ -5,6 +5,13 @@
  */
 package Interfaz;
 
+import Datos.ArchivoTextoProyectos;
+import Modelo.Docente;
+import Modelo.Estudiante;
+import Modelo.PropuestaProyecto;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author zarel
@@ -14,8 +21,33 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
     /**
      * Creates new form ExamenEvaluador
      */
+    
+    private ArchivoTextoProyectos proyectosDB= new ArchivoTextoProyectos();
+     private ArrayList<PropuestaProyecto> listaProyectos;
+     private ArrayList<Estudiante> listaEstudiante;
+     
+            
     public ExamenEvaluador() {
         initComponents();
+        inicarProyectos();
+    }
+    
+   public void inicarProyectos(){
+       
+        try {
+            
+            listaProyectos= new ArrayList<PropuestaProyecto>();
+            listaEstudiante=new ArrayList<Estudiante>();
+            listaEstudiante=proyectosDB.leerArchivo();
+            
+            for (Estudiante estudiante : listaEstudiante) {
+                listaProyectos.add(estudiante.getPropuesta());
+            }
+
+            
+       } catch (Exception e) {
+           
+       }
     }
 
     /**
