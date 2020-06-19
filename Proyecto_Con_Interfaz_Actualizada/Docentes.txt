@@ -1,3 +1,8 @@
 Miembro;juan;123;123;123;123;ingenieria
+<<<<<<< HEAD
 Evaluador;Isela;Acosta;000000;000000;12131213;SISTEMAS DE INFORMACION
 Miembro;Andres;Savedra;6666;6666;7777;SISTEMAS INTELIGENTES
+=======
+Evaluador;Juan;AndresAAA;11927903356;11927903356;54321;Linea2
+Evaluador;Javier;viloria;1004308815;1004308815;javierviloria;SISTEMAS INTELIGENTES
+>>>>>>> a4dd0f1f49e25ff9405abc74b0b2b1c107f31a41

@@ -7,8 +7,13 @@ import javax.swing.JPanel;
 public class DocenteEvaluador extends javax.swing.JFrame {
 
   
-    public DocenteEvaluador() {
+    public DocenteEvaluador(){
         initComponents();
+    }
+    
+    public DocenteEvaluador(String nombre) {
+        initComponents();
+        jLabel58.setText(nombre);
         this.setLocationRelativeTo(null);
     }
 
@@ -128,7 +133,7 @@ public class DocenteEvaluador extends javax.swing.JFrame {
         jLabel58.setFont(new java.awt.Font("Lucida Console", 1, 18)); // NOI18N
         jLabel58.setForeground(new java.awt.Color(255, 255, 255));
         jLabel58.setText("Evaluador");
-        jPanel12.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 110, 40));
+        jPanel12.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 200, 40));
 
         jPanel11.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 220, 160));
 
