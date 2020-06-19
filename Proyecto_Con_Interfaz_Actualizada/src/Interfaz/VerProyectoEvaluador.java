@@ -269,11 +269,11 @@ public class VerProyectoEvaluador extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonAceptadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAceptadosMouseClicked
-        modificar("Aprobado");
+        modificar("APROBADO");
     }//GEN-LAST:event_BotonAceptadosMouseClicked
 
     private void BotonRechazadoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonRechazadoMouseClicked
-        modificar("Reprobado");
+        modificar("RECHAZADO");
     }//GEN-LAST:event_BotonRechazadoMouseClicked
 
     private void TxtBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TxtBuscarActionPerformed

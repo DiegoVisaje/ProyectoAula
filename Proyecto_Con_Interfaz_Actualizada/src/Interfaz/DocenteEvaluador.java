@@ -9,7 +9,7 @@ public class DocenteEvaluador extends javax.swing.JFrame {
   
     public DocenteEvaluador(){
         initComponents();
-         this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null);
     }
     
     public DocenteEvaluador(String nombre) {

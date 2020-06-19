@@ -10,10 +10,8 @@ import Modelo.*;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author zarel
- */
+
+
 public class ExamenEvaluador extends javax.swing.JInternalFrame {
 
     /**
@@ -28,12 +26,15 @@ public class ExamenEvaluador extends javax.swing.JInternalFrame {
      
             
     public ExamenEvaluador() {
+        
+        
         initComponents();
         inicarProyectos();
+     
     }
     
    public void inicarProyectos(){
-       
+        
         try {
            
             listaProyectos= new ArrayList<PropuestaProyecto>();
